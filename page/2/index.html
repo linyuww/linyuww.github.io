@@ -28,326 +28,7 @@ var CONFIG = {
 };
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="null" type="application/atom+xml">
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E8%85%BE%E8%AE%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">腾讯面试准备</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="算法和数据结构"   >
-          <a href="#算法和数据结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#算法和数据结构" class="headerlink" title="算法和数据结构"></a>算法和数据结构</h2>
-      <p>刷题</p>
-
-        <h2 id="C-的stl和新特性"   >
-          <a href="#C-的stl和新特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#C-的stl和新特性" class="headerlink" title="C++的stl和新特性"></a>C++的stl和新特性</h2>
-      
-        <h4 id="常量指针和指针常量"   >
-          <a href="#常量指针和指针常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#常量指针和指针常量" class="headerlink" title="常量指针和指针常量"></a>常量指针和指针常量</h4>
-      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> *p = &amp;a;<span class="comment">//常量指针，指针指向常量，指针指向的变量不能通过指针修改，但是指针指向的值可以改变</span></span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *<span class="type">const</span> p = &amp;a;<span class="comment">//指针常量，是一个常量，不能改变指向的对象（地址），但是可以改变地址的内容</span></span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="野指针和悬浮指针"   >
-          <a href="#野指针和悬浮指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#野指针和悬浮指针" class="headerlink" title="野指针和悬浮指针"></a>野指针和悬浮指针</h4>
-      <p>野指针是指向已经被释放或者⽆效的内存地址的指针</p>
-<p>悬浮指针是指向已经被销毁的对象的引⽤</p>
-<p>区别就是一个是指针一个是引用</p>
-
-        <h2 id="网络编程"   >
-          <a href="#网络编程" class="heading-link"><i class="fas fa-link"></i></a><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2>
-      
-        <h4 id="网络编程的基本流程"   >
-          <a href="#网络编程的基本流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#网络编程的基本流程" class="headerlink" title="网络编程的基本流程"></a>网络编程的基本流程</h4>
-      
-        <h4 id="1-服务端代码流程"   >
-          <a href="#1-服务端代码流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-服务端代码流程" class="headerlink" title="(1) 服务端代码流程"></a><strong>(1) 服务端代码流程</strong></h4>
-      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">socket</span>()             <span class="comment">// 创建一个套接字</span></span><br><span class="line"><span class="number">2.</span> <span class="built_in">bind</span>()               <span class="comment">// 将套接字与特定 IP 地址和端口绑定</span></span><br><span class="line"><span class="number">3.</span> <span class="built_in">listen</span>()             <span class="comment">// 开启监听，等待客户端连接</span></span><br><span class="line"><span class="number">4.</span> <span class="built_in">accept</span>()             <span class="comment">// 相应客户端的连接请求，接受新的连接</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">send</span>()/<span class="built_in">recv</span>()       <span class="comment">// 用于和客户端通信（读取请求或者写入响应</span></span><br><span class="line"><span class="number">6.</span> <span class="built_in">close</span>()              <span class="comment">// 关闭连接</span></span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="2-客户端代码流程"   >
-          <a href="#2-客户端代码流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-客户端代码流程" class="headerlink" title="(2) 客户端代码流程"></a><strong>(2) 客户端代码流程</strong></h4>
-      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">socket</span>()             <span class="comment">// 创建一个套接字</span></span><br><span class="line"><span class="number">2.</span> <span class="built_in">connect</span>()            <span class="comment">// 连接到服务端指定的 IP 地址和端口</span></span><br><span class="line"><span class="number">3.</span> <span class="built_in">send</span>()/<span class="built_in">recv</span>()       <span class="comment">// 用于发送请求或读取服务端的响应</span></span><br><span class="line"><span class="number">4.</span> <span class="built_in">close</span>()              <span class="comment">// 关闭连接</span></span><br></pre></td></tr></table></div></figure>
-
-
-
-
-
-
-
-
-        <h2 id="调试命令，gdb-vscode"   >
-          <a href="#调试命令，gdb-vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#调试命令，gdb-vscode" class="headerlink" title="调试命令，gdb&#x2F;vscode"></a>调试命令，gdb&#x2F;vscode</h2>
-      
-        <h2 id="额外：linux操作系统的内存管理，文件系统，进程和线程调度"   >
-          <a href="#额外：linux操作系统的内存管理，文件系统，进程和线程调度" class="heading-link"><i class="fas fa-link"></i></a><a href="#额外：linux操作系统的内存管理，文件系统，进程和线程调度" class="headerlink" title="额外：linux操作系统的内存管理，文件系统，进程和线程调度"></a>额外：linux操作系统的内存管理，文件系统，进程和线程调度</h2>
-      <p>进程间的通信机制：信号量，条件变量，生产者消费者</p>
-<p>异步通信：回调函数，生产者消费者（promise-future和消息队列）</p>
-<p>同步通信：阻塞式调用，文件或网络操作</p>
-
-        <h2 id="引用和指针的区别"   >
-          <a href="#引用和指针的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#引用和指针的区别" class="headerlink" title="引用和指针的区别"></a>引用和指针的区别</h2>
-      
-        <h3 id="1-什么是引用和指针？"   >
-          <a href="#1-什么是引用和指针？" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-什么是引用和指针？" class="headerlink" title="1. 什么是引用和指针？"></a><strong>1. 什么是引用和指针？</strong></h3>
-      <ol>
-<li><p><strong>引用（Reference）</strong>：</p>
-<ul>
-<li>引用是某个变量的别名，声明后与该变量绑定在一起，不能再绑定其他变量。</li>
-<li>本质上是一个语法糖，用更简洁的方式访问变量。</li>
-</ul>
-<p>示例代码：</p>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>&amp; ref = a;  <span class="comment">// 引用 `ref` 绑定到变量 `a`</span></span><br><span class="line">ref = <span class="number">20</span>;      <span class="comment">// 实际修改的是 `a`</span></span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>指针（Pointer）</strong>：</p>
-<ul>
-<li>指针是存储变量地址的一种特殊变量，通过指针可以间接访问或操作存储在内存地址上的值。</li>
-<li>指针可以指向不同的变量或内存单元。</li>
-</ul>
-<p>示例代码：</p>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>* ptr = &amp;a;  <span class="comment">// 指针 ptr 存储变量 a 的地址</span></span><br><span class="line">*ptr = <span class="number">20</span>;      <span class="comment">// 实际修改的是 a</span></span><br></pre></td></tr></table></div></figure></li>
-</ol>
-<hr>
-
-        <h3 id="2-引用和指针的区别"   >
-          <a href="#2-引用和指针的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-引用和指针的区别" class="headerlink" title="2. 引用和指针的区别"></a><strong>2. 引用和指针的区别</strong></h3>
-      <div class="table-container"><table>
-<thead>
-<tr>
-<th>特性</th>
-<th>引用</th>
-<th>指针</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>定义方式</strong></td>
-<td>使用 <code>&amp;</code> 声明</td>
-<td>使用 <code>*</code> 声明</td>
-</tr>
-<tr>
-<td><strong>是否可以为空</strong></td>
-<td>引用必须绑定到变量</td>
-<td>指针可以是 <code>nullptr</code> 或空</td>
-</tr>
-<tr>
-<td><strong>绑定后是否可以更改</strong></td>
-<td>一旦绑定不能更改</td>
-<td>指针可以重新指向其他变量</td>
-</tr>
-<tr>
-<td><strong>语法</strong></td>
-<td>直接使用，无需解引用符号</td>
-<td>需要用 <code>*</code> 解引用</td>
-</tr>
-<tr>
-<td><strong>内存布局</strong></td>
-<td>编译器实现（可能是指针）</td>
-<td>明确存储变量地址</td>
-</tr>
-<tr>
-<td><strong>需要初始化</strong></td>
-<td>声明时必须初始化</td>
-<td>可以声明后再初始化</td>
-</tr>
-<tr>
-<td><strong>别名关系</strong></td>
-<td>是原变量的别名</td>
-<td>独立的变量</td>
-</tr>
-<tr>
-<td><strong>运算</strong></td>
-<td>不支持运算</td>
-<td>可以进行加减运算</td>
-</tr>
-<tr>
-<td><strong>灵活性</strong></td>
-<td>较低，限定性强</td>
-<td>较高，可以动态分配内存</td>
-</tr>
-</tbody></table></div>
-<hr>
-
-        <h3 id="3-区别详解"   >
-          <a href="#3-区别详解" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-区别详解" class="headerlink" title="3. 区别详解"></a><strong>3. 区别详解</strong></h3>
-      
-        <h4 id="1-是否必须初始化"   >
-          <a href="#1-是否必须初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-是否必须初始化" class="headerlink" title="(1) 是否必须初始化"></a><strong>(1) 是否必须初始化</strong></h4>
-      <ul>
-<li><p><strong>引用：</strong></p>
-<ul>
-<li>引用在声明的时候必须初始化，否则无法通过编译。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>&amp; ref;  <span class="comment">// 编译错误，引用必须绑定变量</span></span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>指针：</strong></p>
-<ul>
-<li>指针声明后可以不初始化，但最好将其初始化（例如初始化为 <code>nullptr</code>），否则容易产生未定义行为。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* ptr;  <span class="comment">// 未初始化，非法操作可能导致未定义行为</span></span><br><span class="line"><span class="type">int</span>* ptr = <span class="literal">nullptr</span>;  <span class="comment">// 推荐初始化为 nullptr</span></span><br></pre></td></tr></table></div></figure></li>
-</ul>
-
-        <h4 id="2-是否可以为空"   >
-          <a href="#2-是否可以为空" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-是否可以为空" class="headerlink" title="(2) 是否可以为空"></a><strong>(2) 是否可以为空</strong></h4>
-      <ul>
-<li><p><strong>引用：</strong></p>
-<ul>
-<li>引用不能指向空（<code>nullptr</code>），它必须始终绑定到有效的变量。</li>
-</ul>
-</li>
-<li><p><strong>指针：</strong></p>
-<ul>
-<li>指针可以指向空内存区域（<code>nullptr</code>），表示它当前没有指向任何变量。</li>
-</ul>
-<p> 示例：<br> <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* ptr = <span class="literal">nullptr</span>;  <span class="comment">// 合法</span></span><br><span class="line"><span class="type">int</span>&amp; ref = <span class="literal">nullptr</span>;  <span class="comment">// 编译错误，引用必须绑定到变量</span></span><br></pre></td></tr></table></div></figure></p>
-</li>
-</ul>
-
-        <h4 id="3-绑定后是否可以更改"   >
-          <a href="#3-绑定后是否可以更改" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-绑定后是否可以更改" class="headerlink" title="(3) 绑定后是否可以更改"></a><strong>(3) 绑定后是否可以更改</strong></h4>
-      <ul>
-<li><p><strong>引用：</strong></p>
-<ul>
-<li>引用一旦绑定到变量，就不能再绑定到其他变量，引用始终是它所绑定变量的别名。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span>&amp; ref = a;  <span class="comment">// ref 绑定到 a</span></span><br><span class="line">ref = b;       <span class="comment">// 修改的是 a 的值，而不是重新绑定到 b</span></span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>指针：</strong></p>
-<ul>
-<li>指针可以随时更改指向，可以指向其他变量或内存单元。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span>* ptr = &amp;a;  <span class="comment">// ptr 指向 a</span></span><br><span class="line">ptr = &amp;b;       <span class="comment">// ptr 改为指向 b</span></span><br></pre></td></tr></table></div></figure></li>
-</ul>
-
-        <h4 id="4-使用上的差异"   >
-          <a href="#4-使用上的差异" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-使用上的差异" class="headerlink" title="(4) 使用上的差异"></a><strong>(4) 使用上的差异</strong></h4>
-      <ul>
-<li><p><strong>引用：</strong></p>
-<ul>
-<li>如果将一变量赋值给引用，引用直接操作变量本身。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>&amp; ref = a;</span><br><span class="line">ref = <span class="number">20</span>;  <span class="comment">// 改变的是 a，a 的值变为 20</span></span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>指针：</strong></p>
-<ul>
-<li>要改变指针指向变量的值，需要解引用（<code>*</code>）。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span>* ptr = &amp;a;  <span class="comment">// 指针指向 a</span></span><br><span class="line">*ptr = <span class="number">30</span>;      <span class="comment">// 修改 a 的值为 30</span></span><br><span class="line">ptr = &amp;b;       <span class="comment">// 改为指向 b</span></span><br></pre></td></tr></table></div></figure></li>
-</ul>
-
-        <h4 id="5-运算能力"   >
-          <a href="#5-运算能力" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-运算能力" class="headerlink" title="(5) 运算能力"></a><strong>(5) 运算能力</strong></h4>
-      <ul>
-<li><strong>引用：</strong><ul>
-<li>引用不支持指针的算术运算，例如加减法。</li>
-</ul>
-</li>
-<li><strong>指针：</strong><ul>
-<li>指针可以进行算术运算，例如指针递增&#x2F;递减，用于访问数组元素。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>* ptr = arr;   <span class="comment">// 指向数组的第一个元素</span></span><br><span class="line">ptr++;            <span class="comment">// 指向下一个元素</span></span><br></pre></td></tr></table></div></figure></li>
-</ul>
-
-        <h4 id="6-内存特性"   >
-          <a href="#6-内存特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-内存特性" class="headerlink" title="(6) 内存特性"></a><strong>(6) 内存特性</strong></h4>
-      <ul>
-<li>引用在编译器实现中，可能会转换为指针，但它对开发者是透明的。</li>
-<li>指针本质上是一个变量，存储的是某个地址，并且占用内存。</li>
-</ul>
-<hr>
-
-        <h3 id="4-引用与指针的适用场景"   >
-          <a href="#4-引用与指针的适用场景" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-引用与指针的适用场景" class="headerlink" title="4. 引用与指针的适用场景"></a><strong>4. 引用与指针的适用场景</strong></h3>
-      
-        <h4 id="1-适用引用"   >
-          <a href="#1-适用引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-适用引用" class="headerlink" title="(1) 适用引用"></a><strong>(1) 适用引用</strong></h4>
-      <ol>
-<li><p><strong>函数参数传递</strong>：</p>
-<ul>
-<li>使用引用避免拷贝实参，提高性能。</li>
-<li>常用于不需要修改参数的地方（<code>const</code> 引用）。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; x)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>返回值</strong>：</p>
-<ul>
-<li>返回引用允许函数直接返回变量本身，而不是拷贝。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">getValue</span><span class="params">(<span class="type">int</span>&amp; a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>别名</strong>：</p>
-<ul>
-<li>为变量创建更简化的别名。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">42</span>;</span><br><span class="line"><span class="type">int</span>&amp; alias = a;  <span class="comment">// alias 是 a 的别名</span></span><br></pre></td></tr></table></div></figure></li>
-</ol>
-
-        <h4 id="2-适用指针"   >
-          <a href="#2-适用指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-适用指针" class="headerlink" title="(2) 适用指针"></a><strong>(2) 适用指针</strong></h4>
-      <ol>
-<li><p><strong>动态内存管理</strong>：</p>
-<ul>
-<li>使用指针分配和释放动态内存。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* ptr = <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">delete</span> ptr;  <span class="comment">// 手动释放内存</span></span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>数组与迭代</strong>：</p>
-<ul>
-<li>指针常用来访问数组元素。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span>* ptr = arr; ptr &lt; arr + <span class="number">3</span>; ++ptr) &#123;</span><br><span class="line">    std::cout &lt;&lt; *ptr &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>数据结构</strong>：</p>
-<ul>
-<li>指针是数据结构（如链表、树）的核心基础。</li>
-</ul>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    Node* next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-</li>
-<li><p><strong>需要动态改变指向时</strong>：</p>
-<ul>
-<li>指针可以灵活地改变指向，适合需要频繁切换指向的场景。</li>
-</ul>
-</li>
-</ol>
-<hr>
-
-        <h3 id="5-总结对比"   >
-          <a href="#5-总结对比" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-总结对比" class="headerlink" title="5. 总结对比"></a><strong>5. 总结对比</strong></h3>
-      <div class="table-container"><table>
-<thead>
-<tr>
-<th>特征</th>
-<th>引用</th>
-<th>指针</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>需要初始化</strong></td>
-<td>必须初始化</td>
-<td>可以先声明后初始化</td>
-</tr>
-<tr>
-<td><strong>是否可以为空</strong></td>
-<td>不可以为空</td>
-<td>可以是空指针（<code>nullptr</code>）</td>
-</tr>
-<tr>
-<td><strong>绑定是否可更改</strong></td>
-<td>绑定后不可更改</td>
-<td>可通过重新赋值更改指向</td>
-</tr>
-<tr>
-<td><strong>语法复杂度</strong></td>
-<td>更简单</td>
-<td>更复杂，需要使用 <code>*</code> 号</td>
-</tr>
-<tr>
-<td><strong>灵活性</strong></td>
-<td>受限</td>
-<td>更灵活</td>
-</tr>
-<tr>
-<td><strong>常见场景</strong></td>
-<td>函数传参、别名</td>
-<td>动态内存、复杂结构</td>
-</tr>
-</tbody></table></div>
-<p>引用更简单、更安全，适合大多数普通变量操作；指针更灵活，适合动态内存和复杂结构的场景。在实际开发中，应根据场景和需求选择适合的工具。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/Docker%20Desktop%20%E4%BF%AE%E6%94%B9%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE-CSDN%E5%8D%9A%E5%AE%A2/">Docker Desktop 修改安装位置-CSDN博客</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/cn_ljr/article/details/132047516" >Win11 安装 Docker Desktop 和 WSL2 并进行安装位置迁移_windows 11 wsl 修改安装位置-CSDN博客</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/Docker%20Desktop%20%E4%BF%AE%E6%94%B9%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE-CSDN%E5%8D%9A%E5%AE%A2/">Docker Desktop 修改安装位置-CSDN博客</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/cn_ljr/article/details/132047516" >Win11 安装 Docker Desktop 和 WSL2 并进行安装位置迁移_windows 11 wsl 修改安装位置-CSDN博客</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 <p>迁移docker</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/WSl%E4%BB%8E%E6%9C%AC%E6%9C%BA%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%88%B0wsl/">WSl从本机复制文件到wsl</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="WSl从本机复制文件到wsl"   >
@@ -379,16 +60,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p>关机重启就好</p>
 <figure class="highlight powershell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> docker system prune</span><br><span class="line">WARNING! This will remove:</span><br><span class="line">  - all stopped containers</span><br><span class="line">  - all networks not used by at least one container</span><br><span class="line">  - all dangling images</span><br><span class="line">  - unused build cache</span><br><span class="line"></span><br><span class="line">Are you sure you want to <span class="keyword">continue</span>? [<span class="type">y</span>/<span class="type">N</span>] y</span><br><span class="line">Total reclaimed space: <span class="number">0</span>B</span><br></pre></td></tr></table></div></figure>
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/openvpn/">openvpn</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>openvpn</p>
-<p>下载</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O openvpn.sh https://get.vpnsetup.net/ovpn</span><br></pre></td></tr></table></div></figure>
-
-<p>安装</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bash openvpn.sh --auto</span><br></pre></td></tr></table></div></figure>
-
-<p>启动</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bash openvpn.sh</span><br></pre></td></tr></table></div></figure>
-
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/ngnix%E5%AE%9E%E7%8E%B0%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/">ngnix实现共享文件</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="ngnix实现共享文件"   >
           <a href="#ngnix实现共享文件" class="heading-link"><i class="fas fa-link"></i></a><a href="#ngnix实现共享文件" class="headerlink" title="ngnix实现共享文件"></a>ngnix实现共享文件</h1>
@@ -415,6 +86,16 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p>要求权限是755才能正常访问</p>
 <figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 755 xmal/</span><br></pre></td></tr></table></div></figure>
 
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/openvpn/">openvpn</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>openvpn</p>
+<p>下载</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O openvpn.sh https://get.vpnsetup.net/ovpn</span><br></pre></td></tr></table></div></figure>
+
+<p>安装</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bash openvpn.sh --auto</span><br></pre></td></tr></table></div></figure>
+
+<p>启动</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bash openvpn.sh</span><br></pre></td></tr></table></div></figure>
+
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/system%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/">system初始化问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>System has not been booted with systemd as init system (PID 1). Can’t operate.<br>Failed to connect to bus: Host is down</p>
 <p>翻译过来就是：“<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%B3%BB%E7%BB%9F&spm=1001.2101.3001.7020" >系统</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>尚未以systemd作为初始系统启动”。</p>
 
@@ -430,6 +111,18 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918205806490.png" alt="image-20240918205806490"></p>
 <p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918210154534.png" alt="image-20240918210154534"></p>
 <p>把这两个目录添加到环境变量，之后再修改文件夹中python.exe为python2.exe</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/wsl%E7%9A%84%E4%BB%A3%E7%90%86%E5%A6%82%E4%BD%95%E4%B8%8E%E4%B8%BB%E6%9C%BA%E5%85%B1%E4%BA%AB/">wsl的代理如何与主机共享</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>wsl的代理如何与主机共享</p>
+<p>需要拉取docker镜像，但是curl无效</p>
+<p>设置配置文件.wslconfig后仍然ping不通</p>
+<p>ping，ping的是ip，用的是icmp协议，在osi七层模型中用的是第三层（网络层）</p>
+<p>其实是curl google.com</p>
+<p>直接得到的就是</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span><span class="tag">&lt;<span class="name">HEAD</span>&gt;</span><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;content-type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html;charset=utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TITLE</span>&gt;</span>301 Moved<span class="tag">&lt;/<span class="name">TITLE</span>&gt;</span><span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span><span class="tag">&lt;<span class="name">BODY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">H1</span>&gt;</span>301 Moved<span class="tag">&lt;/<span class="name">H1</span>&gt;</span></span><br><span class="line">The document has moved</span><br><span class="line"><span class="tag">&lt;<span class="name">A</span> <span class="attr">HREF</span>=<span class="string">&quot;http://www.google.com/&quot;</span>&gt;</span>here<span class="tag">&lt;/<span class="name">A</span>&gt;</span>.</span><br><span class="line"><span class="tag">&lt;/<span class="name">BODY</span>&gt;</span><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>用浏览器访问一下就知道了</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://www.google.com.hk/  </span><br></pre></td></tr></table></div></figure>
+
+<p>这个才是正确的</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/wsl2%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8mysql/">wsl2安装启动mysql</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><strong>wsl2安装启动mysql</strong></p>
 <p>启动</p>
 <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /etc/init.d/mysql start</span><br></pre></td></tr></table></div></figure>
@@ -461,4 +154,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
 <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER <span class="string">&#x27;mufeng&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>;</span><br></pre></td></tr></table></div></figure>
 
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">64</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span></span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">63</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span></span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
