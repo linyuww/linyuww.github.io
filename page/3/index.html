@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta property="og:type" content="website">
 <meta property="og:title">
-<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:url" content="https://linyuww.github.io/page/3/index.html">
 <meta property="og:site_name">
 <meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary"><title>null</title><link ref="canonical" href="http://example.com/page/3/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+<meta name="twitter:card" content="summary"><title>null</title><link ref="canonical" href="https://linyuww.github.io/page/3/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -28,46 +28,7 @@ var CONFIG = {
 };
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="null" type="application/atom+xml">
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/">在使用wsl时，突然不能用code打开vscode</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="在使用wsl时，突然不能用code打开vscode"   >
-          <a href="#在使用wsl时，突然不能用code打开vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#在使用wsl时，突然不能用code打开vscode" class="headerlink" title="在使用wsl时，突然不能用code打开vscode"></a>在使用wsl时，突然不能用<code>code</code>打开<code>vscode</code></h2>
-      <p>加一行配置环境变量可以解决</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/mnt/c/Users/86147/AppData/Local/Programs/Microsoft VS Code/bin&quot;</span></span><br></pre></td></tr></table></div></figure>
-
-<p>但是不够优雅</p>
-<p>在 <code>/etc/wsl.conf</code> 中明确追加 PATH 配置</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = true</span><br></pre></td></tr></table></div></figure>
-
-<p>设置完以上方法后，发现还是一样因为本来就默认共享环境变量</p>
-<p>发现vscode文件路径名称<strong>有空格</strong></p>
-<p>wsl执行</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></div></figure>
-
-<p>出现</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/c/Users/86147/AppData/Local/Programs/Microsoft:VS:Code/bin</span><br></pre></td></tr></table></div></figure>
-
-<p>空格被识别成分割</p>
-<p>所以可能是更新后路径名出现了这个bug导致无法正常识别环境变量</p>
-
-        <h3 id="解决方案是用短路径"   >
-          <a href="#解决方案是用短路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方案是用短路径" class="headerlink" title="解决方案是用短路径"></a>解决方案是用短路径</h3>
-      <p>Windows 文件系统有短路径名（8.3 格式）支持，通常无空格，可以兼容在 WSL 和 Windows 下使用。你可以先找到短路径名，然后将其添加到环境变量中。</p>
-<ol>
-<li><p><strong>获取短路径名</strong>： 打开 Windows 命令提示符（cmd），输入以下命令以获取 <code>Microsoft VS Code</code> 文件夹的短路径名：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> <span class="string">&quot;C:\Users\86147\AppData\Local\Programs\&quot; /x</span></span><br></pre></td></tr></table></div></figure>
-
-<p>你可能会看到一行输出类似：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03/12/2024  09:00 AM    &lt;DIR&gt;          MICRO~1    Microsoft VS Code</span><br></pre></td></tr></table></div></figure>
-
-<p><code>MICRO~1</code> 就是此文件夹的短路径名。用这个名字可以避免空格问题。</p>
-</li>
-<li><p><strong>将短路径名添加到 PATH</strong>： 在 Windows 的环境变量设置中，将 VS Code 的路径设置为短路径格式。例如，将路径设置为：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86147\AppData\Local\Programs\MICRO~1\bin</span><br></pre></td></tr></table></div></figure>
-
-<p>在 WSL 中，这个路径会自动被映射到 <code>/mnt/c/Users/86147/AppData/Local/Programs/MICRO~1/bin</code>，WSL 能正确解析。</p>
-</li>
-</ol>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8VSCode%E4%B8%AD%E6%89%93%E5%BC%80WSL2%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8CCopilot%E6%89%A9%E5%B1%95%E6%B2%A1%E6%9C%89%E5%93%8D%E5%BA%94/">在VSCode中打开WSL2项目时，Copilot扩展没有响应</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在VSCode中打开WSL2项目时，Copilot扩展没有响应</p>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8VSCode%E4%B8%AD%E6%89%93%E5%BC%80WSL2%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8CCopilot%E6%89%A9%E5%B1%95%E6%B2%A1%E6%9C%89%E5%93%8D%E5%BA%94/">在VSCode中打开WSL2项目时，Copilot扩展没有响应</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在VSCode中打开WSL2项目时，Copilot扩展没有响应</p>
 <p>添加<code>setting.json</code></p>
 <figure class="highlight json"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;remote.extensionKind&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;GitHub.copilot&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;ui&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;GitHub.copilot-chat&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;ui&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></div></figure>
 
@@ -124,6 +85,45 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
         <h3 id="总结"   >
           <a href="#总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       <p>通过以上步骤，你可以创建一个轻量化的 Python 虚拟环境，并在其中安装所需的包。<code>venv</code> 提供了一个相对简单的方式来管理项目所需的依赖，同时保持系统 Python 环境的干净。在项目开发和测试中使用虚拟环境是良好的实践。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/">在使用wsl时，突然不能用code打开vscode</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="在使用wsl时，突然不能用code打开vscode"   >
+          <a href="#在使用wsl时，突然不能用code打开vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#在使用wsl时，突然不能用code打开vscode" class="headerlink" title="在使用wsl时，突然不能用code打开vscode"></a>在使用wsl时，突然不能用<code>code</code>打开<code>vscode</code></h2>
+      <p>加一行配置环境变量可以解决</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/mnt/c/Users/86147/AppData/Local/Programs/Microsoft VS Code/bin&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>但是不够优雅</p>
+<p>在 <code>/etc/wsl.conf</code> 中明确追加 PATH 配置</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = true</span><br></pre></td></tr></table></div></figure>
+
+<p>设置完以上方法后，发现还是一样因为本来就默认共享环境变量</p>
+<p>发现vscode文件路径名称<strong>有空格</strong></p>
+<p>wsl执行</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></div></figure>
+
+<p>出现</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/c/Users/86147/AppData/Local/Programs/Microsoft:VS:Code/bin</span><br></pre></td></tr></table></div></figure>
+
+<p>空格被识别成分割</p>
+<p>所以可能是更新后路径名出现了这个bug导致无法正常识别环境变量</p>
+
+        <h3 id="解决方案是用短路径"   >
+          <a href="#解决方案是用短路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方案是用短路径" class="headerlink" title="解决方案是用短路径"></a>解决方案是用短路径</h3>
+      <p>Windows 文件系统有短路径名（8.3 格式）支持，通常无空格，可以兼容在 WSL 和 Windows 下使用。你可以先找到短路径名，然后将其添加到环境变量中。</p>
+<ol>
+<li><p><strong>获取短路径名</strong>： 打开 Windows 命令提示符（cmd），输入以下命令以获取 <code>Microsoft VS Code</code> 文件夹的短路径名：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> <span class="string">&quot;C:\Users\86147\AppData\Local\Programs\&quot; /x</span></span><br></pre></td></tr></table></div></figure>
+
+<p>你可能会看到一行输出类似：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03/12/2024  09:00 AM    &lt;DIR&gt;          MICRO~1    Microsoft VS Code</span><br></pre></td></tr></table></div></figure>
+
+<p><code>MICRO~1</code> 就是此文件夹的短路径名。用这个名字可以避免空格问题。</p>
+</li>
+<li><p><strong>将短路径名添加到 PATH</strong>： 在 Windows 的环境变量设置中，将 VS Code 的路径设置为短路径格式。例如，将路径设置为：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86147\AppData\Local\Programs\MICRO~1\bin</span><br></pre></td></tr></table></div></figure>
+
+<p>在 WSL 中，这个路径会自动被映射到 <code>/mnt/c/Users/86147/AppData/Local/Programs/MICRO~1/bin</code>，WSL 能正确解析。</p>
+</li>
+</ol>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E6%B8%85%E7%90%86wsl%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/">清理wsl磁盘空间</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="清理wsl磁盘空间"   >
           <a href="#清理wsl磁盘空间" class="heading-link"><i class="fas fa-link"></i></a><a href="#清理wsl磁盘空间" class="headerlink" title="清理wsl磁盘空间"></a>清理wsl磁盘空间</h1>
@@ -294,6 +294,21 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
 
 
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/13-%E5%BA%94%E5%AF%B9%E5%B9%B6%E5%8F%91%20Bugs%20(%E5%8A%A8%E6%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90%EF%BC%9A%E5%BA%94%E5%AF%B9%E6%AD%BB%E9%94%81%E3%80%81%E6%AD%BB%E5%B1%80%E5%92%8C%E6%AD%BB%E7%BA%BF)/">13-应对并发 Bugs (动态程序分析：应对死锁、死局和死线)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="13-应对并发-Bugs-动态程序分析：应对死锁、死局和死线"   >
+          <a href="#13-应对并发-Bugs-动态程序分析：应对死锁、死局和死线" class="heading-link"><i class="fas fa-link"></i></a><a href="#13-应对并发-Bugs-动态程序分析：应对死锁、死局和死线" class="headerlink" title="13-应对并发 Bugs (动态程序分析：应对死锁、死局和死线)"></a>13-应对并发 Bugs (动态程序分析：应对死锁、死局和死线)</h2>
+      
+        <h4 id="运行时lock-ordering检查（动态分析）"   >
+          <a href="#运行时lock-ordering检查（动态分析）" class="heading-link"><i class="fas fa-link"></i></a><a href="#运行时lock-ordering检查（动态分析）" class="headerlink" title="运行时lock ordering检查（动态分析）"></a>运行时lock ordering检查（动态分析）</h4>
+      <p>应对死锁，给锁编号，构建图</p>
+<p>形成环，就有循环等待，就有可能死锁</p>
+<p>对上锁的顺序进行一个闭包运算</p>
+<p>同一行分配的锁就是同一个锁（近似）</p>
+
+        <h4 id="data-race"   >
+          <a href="#data-race" class="heading-link"><i class="fas fa-link"></i></a><a href="#data-race" class="headerlink" title="data race"></a>data race</h4>
+      <p>基本原理就是不同线程对同一变量，至少有一个是写操作</p>
+<p>编译加<code>-fsanitize=thread</code>线程消毒器</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/10-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6%E5%90%8C%E6%AD%A5/">10-并发控制同步</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="10-并发控制：同步-2"   >
           <a href="#10-并发控制：同步-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-并发控制：同步-2" class="headerlink" title="10-并发控制：同步 (2)"></a>10-并发控制：同步 (2)</h2>
@@ -331,29 +346,44 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p>现在的问题是，为什么前一个线程执行完的broadcast后，新建的produce线程为什么球会取走，不应该是执行完一个线程再执行同一种线程吗，而且例子中只有一个生产者和一个消费者，缓冲区大小为1</p>
 <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Producer: begin, execution count: <span class="number">14397</span></span><br><span class="line">(</span><br><span class="line">depth = <span class="number">1</span></span><br><span class="line">	<span class="comment">//Producer: Broadcast</span></span><br><span class="line">	<span class="comment">//start broadcast</span></span><br><span class="line">nwait: <span class="number">0</span></span><br><span class="line">	<span class="comment">//broadcast end</span></span><br><span class="line">		<span class="comment">//Consumer: Broadcast</span></span><br><span class="line">Producer: begin, execution count: <span class="number">14398</span></span><br><span class="line">Producer: Waiting</span><br><span class="line">in wait nwait: <span class="number">1</span></span><br><span class="line">waiting at <span class="number">32</span></span><br><span class="line">		<span class="comment">//start broadcast</span></span><br><span class="line">nwait: <span class="number">1</span></span><br><span class="line">waiting out</span><br><span class="line">Producer: Waiting</span><br><span class="line">		<span class="comment">//broadcast end</span></span><br><span class="line">in wait nwait: <span class="number">1</span></span><br><span class="line">waiting at <span class="number">32</span></span><br><span class="line">Consumer: begin, execution count: <span class="number">14399</span></span><br><span class="line">)</span><br><span class="line">depth = <span class="number">0</span></span><br><span class="line"><span class="comment">//Consumer: Broadcast</span></span><br><span class="line"><span class="comment">//start broadcast</span></span><br><span class="line">nwait: <span class="number">1</span></span><br><span class="line">broadcast end</span><br><span class="line">Consumer: begin, execution count: <span class="number">14400</span></span><br><span class="line">Consumer: Waiting</span><br><span class="line">in wait nwait: <span class="number">1</span></span><br><span class="line">waiting at <span class="number">32</span></span><br><span class="line">waiting out</span><br><span class="line">Consumer: Waiting</span><br><span class="line">in wait nwait: <span class="number">2</span></span><br><span class="line">waiting at <span class="number">32</span></span><br></pre></td></tr></table></div></figure>
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/12-%E5%B9%B6%E5%8F%91%20Bugs%20(%E6%AD%BB%E9%94%81%E3%80%81%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89%E3%80%81%E5%8E%9F%E5%AD%90%E6%80%A7%E9%A1%BA%E5%BA%8F%E8%BF%9D%E5%8F%8D)/">12-并发 Bugs (死锁、数据竞争、原子性顺序违反)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="12-并发-Bugs-死锁、数据竞争、原子性-顺序违反"   >
-          <a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="heading-link"><i class="fas fa-link"></i></a><a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="headerlink" title="12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)"></a>12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)</h2>
-      <p>死锁产生的必要条件</p>
-<ul>
-<li>Atomicity violation，本应原子完成不被打断的代码被打断</li>
-<li>Order violation，本应按某个顺序完成的未能被正确同步</li>
-</ul>
-<p>ABA</p>
-<p>例如mysql里的解引用指针和将指针置为空的两个线程，也是一种数据</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/13-%E5%BA%94%E5%AF%B9%E5%B9%B6%E5%8F%91%20Bugs%20(%E5%8A%A8%E6%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90%EF%BC%9A%E5%BA%94%E5%AF%B9%E6%AD%BB%E9%94%81%E3%80%81%E6%AD%BB%E5%B1%80%E5%92%8C%E6%AD%BB%E7%BA%BF)/">13-应对并发 Bugs (动态程序分析：应对死锁、死局和死线)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="13-应对并发-Bugs-动态程序分析：应对死锁、死局和死线"   >
-          <a href="#13-应对并发-Bugs-动态程序分析：应对死锁、死局和死线" class="heading-link"><i class="fas fa-link"></i></a><a href="#13-应对并发-Bugs-动态程序分析：应对死锁、死局和死线" class="headerlink" title="13-应对并发 Bugs (动态程序分析：应对死锁、死局和死线)"></a>13-应对并发 Bugs (动态程序分析：应对死锁、死局和死线)</h2>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/14-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%9A%84%E8%BF%9B%E7%A8%8B%20(forkexecveexit)/">14-操作系统上的进程 (forkexecveexit)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="14-操作系统上的进程-fork-execve-exit"   >
+          <a href="#14-操作系统上的进程-fork-execve-exit" class="heading-link"><i class="fas fa-link"></i></a><a href="#14-操作系统上的进程-fork-execve-exit" class="headerlink" title="14-操作系统上的进程 (fork&#x2F;execve&#x2F;exit)"></a>14-操作系统上的进程 (fork&#x2F;execve&#x2F;exit)</h3>
       
-        <h4 id="运行时lock-ordering检查（动态分析）"   >
-          <a href="#运行时lock-ordering检查（动态分析）" class="heading-link"><i class="fas fa-link"></i></a><a href="#运行时lock-ordering检查（动态分析）" class="headerlink" title="运行时lock ordering检查（动态分析）"></a>运行时lock ordering检查（动态分析）</h4>
-      <p>应对死锁，给锁编号，构建图</p>
-<p>形成环，就有循环等待，就有可能死锁</p>
-<p>对上锁的顺序进行一个闭包运算</p>
-<p>同一行分配的锁就是同一个锁（近似）</p>
+        <h3 id="立即复制状态机"   >
+          <a href="#立即复制状态机" class="heading-link"><i class="fas fa-link"></i></a><a href="#立即复制状态机" class="headerlink" title="立即复制状态机"></a>立即复制状态机</h3>
+      <ul>
+<li><p>包括</p>
+<p>所有</p>
+<p>信息的完整拷贝</p>
+<ul>
+<li>每一个字节的内存</li>
+<li>打开的文件 (共享)</li>
+<li>……</li>
+<li>复制失败返回 -1<ul>
+<li>errno 会返回错误原因 (man fork)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-        <h4 id="data-race"   >
-          <a href="#data-race" class="heading-link"><i class="fas fa-link"></i></a><a href="#data-race" class="headerlink" title="data race"></a>data race</h4>
-      <p>基本原理就是不同线程对同一变量，至少有一个是写操作</p>
-<p>编译加<code>-fsanitize=thread</code>线程消毒器</p>
+        <h3 id="如何区分两个状态机？"   >
+          <a href="#如何区分两个状态机？" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何区分两个状态机？" class="headerlink" title="如何区分两个状态机？"></a>如何区分两个状态机？</h3>
+      <ul>
+<li>新创建进程返回 0</li>
+<li>执行 fork 的进程返回子进程的进程号</li>
+</ul>
+<p>系统调用的返回值放在rax中</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">f</span></span>()&#123;</span><br><span class="line">	f | f &amp;</span><br><span class="line">&#125;</span><br><span class="line">f</span><br></pre></td></tr></table></div></figure>
+
+
+
+<p><code>printf</code>缓冲区在每一个进程的内存里，fork会一起复制</p>
+<p>遇到了粘贴时乱码问题</p>
+<p><code>execve</code>把当前的进程重置成一个可执行文件描述状态机的初始状态</p>
+<p>第三个参数是环境变量</p>
+<p><code>fork</code>默认直接把环境变量会继承</p>
+<p>strace的使用</p>
+<p><code>./demo</code>当前目录下的程序</p>
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">63</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span></span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
