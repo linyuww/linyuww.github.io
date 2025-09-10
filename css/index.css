@@ -910,6 +910,17 @@ body::after {
   height: 100%;
   background: url("https://cdn.pixabay.com/photo/2023/01/21/13/39/night-sky-7733876_1280.jpg") no-repeat center/cover;
 }
+.header-banner::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+}
 .header-banner-info {
   position: absolute;
   top: 50%;
@@ -948,6 +959,17 @@ body::after {
   text-align: center;
   color: #f5f6f7;
   background-color: #2d2e30;
+}
+.footer-inner::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
 }
 .footer a {
   color: #c20808;
