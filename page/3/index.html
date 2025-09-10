@@ -28,14 +28,18 @@ var CONFIG = {
 };
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="linyuww's blog" type="application/atom+xml">
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/windows%E5%AE%89%E8%A3%85python2%E7%8E%AF%E5%A2%83/">windows安装python2环境</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="windows安装python2环境"   >
-          <a href="#windows安装python2环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#windows安装python2环境" class="headerlink" title="windows安装python2环境"></a>windows安装python2环境</h4>
-      <p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918205426825.png" alt="image-20240918205426825"></p>
-<p>安装在D盘后，不用管最后这个，之后配置环境变量</p>
-<p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918205806490.png" alt="image-20240918205806490"></p>
-<p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918210154534.png" alt="image-20240918210154534"></p>
-<p>把这两个目录添加到环境变量，之后再修改文件夹中python.exe为python2.exe</p>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/wsl%E7%9A%84%E4%BB%A3%E7%90%86%E5%A6%82%E4%BD%95%E4%B8%8E%E4%B8%BB%E6%9C%BA%E5%85%B1%E4%BA%AB/">wsl的代理如何与主机共享</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>wsl的代理如何与主机共享</p>
+<p>需要拉取docker镜像，但是curl无效</p>
+<p>设置配置文件.wslconfig后仍然ping不通</p>
+<p>ping，ping的是ip，用的是icmp协议，在osi七层模型中用的是第三层（网络层）</p>
+<p>其实是curl google.com</p>
+<p>直接得到的就是</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span><span class="tag">&lt;<span class="name">HEAD</span>&gt;</span><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;content-type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html;charset=utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TITLE</span>&gt;</span>301 Moved<span class="tag">&lt;/<span class="name">TITLE</span>&gt;</span><span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span><span class="tag">&lt;<span class="name">BODY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">H1</span>&gt;</span>301 Moved<span class="tag">&lt;/<span class="name">H1</span>&gt;</span></span><br><span class="line">The document has moved</span><br><span class="line"><span class="tag">&lt;<span class="name">A</span> <span class="attr">HREF</span>=<span class="string">&quot;http://www.google.com/&quot;</span>&gt;</span>here<span class="tag">&lt;/<span class="name">A</span>&gt;</span>.</span><br><span class="line"><span class="tag">&lt;/<span class="name">BODY</span>&gt;</span><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>用浏览器访问一下就知道了</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://www.google.com.hk/  </span><br></pre></td></tr></table></div></figure>
+
+<p>这个才是正确的</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8VSCode%E4%B8%AD%E6%89%93%E5%BC%80WSL2%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8CCopilot%E6%89%A9%E5%B1%95%E6%B2%A1%E6%9C%89%E5%93%8D%E5%BA%94/">在VSCode中打开WSL2项目时，Copilot扩展没有响应</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在VSCode中打开WSL2项目时，Copilot扩展没有响应</p>
 <p>添加<code>setting.json</code></p>
 <figure class="highlight json"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;remote.extensionKind&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;GitHub.copilot&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;ui&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;GitHub.copilot-chat&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;ui&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></div></figure>
@@ -44,45 +48,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
 <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://qiita.com/1000k/items/8446c344f3823b04db47" >VSCode で WSL2 プロジェクトを開くと Copilot 拡張機能が応答しない #copilot - Qiita</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://stackoverflow.com/questions/78719710/copilot-is-not-working-is-wsl-remote-connection" >github - Copilot is not working is WSL remote connection? - Stack Overflow</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/">在使用wsl时，突然不能用code打开vscode</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="在使用wsl时，突然不能用code打开vscode"   >
-          <a href="#在使用wsl时，突然不能用code打开vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#在使用wsl时，突然不能用code打开vscode" class="headerlink" title="在使用wsl时，突然不能用code打开vscode"></a>在使用wsl时，突然不能用<code>code</code>打开<code>vscode</code></h2>
-      <p>加一行配置环境变量可以解决</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/mnt/c/Users/86147/AppData/Local/Programs/Microsoft VS Code/bin&quot;</span></span><br></pre></td></tr></table></div></figure>
-
-<p>但是不够优雅</p>
-<p>在 <code>/etc/wsl.conf</code> 中明确追加 PATH 配置</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = true</span><br></pre></td></tr></table></div></figure>
-
-<p>设置完以上方法后，发现还是一样因为本来就默认共享环境变量</p>
-<p>发现vscode文件路径名称<strong>有空格</strong></p>
-<p>wsl执行</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></div></figure>
-
-<p>出现</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/c/Users/86147/AppData/Local/Programs/Microsoft:VS:Code/bin</span><br></pre></td></tr></table></div></figure>
-
-<p>空格被识别成分割</p>
-<p>所以可能是更新后路径名出现了这个bug导致无法正常识别环境变量</p>
-
-        <h3 id="解决方案是用短路径"   >
-          <a href="#解决方案是用短路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方案是用短路径" class="headerlink" title="解决方案是用短路径"></a>解决方案是用短路径</h3>
-      <p>Windows 文件系统有短路径名（8.3 格式）支持，通常无空格，可以兼容在 WSL 和 Windows 下使用。你可以先找到短路径名，然后将其添加到环境变量中。</p>
-<ol>
-<li><p><strong>获取短路径名</strong>： 打开 Windows 命令提示符（cmd），输入以下命令以获取 <code>Microsoft VS Code</code> 文件夹的短路径名：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> <span class="string">&quot;C:\Users\86147\AppData\Local\Programs\&quot; /x</span></span><br></pre></td></tr></table></div></figure>
-
-<p>你可能会看到一行输出类似：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03/12/2024  09:00 AM    &lt;DIR&gt;          MICRO~1    Microsoft VS Code</span><br></pre></td></tr></table></div></figure>
-
-<p><code>MICRO~1</code> 就是此文件夹的短路径名。用这个名字可以避免空格问题。</p>
-</li>
-<li><p><strong>将短路径名添加到 PATH</strong>： 在 Windows 的环境变量设置中，将 VS Code 的路径设置为短路径格式。例如，将路径设置为：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86147\AppData\Local\Programs\MICRO~1\bin</span><br></pre></td></tr></table></div></figure>
-
-<p>在 WSL 中，这个路径会自动被映射到 <code>/mnt/c/Users/86147/AppData/Local/Programs/MICRO~1/bin</code>，WSL 能正确解析。</p>
-</li>
-</ol>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9Fpython%E7%8E%AF%E5%A2%83%EF%BC%8C%E9%87%87%E7%94%A8%E8%BD%BB%E9%87%8F%E5%8C%96%E7%9A%84%E6%96%B9%E6%A1%88/">安装虚拟python环境，采用轻量化的方案</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="安装虚拟python环境，采用轻量化的方案"   >
           <a href="#安装虚拟python环境，采用轻量化的方案" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装虚拟python环境，采用轻量化的方案" class="headerlink" title="安装虚拟python环境，采用轻量化的方案"></a>安装虚拟python环境，采用轻量化的方案</h2>
@@ -132,6 +97,45 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
         <h3 id="总结"   >
           <a href="#总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       <p>通过以上步骤，你可以创建一个轻量化的 Python 虚拟环境，并在其中安装所需的包。<code>venv</code> 提供了一个相对简单的方式来管理项目所需的依赖，同时保持系统 Python 环境的干净。在项目开发和测试中使用虚拟环境是良好的实践。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/">在使用wsl时，突然不能用code打开vscode</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="在使用wsl时，突然不能用code打开vscode"   >
+          <a href="#在使用wsl时，突然不能用code打开vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#在使用wsl时，突然不能用code打开vscode" class="headerlink" title="在使用wsl时，突然不能用code打开vscode"></a>在使用wsl时，突然不能用<code>code</code>打开<code>vscode</code></h2>
+      <p>加一行配置环境变量可以解决</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/mnt/c/Users/86147/AppData/Local/Programs/Microsoft VS Code/bin&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>但是不够优雅</p>
+<p>在 <code>/etc/wsl.conf</code> 中明确追加 PATH 配置</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = true</span><br></pre></td></tr></table></div></figure>
+
+<p>设置完以上方法后，发现还是一样因为本来就默认共享环境变量</p>
+<p>发现vscode文件路径名称<strong>有空格</strong></p>
+<p>wsl执行</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></div></figure>
+
+<p>出现</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/c/Users/86147/AppData/Local/Programs/Microsoft:VS:Code/bin</span><br></pre></td></tr></table></div></figure>
+
+<p>空格被识别成分割</p>
+<p>所以可能是更新后路径名出现了这个bug导致无法正常识别环境变量</p>
+
+        <h3 id="解决方案是用短路径"   >
+          <a href="#解决方案是用短路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方案是用短路径" class="headerlink" title="解决方案是用短路径"></a>解决方案是用短路径</h3>
+      <p>Windows 文件系统有短路径名（8.3 格式）支持，通常无空格，可以兼容在 WSL 和 Windows 下使用。你可以先找到短路径名，然后将其添加到环境变量中。</p>
+<ol>
+<li><p><strong>获取短路径名</strong>： 打开 Windows 命令提示符（cmd），输入以下命令以获取 <code>Microsoft VS Code</code> 文件夹的短路径名：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> <span class="string">&quot;C:\Users\86147\AppData\Local\Programs\&quot; /x</span></span><br></pre></td></tr></table></div></figure>
+
+<p>你可能会看到一行输出类似：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03/12/2024  09:00 AM    &lt;DIR&gt;          MICRO~1    Microsoft VS Code</span><br></pre></td></tr></table></div></figure>
+
+<p><code>MICRO~1</code> 就是此文件夹的短路径名。用这个名字可以避免空格问题。</p>
+</li>
+<li><p><strong>将短路径名添加到 PATH</strong>： 在 Windows 的环境变量设置中，将 VS Code 的路径设置为短路径格式。例如，将路径设置为：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86147\AppData\Local\Programs\MICRO~1\bin</span><br></pre></td></tr></table></div></figure>
+
+<p>在 WSL 中，这个路径会自动被映射到 <code>/mnt/c/Users/86147/AppData/Local/Programs/MICRO~1/bin</code>，WSL 能正确解析。</p>
+</li>
+</ol>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E6%B8%85%E7%90%86wsl%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/">清理wsl磁盘空间</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="清理wsl磁盘空间"   >
           <a href="#清理wsl磁盘空间" class="heading-link"><i class="fas fa-link"></i></a><a href="#清理wsl磁盘空间" class="headerlink" title="清理wsl磁盘空间"></a>清理wsl磁盘空间</h1>
@@ -302,6 +306,16 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
 
 
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/12-%E5%B9%B6%E5%8F%91%20Bugs%20(%E6%AD%BB%E9%94%81%E3%80%81%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89%E3%80%81%E5%8E%9F%E5%AD%90%E6%80%A7%E9%A1%BA%E5%BA%8F%E8%BF%9D%E5%8F%8D)/">12-并发 Bugs (死锁、数据竞争、原子性顺序违反)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="12-并发-Bugs-死锁、数据竞争、原子性-顺序违反"   >
+          <a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="heading-link"><i class="fas fa-link"></i></a><a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="headerlink" title="12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)"></a>12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)</h2>
+      <p>死锁产生的必要条件</p>
+<ul>
+<li>Atomicity violation，本应原子完成不被打断的代码被打断</li>
+<li>Order violation，本应按某个顺序完成的未能被正确同步</li>
+</ul>
+<p>ABA</p>
+<p>例如mysql里的解引用指针和将指针置为空的两个线程，也是一种数据</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/10-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6%E5%90%8C%E6%AD%A5/">10-并发控制同步</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="10-并发控制：同步-2"   >
           <a href="#10-并发控制：同步-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#10-并发控制：同步-2" class="headerlink" title="10-并发控制：同步 (2)"></a>10-并发控制：同步 (2)</h2>
@@ -339,14 +353,277 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p>现在的问题是，为什么前一个线程执行完的broadcast后，新建的produce线程为什么球会取走，不应该是执行完一个线程再执行同一种线程吗，而且例子中只有一个生产者和一个消费者，缓冲区大小为1</p>
 <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Producer: begin, execution count: <span class="number">14397</span></span><br><span class="line">(</span><br><span class="line">depth = <span class="number">1</span></span><br><span class="line">	<span class="comment">//Producer: Broadcast</span></span><br><span class="line">	<span class="comment">//start broadcast</span></span><br><span class="line">nwait: <span class="number">0</span></span><br><span class="line">	<span class="comment">//broadcast end</span></span><br><span class="line">		<span class="comment">//Consumer: Broadcast</span></span><br><span class="line">Producer: begin, execution count: <span class="number">14398</span></span><br><span class="line">Producer: Waiting</span><br><span class="line">in wait nwait: <span class="number">1</span></span><br><span class="line">waiting at <span class="number">32</span></span><br><span class="line">		<span class="comment">//start broadcast</span></span><br><span class="line">nwait: <span class="number">1</span></span><br><span class="line">waiting out</span><br><span class="line">Producer: Waiting</span><br><span class="line">		<span class="comment">//broadcast end</span></span><br><span class="line">in wait nwait: <span class="number">1</span></span><br><span class="line">waiting at <span class="number">32</span></span><br><span class="line">Consumer: begin, execution count: <span class="number">14399</span></span><br><span class="line">)</span><br><span class="line">depth = <span class="number">0</span></span><br><span class="line"><span class="comment">//Consumer: Broadcast</span></span><br><span class="line"><span class="comment">//start broadcast</span></span><br><span class="line">nwait: <span class="number">1</span></span><br><span class="line">broadcast end</span><br><span class="line">Consumer: begin, execution count: <span class="number">14400</span></span><br><span class="line">Consumer: Waiting</span><br><span class="line">in wait nwait: <span class="number">1</span></span><br><span class="line">waiting at <span class="number">32</span></span><br><span class="line">waiting out</span><br><span class="line">Consumer: Waiting</span><br><span class="line">in wait nwait: <span class="number">2</span></span><br><span class="line">waiting at <span class="number">32</span></span><br></pre></td></tr></table></div></figure>
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/12-%E5%B9%B6%E5%8F%91%20Bugs%20(%E6%AD%BB%E9%94%81%E3%80%81%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89%E3%80%81%E5%8E%9F%E5%AD%90%E6%80%A7%E9%A1%BA%E5%BA%8F%E8%BF%9D%E5%8F%8D)/">12-并发 Bugs (死锁、数据竞争、原子性顺序违反)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="12-并发-Bugs-死锁、数据竞争、原子性-顺序违反"   >
-          <a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="heading-link"><i class="fas fa-link"></i></a><a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="headerlink" title="12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)"></a>12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)</h2>
-      <p>死锁产生的必要条件</p>
-<ul>
-<li>Atomicity violation，本应原子完成不被打断的代码被打断</li>
-<li>Order violation，本应按某个顺序完成的未能被正确同步</li>
-</ul>
-<p>ABA</p>
-<p>例如mysql里的解引用指针和将指针置为空的两个线程，也是一种数据</p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">64</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span></span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">64</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span></span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ Untitled ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', 'Please enter characters');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script><script type="application/json" src="/search.json"></script></body></html>
