@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="多线程 独立的栈，共享的内存空间 阅读thread.h源码 在thread-qa中 将thread.h移入文件夹，执行make报错找不到库 解决方法：设置TLIB_PATH路径为thread.h所在的文件夹 1CFLAGS :&#x3D; -O1 -g -I$(TLIB_PATH)  解释  -I$(TLIB_PATH)： 这个选项指定了一个包含路径，该路径由 $(TLIB_PATH) 变量定义。 $(TL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2025/09/10/%E7%AC%94%E8%AE%B0%E6%9D%82%E9%A1%B9/os/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="多线程 独立的栈，共享的内存空间 阅读thread.h源码 在thread-qa中 将thread.h移入文件夹，执行make报错找不到库 解决方法：设置TLIB_PATH路径为thread.h所在的文件夹 1CFLAGS :&#x3D; -O1 -g -I$(TLIB_PATH)  解释  -I$(TLIB_PATH)： 这个选项指定了一个包含路径，该路径由 $(TLIB_PATH) 变量定义。 $(TL">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-10T08:23:37.511Z">
+<meta property="article:modified_time" content="2024-10-03T13:12:41.788Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary"><title>[ Untitled ] | Hexo</title><link ref="canonical" href="http://example.com/2025/09/10/%E7%AC%94%E8%AE%B0%E6%9D%82%E9%A1%B9/os/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Stun</div><div class="header-banner-info__subtitle">An elegant theme for Hexo</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ Untitled ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2024-10-03</span></span></div></header><div class="post-body"><p>多线程</p>
+<p>独立的栈，共享的内存空间</p>
+<p>阅读thread.h源码</p>
+<p>在thread-qa中</p>
+<p>将thread.h移入文件夹，执行make报错找不到库</p>
+<p>解决方法：设置TLIB_PATH路径为thread.h所在的文件夹</p>
+<figure class="highlight makefile"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CFLAGS := -O1 -g -I<span class="variable">$(TLIB_PATH)</span></span><br></pre></td></tr></table></div></figure>
+
+<p>解释</p>
+<ol>
+<li><code>-I$(TLIB_PATH)</code>：<ul>
+<li>这个选项指定了一个包含路径，该路径由 <code>$(TLIB_PATH)</code> 变量定义。</li>
+<li><code>$(TLIB_PATH)</code> 可能在 [Makefile](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 的其他地方定义，或者在运行 <code>make</code> 命令时通过环境变量传递。</li>
+<li>编译器会在 <code>$(TLIB_PATH)</code> 指定的目录中查找头文件。</li>
+</ul>
+</li>
+<li><code>-I.</code>：<ul>
+<li>这个选项指定当前目录（<code>.</code>）作为包含路径。</li>
+<li>编译器会在当前目录中查找头文件。</li>
+</ul>
+</li>
+</ol>
+<p>多个进程读取写入</p>
+<p>支付宝，第一个减去100，第二个在该进程没有减去的时候进行条件判断，也减去100，由于是unsigned long 结果变成很大的数</p>
+
+        <h3 id="copilot解释"   >
+          <a href="#copilot解释" class="heading-link"><i class="fas fa-link"></i></a><a href="#copilot解释" class="headerlink" title="copilot解释"></a>copilot解释</h3>
+      
+        <h4 id="竞态条件的发生"   >
+          <a href="#竞态条件的发生" class="heading-link"><i class="fas fa-link"></i></a><a href="#竞态条件的发生" class="headerlink" title="竞态条件的发生"></a>竞态条件的发生</h4>
+      <ol>
+<li><strong>共享变量</strong>：[<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 是一个全局变量，多个线程可以同时访问和修改它。</li>
+<li><strong>线程创建</strong>：[<code>main</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 函数中创建了两个线程，分别执行 [<code>T_alipay</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 函数。</li>
+<li><strong>函数调用</strong>：每个线程调用 <code>Alipay_withdraw(100)</code>，尝试从 [<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 中扣除 100。</li>
+</ol>
+
+        <h4 id="竞态条件的具体过程"   >
+          <a href="#竞态条件的具体过程" class="heading-link"><i class="fas fa-link"></i></a><a href="#竞态条件的具体过程" class="headerlink" title="竞态条件的具体过程"></a>竞态条件的具体过程</h4>
+      <ol>
+<li><p><strong>线程1和线程2同时检查 [<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html)</strong>：</p>
+<ul>
+<li>线程1检查 [<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 是否大于等于 100，结果为真。</li>
+<li>线程2也检查 [<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 是否大于等于 100，结果也为真。</li>
+</ul>
+</li>
+<li><p><strong>线程1和线程2同时进入 [<code>if</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 块</strong>：</p>
+<ul>
+<li>线程1进入 [<code>if</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 块并调用 <code>usleep(1)</code>，暂时让出CPU。</li>
+<li>线程2也进入 [<code>if</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 块并调用 <code>usleep(1)</code>，暂时让出CPU。</li>
+</ul>
+</li>
+<li><p><strong>线程1和线程2同时修改 [<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html)</strong>：</p>
+<ul>
+<li>线程1从 [<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 中减去 100，[<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 变为 0。</li>
+<li>线程2也从 [<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 中减去 100，[<code>balance</code>](vscode-file:&#x2F;&#x2F;vscode-app&#x2F;c:&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;code&#x2F;electron-sandbox&#x2F;workbench&#x2F;workbench.html) 无符号整数会溢出</li>
+</ul>
+</li>
+</ol>
+<p>如果是两个进程都循环加1加到10000，结果不会是20000</p>
+<p>原代码反汇编</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">13ea:       48 8b 05 4f 2c 00 00    mov    0x2c4f(%rip),%rax       </span><br><span class="line"># 4040 &lt;sum&gt;</span><br><span class="line">13f1:       48 83 c0 01             add    $0x1,%rax</span><br><span class="line">13f5:       48 89 05 44 2c 00 00    mov    %rax,0x2c44(%rip) </span><br></pre></td></tr></table></div></figure>
+
+<p>修改成一条汇编指令</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">13ea:       48 ff 05 4f 2c 00 00    incq   0x2c4f(%rip)  </span><br></pre></td></tr></table></div></figure>
+
+<p>改成一条指令，如果在一个处理器上还能正确，但是在多处理器上还会错误。</p>
+<p>看着是一条指令，实际上不是原子指令。</p>
+<p><code>printf</code>是线程安全的</p>
+<p>因为汇编指令取值，在中间寄存器加1后可能会中断，再放入变量对应地址中，结果可能就只是加一个1，而不是两个1</p>
+<p>最小可以小于10000，可以改成汇编指令</p>
+<p>为什么是2？</p>
+<p>每个进程有一个n次循环，n个进程</p>
+<p>在关键进程中，最后一步store，之前，已经循环了n-1次了，这两次的最小值为1（进程A第一个循环store()时，关键进程第n-1个循环正好结束，进程A，store后sum&#x3D;1）关键进程执行前两步，然后关键进程等待其他进程结束后执行store(2,sum)</p>
+<p>编译器优化，可能会隐藏并发的bug(都假设状态迁移是原子性，顺序执行)</p>
+<p>O1优化sum&#x3D;100000000</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">load(sum + N)</span><br><span class="line">;循环N次</span><br><span class="line">store(num)</span><br></pre></td></tr></table></div></figure>
+
+
+
+<p>O2优化sum&#x3D;200000000</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0000000000001260 &lt;T_sum&gt;:</span><br><span class="line">    1264:       48 81 05 d1 2d 00 00    addq   $0x5f5e100,0x2dd1(%rip)       </span><br><span class="line"> ;改成了一条指令，两个进程碰在一起的概率很低</span><br></pre></td></tr></table></div></figure>
+
+
+
+<p>处理器也是编译器，所以单线程的处理器可能会优化，调换程序执行的顺序（在结果不变的情况下）</p>
+<p>也是状态机，流水线，读写不冲突就能同时执行</p>
+<p>所以……相对论？</p>
+<p>共享内存只是一个简化的假象</p>
+<p>mem-modle</p>
+<p>一个是写Y读X，一个是写X读Y，得按特定顺序才能输出1，1，所以很少</p>
+<p>arm与x86的内存模型不同，对于多线程的程序模拟难度大</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2025/09/10/%E7%AC%94%E8%AE%B0%E6%9D%82%E9%A1%B9/os/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">http://example.com/2025/09/10/%E7%AC%94%E8%AE%B0%E6%9D%82%E9%A1%B9/os/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2025/09/10/%E7%AC%94%E8%AE%B0%E6%9D%82%E9%A1%B9/os/%E5%AE%9E%E7%8E%B0%E5%BA%93%E5%87%BD%E6%95%B0printf/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">[ Untitled ]</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2025/09/10/%E7%AC%94%E8%AE%B0%E6%9D%82%E9%A1%B9/os/%E4%BA%92%E6%96%A5/"><span class="paginator-prev__text">[ Untitled ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#copilot%E8%A7%A3%E9%87%8A"><span class="toc-number">1.</span> <span class="toc-text">
+          copilot解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%8F%91%E7%94%9F"><span class="toc-number">1.1.</span> <span class="toc-text">
+          竞态条件的发生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%85%B7%E4%BD%93%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">
+          竞态条件的具体过程</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">Hello Stun</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">60</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>

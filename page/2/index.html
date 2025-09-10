@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary"><title>Hexo</title><link ref="canonical" href="http://example.com/page/2/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Stun</div><div class="header-banner-info__subtitle">An elegant theme for Hexo</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2024-11-12</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="在使用wsl时，突然不能用code打开vscode"   >
+          <a href="#在使用wsl时，突然不能用code打开vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#在使用wsl时，突然不能用code打开vscode" class="headerlink" title="在使用wsl时，突然不能用code打开vscode"></a>在使用wsl时，突然不能用<code>code</code>打开<code>vscode</code></h2>
+      <p>加一行配置环境变量可以解决</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/mnt/c/Users/86147/AppData/Local/Programs/Microsoft VS Code/bin&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>但是不够优雅</p>
+<p>在 <code>/etc/wsl.conf</code> 中明确追加 PATH 配置</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = true</span><br></pre></td></tr></table></div></figure>
+
+<p>设置完以上方法后，发现还是一样因为本来就默认共享环境变量</p>
+<p>发现vscode文件路径名称<strong>有空格</strong></p>
+<p>wsl执行</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></div></figure>
+
+<p>出现</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/c/Users/86147/AppData/Local/Programs/Microsoft:VS:Code/bin</span><br></pre></td></tr></table></div></figure>
+
+<p>空格被识别成分割</p>
+<p>所以可能是更新后路径名出现了这个bug导致无法正常识别环境变量</p>
+
+        <h3 id="解决方案是用短路径"   >
+          <a href="#解决方案是用短路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方案是用短路径" class="headerlink" title="解决方案是用短路径"></a>解决方案是用短路径</h3>
+      <p>Windows 文件系统有短路径名（8.3 格式）支持，通常无空格，可以兼容在 WSL 和 Windows 下使用。你可以先找到短路径名，然后将其添加到环境变量中。</p>
+<ol>
+<li><p><strong>获取短路径名</strong>： 打开 Windows 命令提示符（cmd），输入以下命令以获取 <code>Microsoft VS Code</code> 文件夹的短路径名：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> <span class="string">&quot;C:\Users\86147\AppData\Local\Programs\&quot; /x</span></span><br></pre></td></tr></table></div></figure>
+
+<p>你可能会看到一行输出类似：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03/12/2024  09:00 AM    &lt;DIR&gt;          MICRO~1    Microsoft VS Code</span><br></pre></td></tr></table></div></figure>
+
+<p><code>MICRO~1</code> 就是此文件夹的短路径名。用这个名字可以避免空格问题。</p>
+</li>
+<li><p><strong>将短路径名添加到 PATH</strong>： 在 Windows 的环境变量设置中，将 VS Code 的路径设置为短路径格式。例如，将路径设置为：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86147\AppData\Local\Programs\MICRO~1\bin</span><br></pre></td></tr></table></div></figure>
+
+<p>在 WSL 中，这个路径会自动被映射到 <code>/mnt/c/Users/86147/AppData/Local/Programs/MICRO~1/bin</code>，WSL 能正确解析。</p>
+</li>
+</ol>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E5%9C%A8VSCode%E4%B8%AD%E6%89%93%E5%BC%80WSL2%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8CCopilot%E6%89%A9%E5%B1%95%E6%B2%A1%E6%9C%89%E5%93%8D%E5%BA%94/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-05-07</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在VSCode中打开WSL2项目时，Copilot扩展没有响应</p>
+<p>添加<code>setting.json</code></p>
+<figure class="highlight json"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;remote.extensionKind&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;GitHub.copilot&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;ui&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;GitHub.copilot-chat&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;ui&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></div></figure>
+
+
+
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://qiita.com/1000k/items/8446c344f3823b04db47" >VSCode で WSL2 プロジェクトを開くと Copilot 拡張機能が応答しない #copilot - Qiita</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://stackoverflow.com/questions/78719710/copilot-is-not-working-is-wsl-remote-connection" >github - Copilot is not working is WSL remote connection? - Stack Overflow</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/wsl%E7%9A%84%E4%BB%A3%E7%90%86%E5%A6%82%E4%BD%95%E4%B8%8E%E4%B8%BB%E6%9C%BA%E5%85%B1%E4%BA%AB/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2024-06-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>wsl的代理如何与主机共享</p>
+<p>需要拉取docker镜像，但是curl无效</p>
+<p>设置配置文件.wslconfig后仍然ping不通</p>
+<p>ping，ping的是ip，用的是icmp协议，在osi七层模型中用的是第三层（网络层）</p>
+<p>其实是curl google.com</p>
+<p>直接得到的就是</p>
+<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span><span class="tag">&lt;<span class="name">HEAD</span>&gt;</span><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;content-type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html;charset=utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TITLE</span>&gt;</span>301 Moved<span class="tag">&lt;/<span class="name">TITLE</span>&gt;</span><span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span><span class="tag">&lt;<span class="name">BODY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">H1</span>&gt;</span>301 Moved<span class="tag">&lt;/<span class="name">H1</span>&gt;</span></span><br><span class="line">The document has moved</span><br><span class="line"><span class="tag">&lt;<span class="name">A</span> <span class="attr">HREF</span>=<span class="string">&quot;http://www.google.com/&quot;</span>&gt;</span>here<span class="tag">&lt;/<span class="name">A</span>&gt;</span>.</span><br><span class="line"><span class="tag">&lt;/<span class="name">BODY</span>&gt;</span><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>用浏览器访问一下就知道了</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://www.google.com.hk/  </span><br></pre></td></tr></table></div></figure>
+
+<p>这个才是正确的</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/WSl%E4%BB%8E%E6%9C%AC%E6%9C%BA%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%88%B0wsl/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2024-09-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="WSl从本机复制文件到wsl"   >
+          <a href="#WSl从本机复制文件到wsl" class="heading-link"><i class="fas fa-link"></i></a><a href="#WSl从本机复制文件到wsl" class="headerlink" title="WSl从本机复制文件到wsl"></a>WSl从本机复制文件到wsl</h2>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">ls</span> /mnt/*</span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/wsl2%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8mysql/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><strong>wsl2安装启动mysql</strong></p>
+<p>启动</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /etc/init.d/mysql start</span><br></pre></td></tr></table></div></figure>
+
+<p>配置文件</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cat</span> /etc/mysql/debian.cnf</span><br></pre></td></tr></table></div></figure>
+
+<p>用户名密码就在这</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">host     = localhost</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>复制到用户名文件夹可以免输入用户名密码</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/mysql/debian.cnf .my.cnf</span><br></pre></td></tr></table></div></figure>
+
+<p>要改变文件的所有者为用户</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown cgz .my.cnf</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+
+<p>遇到报错</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 2002 (HY000): Can<span class="string">&#x27;t connect to local MySQL server through socket &#x27;</span>/var/run/mysqld/mysqld.sock<span class="string">&#x27; (2)</span></span><br></pre></td></tr></table></div></figure>
+
+<p>问题就是没启动</p>
+<p>运行上面的启动命令就行</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root 的密码: 123456</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>;</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER <span class="string">&#x27;mufeng&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>;</span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/windows%E5%AE%89%E8%A3%85python2%E7%8E%AF%E5%A2%83/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2024-09-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="windows安装python2环境"   >
+          <a href="#windows安装python2环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#windows安装python2环境" class="headerlink" title="windows安装python2环境"></a>windows安装python2环境</h4>
+      <p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918205426825.png" alt="image-20240918205426825"></p>
+<p>安装在D盘后，不用管最后这个，之后配置环境变量</p>
+<p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918205806490.png" alt="image-20240918205806490"></p>
+<p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918210154534.png" alt="image-20240918210154534"></p>
+<p>把这两个目录添加到环境变量，之后再修改文件夹中python.exe为python2.exe</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/system%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2024-06-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>System has not been booted with systemd as init system (PID 1). Can’t operate.<br>Failed to connect to bus: Host is down</p>
+<p>翻译过来就是：“<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%B3%BB%E7%BB%9F&spm=1001.2101.3001.7020" >系统</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>尚未以systemd作为初始系统启动”。</p>
+
+        <h3 id="问题分析："   >
+          <a href="#问题分析：" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h3>
+      <p>1）当你尝试使用 systemd 命令来管理 Linux 系统上的服务的时候，之所以会报错，可能因为系统中根本就没有使用 systemd，而是使用的 SysV init (sysvinit)。</p>
+<p>2）如果你是在 windows 中通过 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=WSL&spm=1001.2101.3001.7020" >WSL</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 使用的 Ubuntu 或者 Dibian 系统，默认情况下系统使用的是 SysV 而不是 systemd。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/openvpn/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2024-06-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>openvpn</p>
+<p>下载</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O openvpn.sh https://get.vpnsetup.net/ovpn</span><br></pre></td></tr></table></div></figure>
+
+<p>安装</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bash openvpn.sh --auto</span><br></pre></td></tr></table></div></figure>
+
+<p>启动</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> bash openvpn.sh</span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/ngnix%E5%AE%9E%E7%8E%B0%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-06-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="ngnix实现共享文件"   >
+          <a href="#ngnix实现共享文件" class="heading-link"><i class="fas fa-link"></i></a><a href="#ngnix实现共享文件" class="headerlink" title="ngnix实现共享文件"></a>ngnix实现共享文件</h1>
+      <p>乱码解决</p>
+<figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server和loaction层都加上</span><br><span class="line">charset utf-8</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="配置-Nginx"   >
+          <a href="#配置-Nginx" class="heading-link"><i class="fas fa-link"></i></a><a href="#配置-Nginx" class="headerlink" title="配置 Nginx"></a>配置 Nginx</h3>
+      <figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/nginx/sites-enabled/default</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="验证配置"   >
+          <a href="#验证配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#验证配置" class="headerlink" title="验证配置"></a>验证配置</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -t</span><br><span class="line">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /etc/nginx/nginx.conf test is successful</span><br></pre></td></tr></table></div></figure>
+
+<p>这样测试说明 nginx 配置是正确的。</p>
+
+        <h3 id="重启启动-nginx-服务"   >
+          <a href="#重启启动-nginx-服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#重启启动-nginx-服务" class="headerlink" title="重启启动 nginx 服务"></a>重启启动 nginx 服务</h3>
+      <figure class="highlight crystal"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx restart</span><br></pre></td></tr></table></div></figure>
+
+<p>权限问题</p>
+<p>要求权限是755才能正常访问</p>
+<figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 755 xmal/</span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/linux%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/docker%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2024-06-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>拉取镜像失败是网络问题，先看网络</p>
+<p>docker命令报错error during connect: Get <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://2f2f.2fpipe2fdocker_engine/v1.36/containers/json" >http://2F2F.2Fpipe2Fdocker_engine/v1.36/containers/json</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>: open&#x2F;&#x2F;.</p>
+<p>在清理docker时遇到</p>
+<figure class="highlight powershell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system prune</span><br></pre></td></tr></table></div></figure>
+
+<p>原因是docker无法挂载到wsl上</p>
+<p>因为刚刚执行压缩命令占用了vhdx文件，不能把docker文件关联上</p>
+<p>关机重启就好</p>
+<figure class="highlight powershell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> docker system prune</span><br><span class="line">WARNING! This will remove:</span><br><span class="line">  - all stopped containers</span><br><span class="line">  - all networks not used by at least one container</span><br><span class="line">  - all dangling images</span><br><span class="line">  - unused build cache</span><br><span class="line"></span><br><span class="line">Are you sure you want to <span class="keyword">continue</span>? [<span class="type">y</span>/<span class="type">N</span>] y</span><br><span class="line">Total reclaimed space: <span class="number">0</span>B</span><br></pre></td></tr></table></div></figure>
+
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">Hello Stun</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">60</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
