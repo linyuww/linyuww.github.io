@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="容器类型 底层数据结构 元素存储特点 访问方式 是否支持随机访问 动态大小调整 典型应用场景    vector 动态数组 (连续内存) 按加入顺序连续存储 下标访问 ([]) 是 是 动态数组的替代，快速随机访问，大量数据按顺序存取。   deque 分段连续内存 按加入顺序存储（分段实现） 双向访问（头尾操作快） 是 是 需要快速在首尾插入与删除，而仍然支持随机访问的场景。   list">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STL的对比">
+<meta property="og:url" content="http://example.com/2025/09/10/STL%E7%9A%84%E5%AF%B9%E6%AF%94/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="容器类型 底层数据结构 元素存储特点 访问方式 是否支持随机访问 动态大小调整 典型应用场景    vector 动态数组 (连续内存) 按加入顺序连续存储 下标访问 ([]) 是 是 动态数组的替代，快速随机访问，大量数据按顺序存取。   deque 分段连续内存 按加入顺序存储（分段实现） 双向访问（头尾操作快） 是 是 需要快速在首尾插入与删除，而仍然支持随机访问的场景。   list">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-10T00:24:18.000Z">
+<meta property="article:modified_time" content="2025-09-10T12:19:36.933Z">
+<meta name="twitter:card" content="summary"><title>STL的对比 | null</title><link ref="canonical" href="http://example.com/2025/09/10/STL%E7%9A%84%E5%AF%B9%E6%AF%94/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="null" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">STL的对比</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="table-container"><table>
+<thead>
+<tr>
+<th>容器类型</th>
+<th>底层数据结构</th>
+<th>元素存储特点</th>
+<th>访问方式</th>
+<th>是否支持随机访问</th>
+<th>动态大小调整</th>
+<th>典型应用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><code>vector</code></strong></td>
+<td>动态数组 (连续内存)</td>
+<td>按加入顺序连续存储</td>
+<td>下标访问 (<code>[]</code>)</td>
+<td>是</td>
+<td>是</td>
+<td>动态数组的替代，快速随机访问，大量数据按顺序存取。</td>
+</tr>
+<tr>
+<td><strong><code>deque</code></strong></td>
+<td>分段连续内存</td>
+<td>按加入顺序存储（分段实现）</td>
+<td>双向访问（头尾操作快）</td>
+<td>是</td>
+<td>是</td>
+<td>需要快速在首尾插入与删除，而仍然支持随机访问的场景。</td>
+</tr>
+<tr>
+<td><strong><code>list</code></strong></td>
+<td>双向链表</td>
+<td>不连续，每个元素存储指针</td>
+<td>双向遍历</td>
+<td>否</td>
+<td>是</td>
+<td>频繁插入&#x2F;删除操作的场景，尤其在需要中间修改的情况下。</td>
+</tr>
+<tr>
+<td><strong><code>forward_list</code></strong></td>
+<td>单向链表</td>
+<td>不连续，只有前向指针</td>
+<td>单向遍历</td>
+<td>否</td>
+<td>是</td>
+<td>内存占用较小的场景，在对链表操作需求简单时用作优化。</td>
+</tr>
+<tr>
+<td><strong><code>array</code></strong></td>
+<td>静态数组 (固定大小)</td>
+<td>按加入顺序连续存储</td>
+<td>下标访问 (<code>[]</code>)</td>
+<td>是</td>
+<td>否</td>
+<td>小容量、固定大小、性能关键的场景，避免动态分配。</td>
+</tr>
+<tr>
+<td><strong><code>set</code></strong></td>
+<td>平衡二叉搜索树（通常是 Red-Black 树）</td>
+<td>按键值自动排序</td>
+<td>基于 key 查找和遍历</td>
+<td>否</td>
+<td>是</td>
+<td>唯一值的集合，不允许重复值，支持快速有序的查找和插入。</td>
+</tr>
+<tr>
+<td><strong><code>multiset</code></strong></td>
+<td>平衡二叉搜索树</td>
+<td>按键值自动排序</td>
+<td>基于 key 查找和遍历</td>
+<td>否</td>
+<td>是</td>
+<td>允许重复值的集合，多次插入同一值场景（按顺序存储）。</td>
+</tr>
+<tr>
+<td><strong><code>map</code></strong></td>
+<td>平衡二叉搜索树</td>
+<td>按键值自动排序</td>
+<td>基于 key 查找</td>
+<td>否</td>
+<td>是</td>
+<td>有序的键值对储存，适合频繁按 key 查找具体值的场景。</td>
+</tr>
+<tr>
+<td><strong><code>multimap</code></strong></td>
+<td>平衡二叉搜索树</td>
+<td>按键值自动排序</td>
+<td>基于 key 查找</td>
+<td>否</td>
+<td>是</td>
+<td>允许同一键值存在多个映射值的场景。</td>
+</tr>
+<tr>
+<td><strong><code>unordered_set</code></strong></td>
+<td>哈希表</td>
+<td>无序存储</td>
+<td>常数时间 key 查找</td>
+<td>否</td>
+<td>是</td>
+<td>唯一值的集合，但无需排序，适合大量 key 快速判断是否存在的场景。</td>
+</tr>
+<tr>
+<td><strong><code>unordered_multiset</code></strong></td>
+<td>哈希表</td>
+<td>无序存储</td>
+<td>常数时间 key 查找</td>
+<td>否</td>
+<td>是</td>
+<td>允许重复值的集合，但无序存储，适合大数据去重分析场景。</td>
+</tr>
+<tr>
+<td><strong><code>unordered_map</code></strong></td>
+<td>哈希表</td>
+<td>无序存储</td>
+<td>常数时间 key-value 查找</td>
+<td>否</td>
+<td>是</td>
+<td>可快速通过 key 查找 value 的场景（无需排序）。</td>
+</tr>
+<tr>
+<td><strong><code>unordered_multimap</code></strong></td>
+<td>哈希表</td>
+<td>无序存储</td>
+<td>常数时间 key 查找</td>
+<td>否</td>
+<td>是</td>
+<td>允许同一个 key 存储多个值（无需排序）的场景。</td>
+</tr>
+<tr>
+<td><strong><code>stack</code></strong></td>
+<td>基于 <code>deque</code> 实现</td>
+<td>后进先出 (LIFO)</td>
+<td>只访问顶端 (<code>top</code>)</td>
+<td>否</td>
+<td>是</td>
+<td>后进先出的场景，比如函数调用栈、括号匹配等。</td>
+</tr>
+<tr>
+<td><strong><code>queue</code></strong></td>
+<td>基于 <code>deque</code> 实现</td>
+<td>先进先出 (FIFO)</td>
+<td>只访问头部和尾部</td>
+<td>否</td>
+<td>是</td>
+<td>先进先出的场景，比如任务排队、消息队列等。</td>
+</tr>
+<tr>
+<td><strong><code>priority_queue</code></strong></td>
+<td>基于堆实现</td>
+<td>按优先级排序</td>
+<td>访问最大（默认情况）值</td>
+<td>否</td>
+<td>是</td>
+<td>按优先级任务调度、动态获取最大&#x2F;最小值的场景。</td>
+</tr>
+<tr>
+<td><strong><code>bitset</code></strong></td>
+<td>定长的位数组</td>
+<td>每个位存储 true&#x2F;false</td>
+<td>位访问 (<code>[]</code>)</td>
+<td>是</td>
+<td>否</td>
+<td>高效存储和操作布尔值，适合空间和位运算优化场景。</td>
+</tr>
+</tbody></table></div>
+
+        <h4 id="1-底层数据结构"   >
+          <a href="#1-底层数据结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-底层数据结构" class="headerlink" title="1. 底层数据结构"></a><strong>1. 底层数据结构</strong></h4>
+      <ul>
+<li><strong>动态数组</strong>：元素连续存放且可动态扩展的数组。</li>
+<li><strong>链表</strong>：使用指针将元素链接而成的结构，可分为单向链表与双向链表。</li>
+<li><strong>平衡二叉树</strong>：自平衡的二叉搜索树，常用的是红黑树（Red-Black Tree）。</li>
+<li><strong>哈希表</strong>：以哈希函数作为索引，通过哈希冲突解决机制（如拉链法）高效存储数据。</li>
+<li><strong>堆</strong>：通常是二叉堆，支持动态调整以保证堆顶始终是最大值或最小值。</li>
+</ul>
+<hr>
+
+        <h4 id="2-元素存储特点"   >
+          <a href="#2-元素存储特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-元素存储特点" class="headerlink" title="2. 元素存储特点"></a><strong>2. 元素存储特点</strong></h4>
+      <ul>
+<li><strong>连续存储</strong>：<code>vector</code> 和 <code>array</code> 采用连续存储，内存紧凑，随机访问快。</li>
+<li><strong>分段连续存储</strong>：<code>deque</code> 分段实现，以保证在头尾添加数据的高效性。</li>
+<li><strong>不连续存储</strong>：<code>list</code>、<code>forward_list</code>、<code>set</code> 等采用链表或树结构，插入&#x2F;删除效率高，但随机访问速度较慢。</li>
+</ul>
+<hr>
+
+        <h4 id="3-访问方式"   >
+          <a href="#3-访问方式" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-访问方式" class="headerlink" title="3. 访问方式"></a><strong>3. 访问方式</strong></h4>
+      <ul>
+<li><strong>下标访问 (<code>[]</code>)</strong>：<code>vector</code>、<code>array</code> 支持随机访问，可迅速获取指定位置的元素。</li>
+<li><strong>头尾访问</strong>：<code>stack</code> 和 <code>queue</code> 限制为某些特定操作。</li>
+<li><strong>优先访问</strong>：<code>priority_queue</code> 只能访问堆顶元素（最大值&#x2F;最小值）。</li>
+<li><strong>基于 key 访问</strong>：<code>map</code>、<code>unordered_map</code> 以键值对方式支持查找。</li>
+</ul>
+<hr>
+
+        <h4 id="4-是否支持随机访问"   >
+          <a href="#4-是否支持随机访问" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-是否支持随机访问" class="headerlink" title="4. 是否支持随机访问"></a><strong>4. 是否支持随机访问</strong></h4>
+      <ul>
+<li>支持随机访问的容器（如 <code>vector</code>、<code>array</code>、<code>deque</code> 等）提供 O(1) 复杂度的下标访问，操作简单。</li>
+<li>不支持随机访问的容器（如 <code>list</code>、<code>set</code> 等）需要遍历或依赖搜索结构，访问效率较低。</li>
+</ul>
+<hr>
+
+        <h4 id="5-动态大小调整"   >
+          <a href="#5-动态大小调整" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-动态大小调整" class="headerlink" title="5. 动态大小调整"></a><strong>5. 动态大小调整</strong></h4>
+      <ul>
+<li>动态容器（如 <code>vector</code>、<code>deque</code>、<code>list</code>）可以根据元素数目动态分配或收缩内存。</li>
+<li>静态容器（如 <code>array</code>）在定义时需指定固定大小。</li>
+</ul>
+<hr>
+
+        <h4 id="6-应用场景"   >
+          <a href="#6-应用场景" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-应用场景" class="headerlink" title="6. 应用场景"></a><strong>6. 应用场景</strong></h4>
+      <p>每种容器都有其典型应用场景，选择合适的容器取决于业务需求（如性能、顺序性、查找效率）。</p>
+
+        <h4 id="根据需求选择不同容器："   >
+          <a href="#根据需求选择不同容器：" class="heading-link"><i class="fas fa-link"></i></a><a href="#根据需求选择不同容器：" class="headerlink" title="根据需求选择不同容器："></a>根据需求选择不同容器：</h4>
+      <ol>
+<li><strong>需要快速随机访问</strong>：使用 <code>vector</code>、<code>array</code>。</li>
+<li><strong>需要频繁插入和删除</strong>：使用 <code>list</code>、<code>deque</code>（插入和删除表现良好）。</li>
+<li><strong>需要数据自动排序</strong>：使用 <code>set</code>、<code>multiset</code>（有序集合）或 <code>map</code>、<code>multimap</code>（有序键值对）。</li>
+<li><strong>需要快速查找，不关心顺序</strong>：优先选择哈希容器，比如 <code>unordered_set</code> 和 <code>unordered_map</code>。</li>
+<li><strong>使用栈或队列模型</strong>：考虑 <code>stack</code>、<code>queue</code> 或 <code>priority_queue</code>。</li>
+</ol>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2025/09/10/STL%E7%9A%84%E5%AF%B9%E6%AF%94/">http://example.com/2025/09/10/STL%E7%9A%84%E5%AF%B9%E6%AF%94/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2025/09/10/%E9%87%91%E5%B1%B1C++%E7%A0%94%E5%8F%91%E5%AE%9E%E4%B9%A0%E7%94%9F%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">金山C++研发实习生面试准备</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2025/09/10/%E5%AD%97%E8%8A%82%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"><span class="paginator-prev__text">字节面试准备</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">
+          1. 底层数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%85%83%E7%B4%A0%E5%AD%98%E5%82%A8%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">
+          2. 元素存储特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">
+          3. 访问方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE"><span class="toc-number">4.</span> <span class="toc-text">
+          4. 是否支持随机访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%8A%A8%E6%80%81%E5%A4%A7%E5%B0%8F%E8%B0%83%E6%95%B4"><span class="toc-number">5.</span> <span class="toc-text">
+          5. 动态大小调整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">6.</span> <span class="toc-text">
+          6. 应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E6%8B%A9%E4%B8%8D%E5%90%8C%E5%AE%B9%E5%99%A8%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">
+          根据需求选择不同容器：</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">64</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span></span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>

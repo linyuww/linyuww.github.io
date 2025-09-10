@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="在使用wsl时，突然不能用code打开vscode       加一行配置环境变量可以解决 1export PATH&#x3D;&quot;$PATH:&#x2F;mnt&#x2F;c&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;bin&quot;  但是不够优雅 在 &#x2F;etc&#x2F;wsl.conf 中明确追加 PATH 配置 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在使用wsl时，突然不能用code打开vscode">
+<meta property="og:url" content="http://example.com/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="在使用wsl时，突然不能用code打开vscode       加一行配置环境变量可以解决 1export PATH&#x3D;&quot;$PATH:&#x2F;mnt&#x2F;c&#x2F;Users&#x2F;86147&#x2F;AppData&#x2F;Local&#x2F;Programs&#x2F;Microsoft VS Code&#x2F;bin&quot;  但是不够优雅 在 &#x2F;etc&#x2F;wsl.conf 中明确追加 PATH 配置 1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-10T00:23:56.000Z">
+<meta property="article:modified_time" content="2025-09-10T12:19:36.933Z">
+<meta name="twitter:card" content="summary"><title>在使用wsl时，突然不能用code打开vscode | null</title><link ref="canonical" href="http://example.com/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="null" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">在使用wsl时，突然不能用code打开vscode</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body">
+        <h2 id="在使用wsl时，突然不能用code打开vscode"   >
+          <a href="#在使用wsl时，突然不能用code打开vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#在使用wsl时，突然不能用code打开vscode" class="headerlink" title="在使用wsl时，突然不能用code打开vscode"></a>在使用wsl时，突然不能用<code>code</code>打开<code>vscode</code></h2>
+      <p>加一行配置环境变量可以解决</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/mnt/c/Users/86147/AppData/Local/Programs/Microsoft VS Code/bin&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>但是不够优雅</p>
+<p>在 <code>/etc/wsl.conf</code> 中明确追加 PATH 配置</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = true</span><br></pre></td></tr></table></div></figure>
+
+<p>设置完以上方法后，发现还是一样因为本来就默认共享环境变量</p>
+<p>发现vscode文件路径名称<strong>有空格</strong></p>
+<p>wsl执行</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></div></figure>
+
+<p>出现</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/c/Users/86147/AppData/Local/Programs/Microsoft:VS:Code/bin</span><br></pre></td></tr></table></div></figure>
+
+<p>空格被识别成分割</p>
+<p>所以可能是更新后路径名出现了这个bug导致无法正常识别环境变量</p>
+
+        <h3 id="解决方案是用短路径"   >
+          <a href="#解决方案是用短路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方案是用短路径" class="headerlink" title="解决方案是用短路径"></a>解决方案是用短路径</h3>
+      <p>Windows 文件系统有短路径名（8.3 格式）支持，通常无空格，可以兼容在 WSL 和 Windows 下使用。你可以先找到短路径名，然后将其添加到环境变量中。</p>
+<ol>
+<li><p><strong>获取短路径名</strong>： 打开 Windows 命令提示符（cmd），输入以下命令以获取 <code>Microsoft VS Code</code> 文件夹的短路径名：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> <span class="string">&quot;C:\Users\86147\AppData\Local\Programs\&quot; /x</span></span><br></pre></td></tr></table></div></figure>
+
+<p>你可能会看到一行输出类似：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03/12/2024  09:00 AM    &lt;DIR&gt;          MICRO~1    Microsoft VS Code</span><br></pre></td></tr></table></div></figure>
+
+<p><code>MICRO~1</code> 就是此文件夹的短路径名。用这个名字可以避免空格问题。</p>
+</li>
+<li><p><strong>将短路径名添加到 PATH</strong>： 在 Windows 的环境变量设置中，将 VS Code 的路径设置为短路径格式。例如，将路径设置为：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86147\AppData\Local\Programs\MICRO~1\bin</span><br></pre></td></tr></table></div></figure>
+
+<p>在 WSL 中，这个路径会自动被映射到 <code>/mnt/c/Users/86147/AppData/Local/Programs/MICRO~1/bin</code>，WSL 能正确解析。</p>
+</li>
+</ol>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/">http://example.com/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2025/09/10/wsl%E7%9A%84%E4%BB%A3%E7%90%86%E5%A6%82%E4%BD%95%E4%B8%8E%E4%B8%BB%E6%9C%BA%E5%85%B1%E4%BA%AB/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">wsl的代理如何与主机共享</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2025/09/10/%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9Fpython%E7%8E%AF%E5%A2%83%EF%BC%8C%E9%87%87%E7%94%A8%E8%BD%BB%E9%87%8F%E5%8C%96%E7%9A%84%E6%96%B9%E6%A1%88/"><span class="paginator-prev__text">安装虚拟python环境，采用轻量化的方案</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode"><span class="toc-number">1.</span> <span class="toc-text">
+          在使用wsl时，突然不能用code打开vscode</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%98%AF%E7%94%A8%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="toc-number">1.1.</span> <span class="toc-text">
+          解决方案是用短路径</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">64</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span></span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v7.3.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
