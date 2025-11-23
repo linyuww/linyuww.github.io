@@ -366,6 +366,18 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <li><strong>需要快速查找，不关心顺序</strong>：优先选择哈希容器，比如 <code>unordered_set</code> 和 <code>unordered_map</code>。</li>
 <li><strong>使用栈或队列模型</strong>：考虑 <code>stack</code>、<code>queue</code> 或 <code>priority_queue</code>。</li>
 </ol>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98/">其他问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="Mysql问题"   >
+          <a href="#Mysql问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#Mysql问题" class="headerlink" title="Mysql问题"></a>Mysql问题</h2>
+      <p> 说一说事物隔离级别 </p>
+<p>SQL标准的事务隔离级别包括：</p>
+<p>读未提交，读提交，可重复读，串行化</p>
+<p> 事务的四大特性有哪些？ </p>
+<p>原子性，一致性，隔离性，持久性</p>
+
+        <h2 id="Linux系统目录"   >
+          <a href="#Linux系统目录" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux系统目录" class="headerlink" title="Linux系统目录"></a>Linux系统目录</h2>
+      <p><img src="/images/linux_folder.webp" alt="目录2" title="linux系统文件夹"></p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%85%B3%E4%BA%8E%E9%A1%B9%E7%9B%AE/">关于项目</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>项目背景： 设计并实现了一个基于 Linux 平台的轻量级 HTTP 服务器，采用<strong>多 Reactor 多线程</strong>高并发模型，通过 <strong>epoll 提供高效的 I&#x2F;O 复用</strong>。结合<strong>自动增长缓冲区</strong>、<strong>定时器和异步日志</strong>等技术，实现了高性能和稳定运行的目标。 </p>
 <p>主要工作  </p>
 <p>内存优化：设计了<strong>内存池和 LFU 缓存</strong>，减少内存碎片，提升内存使用效率。  </p>
@@ -522,18 +534,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p><img   src="https://cdn.nlark.com/yuque/0/2025/png/47188040/1737792284038-49feb6bc-6920-4e1c-9c4a-516ffee44982.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_26,text_5Luj56CB6ZqP5oOz5b2V55-l6K-G5pif55CD,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" style="width: image/watermark,type_d3F5LW1pY3JvaGVp,size_26,tepx;height: t_5Luj56CB6ZqP5oOz5b2V55-l6K-G5pif55CD,color_FFFFFF,shadow_50,t_80,g_se,px;"  alt="img"></p>
 <p>前端往后端写，后端往硬盘写</p>
 <p>双缓冲技术 ，写满就交换，相当于将多条日志拼接成一个大buffer传送到后端然后写入文件，减少了线程开销</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98/">其他问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="Mysql问题"   >
-          <a href="#Mysql问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#Mysql问题" class="headerlink" title="Mysql问题"></a>Mysql问题</h2>
-      <p> 说一说事物隔离级别 </p>
-<p>SQL标准的事务隔离级别包括：</p>
-<p>读未提交，读提交，可重复读，串行化</p>
-<p> 事务的四大特性有哪些？ </p>
-<p>原子性，一致性，隔离性，持久性</p>
-
-        <h2 id="Linux系统目录"   >
-          <a href="#Linux系统目录" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux系统目录" class="headerlink" title="Linux系统目录"></a>Linux系统目录</h2>
-      <p><img src="/images/linux_folder.webp" alt="目录2" title="linux系统文件夹"></p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E9%97%AE%E9%A2%98/">其他项目问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="为什么服务器要以root身份启动，不能以root身份运行"   >
           <a href="#为什么服务器要以root身份启动，不能以root身份运行" class="heading-link"><i class="fas fa-link"></i></a><a href="#为什么服务器要以root身份启动，不能以root身份运行" class="headerlink" title="为什么服务器要以root身份启动，不能以root身份运行"></a>为什么服务器要以root身份启动，不能以root身份运行</h3>
@@ -880,24 +880,325 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p>如果某类对象注册了一个事件监听器或回调函数，而监听器的生命周期可能比被观察的对象短，那么可以使用 <code>std::weak_ptr</code> 避免访问悬垂的指针。</p>
 <p>例如：</p>
 <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">EventSource</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Listener</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Listener</span>(std::shared_ptr&lt;EventSource&gt; source) : <span class="built_in">source</span>(source) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">onEvent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">auto</span> src = source.<span class="built_in">lock</span>()) &#123; <span class="comment">// 检查 source 是否仍有效</span></span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;Event handled&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;Source no longer exists&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    std::weak_ptr&lt;EventSource&gt; source;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">EventSource</span> : <span class="keyword">public</span> std::enable_shared_from_this&lt;EventSource&gt; &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">fireEvent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (listener) <span class="built_in">listener</span>(); <span class="comment">// 调用回调</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setListener</span><span class="params">(std::function&lt;<span class="type">void</span>()&gt; callback)</span> </span>&#123;</span><br><span class="line">        listener = callback;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    std::function&lt;<span class="type">void</span>()&gt; listener;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::shared_ptr&lt;EventSource&gt; source = std::<span class="built_in">make_shared</span>&lt;EventSource&gt;();</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> listener = std::<span class="built_in">make_shared</span>&lt;Listener&gt;(source);</span><br><span class="line">        source-&gt;<span class="built_in">setListener</span>([listener]() &#123; listener-&gt;<span class="built_in">onEvent</span>(); &#125;);</span><br><span class="line"></span><br><span class="line">        source-&gt;<span class="built_in">fireEvent</span>(); <span class="comment">// 输出：Event handled</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Listener 已销毁，无悬垂引用</span></span><br><span class="line">    source-&gt;<span class="built_in">fireEvent</span>(); <span class="comment">// 不输出，Listener 已解除绑定</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E7%BA%A2%E9%BB%91%E6%A0%91/">红黑树</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="红黑树"   >
-          <a href="#红黑树" class="heading-link"><i class="fas fa-link"></i></a><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2>
-      
-        <h3 id="基本规则："   >
-          <a href="#基本规则：" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本规则：" class="headerlink" title="基本规则："></a>基本规则：</h3>
-      <p><strong>隐藏的空节点是黑色</strong></p>
-<p>满足Avl树</p>
-<p>根节点和叶子节点都是黑色</p>
-<p>不能有连续两个红色节点</p>
-<p>从根节点到叶子节点的每个路径上黑色节点数量都一致</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E8%85%BE%E8%AE%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">腾讯面试准备</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-09-10</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="算法和数据结构"   >
+          <a href="#算法和数据结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#算法和数据结构" class="headerlink" title="算法和数据结构"></a>算法和数据结构</h2>
+      <p>刷题</p>
 
-        <h3 id="插入："   >
-          <a href="#插入：" class="heading-link"><i class="fas fa-link"></i></a><a href="#插入：" class="headerlink" title="插入："></a>插入：</h3>
-      <p>插入节点是根节点；直接变黑</p>
-<p>插入节点的叔叔是红色；叔父爷爷变色，爷爷变插入节点继续调整</p>
-<p>插入节点的叔叔是黑 ；（LL，RL，LR，RL）旋转，然后变色</p>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xm421x7Lg/?spm_id_from=333.337.search-card.all.click&vd_source=07ce431f0897d40efe75d8ff3761e5f6" >红黑树 - 定义, 插入, 构建_哔哩哔哩_bilibili</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+        <h2 id="C-的stl和新特性"   >
+          <a href="#C-的stl和新特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#C-的stl和新特性" class="headerlink" title="C++的stl和新特性"></a>C++的stl和新特性</h2>
+      
+        <h4 id="常量指针和指针常量"   >
+          <a href="#常量指针和指针常量" class="heading-link"><i class="fas fa-link"></i></a><a href="#常量指针和指针常量" class="headerlink" title="常量指针和指针常量"></a>常量指针和指针常量</h4>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> *p = &amp;a;<span class="comment">//常量指针，指针指向常量，指针指向的变量不能通过指针修改，但是指针指向的值可以改变</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *<span class="type">const</span> p = &amp;a;<span class="comment">//指针常量，是一个常量，不能改变指向的对象（地址），但是可以改变地址的内容</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="野指针和悬浮指针"   >
+          <a href="#野指针和悬浮指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#野指针和悬浮指针" class="headerlink" title="野指针和悬浮指针"></a>野指针和悬浮指针</h4>
+      <p>野指针是指向已经被释放或者⽆效的内存地址的指针</p>
+<p>悬浮指针是指向已经被销毁的对象的引⽤</p>
+<p>区别就是一个是指针一个是引用</p>
+
+        <h2 id="网络编程"   >
+          <a href="#网络编程" class="heading-link"><i class="fas fa-link"></i></a><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2>
+      
+        <h4 id="网络编程的基本流程"   >
+          <a href="#网络编程的基本流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#网络编程的基本流程" class="headerlink" title="网络编程的基本流程"></a>网络编程的基本流程</h4>
+      
+        <h4 id="1-服务端代码流程"   >
+          <a href="#1-服务端代码流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-服务端代码流程" class="headerlink" title="(1) 服务端代码流程"></a><strong>(1) 服务端代码流程</strong></h4>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">socket</span>()             <span class="comment">// 创建一个套接字</span></span><br><span class="line"><span class="number">2.</span> <span class="built_in">bind</span>()               <span class="comment">// 将套接字与特定 IP 地址和端口绑定</span></span><br><span class="line"><span class="number">3.</span> <span class="built_in">listen</span>()             <span class="comment">// 开启监听，等待客户端连接</span></span><br><span class="line"><span class="number">4.</span> <span class="built_in">accept</span>()             <span class="comment">// 相应客户端的连接请求，接受新的连接</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">send</span>()/<span class="built_in">recv</span>()       <span class="comment">// 用于和客户端通信（读取请求或者写入响应</span></span><br><span class="line"><span class="number">6.</span> <span class="built_in">close</span>()              <span class="comment">// 关闭连接</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2-客户端代码流程"   >
+          <a href="#2-客户端代码流程" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-客户端代码流程" class="headerlink" title="(2) 客户端代码流程"></a><strong>(2) 客户端代码流程</strong></h4>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">socket</span>()             <span class="comment">// 创建一个套接字</span></span><br><span class="line"><span class="number">2.</span> <span class="built_in">connect</span>()            <span class="comment">// 连接到服务端指定的 IP 地址和端口</span></span><br><span class="line"><span class="number">3.</span> <span class="built_in">send</span>()/<span class="built_in">recv</span>()       <span class="comment">// 用于发送请求或读取服务端的响应</span></span><br><span class="line"><span class="number">4.</span> <span class="built_in">close</span>()              <span class="comment">// 关闭连接</span></span><br></pre></td></tr></table></div></figure>
+
+
+
+
+
+
+
+
+        <h2 id="调试命令，gdb-vscode"   >
+          <a href="#调试命令，gdb-vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#调试命令，gdb-vscode" class="headerlink" title="调试命令，gdb&#x2F;vscode"></a>调试命令，gdb&#x2F;vscode</h2>
+      
+        <h2 id="额外：linux操作系统的内存管理，文件系统，进程和线程调度"   >
+          <a href="#额外：linux操作系统的内存管理，文件系统，进程和线程调度" class="heading-link"><i class="fas fa-link"></i></a><a href="#额外：linux操作系统的内存管理，文件系统，进程和线程调度" class="headerlink" title="额外：linux操作系统的内存管理，文件系统，进程和线程调度"></a>额外：linux操作系统的内存管理，文件系统，进程和线程调度</h2>
+      <p>进程间的通信机制：信号量，条件变量，生产者消费者</p>
+<p>异步通信：回调函数，生产者消费者（promise-future和消息队列）</p>
+<p>同步通信：阻塞式调用，文件或网络操作</p>
+
+        <h2 id="引用和指针的区别"   >
+          <a href="#引用和指针的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#引用和指针的区别" class="headerlink" title="引用和指针的区别"></a>引用和指针的区别</h2>
+      
+        <h3 id="1-什么是引用和指针？"   >
+          <a href="#1-什么是引用和指针？" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-什么是引用和指针？" class="headerlink" title="1. 什么是引用和指针？"></a><strong>1. 什么是引用和指针？</strong></h3>
+      <ol>
+<li><p><strong>引用（Reference）</strong>：</p>
+<ul>
+<li>引用是某个变量的别名，声明后与该变量绑定在一起，不能再绑定其他变量。</li>
+<li>本质上是一个语法糖，用更简洁的方式访问变量。</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>&amp; ref = a;  <span class="comment">// 引用 `ref` 绑定到变量 `a`</span></span><br><span class="line">ref = <span class="number">20</span>;      <span class="comment">// 实际修改的是 `a`</span></span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>指针（Pointer）</strong>：</p>
+<ul>
+<li>指针是存储变量地址的一种特殊变量，通过指针可以间接访问或操作存储在内存地址上的值。</li>
+<li>指针可以指向不同的变量或内存单元。</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>* ptr = &amp;a;  <span class="comment">// 指针 ptr 存储变量 a 的地址</span></span><br><span class="line">*ptr = <span class="number">20</span>;      <span class="comment">// 实际修改的是 a</span></span><br></pre></td></tr></table></div></figure></li>
+</ol>
+<hr>
+
+        <h3 id="2-引用和指针的区别"   >
+          <a href="#2-引用和指针的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-引用和指针的区别" class="headerlink" title="2. 引用和指针的区别"></a><strong>2. 引用和指针的区别</strong></h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>引用</th>
+<th>指针</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>定义方式</strong></td>
+<td>使用 <code>&amp;</code> 声明</td>
+<td>使用 <code>*</code> 声明</td>
+</tr>
+<tr>
+<td><strong>是否可以为空</strong></td>
+<td>引用必须绑定到变量</td>
+<td>指针可以是 <code>nullptr</code> 或空</td>
+</tr>
+<tr>
+<td><strong>绑定后是否可以更改</strong></td>
+<td>一旦绑定不能更改</td>
+<td>指针可以重新指向其他变量</td>
+</tr>
+<tr>
+<td><strong>语法</strong></td>
+<td>直接使用，无需解引用符号</td>
+<td>需要用 <code>*</code> 解引用</td>
+</tr>
+<tr>
+<td><strong>内存布局</strong></td>
+<td>编译器实现（可能是指针）</td>
+<td>明确存储变量地址</td>
+</tr>
+<tr>
+<td><strong>需要初始化</strong></td>
+<td>声明时必须初始化</td>
+<td>可以声明后再初始化</td>
+</tr>
+<tr>
+<td><strong>别名关系</strong></td>
+<td>是原变量的别名</td>
+<td>独立的变量</td>
+</tr>
+<tr>
+<td><strong>运算</strong></td>
+<td>不支持运算</td>
+<td>可以进行加减运算</td>
+</tr>
+<tr>
+<td><strong>灵活性</strong></td>
+<td>较低，限定性强</td>
+<td>较高，可以动态分配内存</td>
+</tr>
+</tbody></table></div>
+<hr>
+
+        <h3 id="3-区别详解"   >
+          <a href="#3-区别详解" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-区别详解" class="headerlink" title="3. 区别详解"></a><strong>3. 区别详解</strong></h3>
+      
+        <h4 id="1-是否必须初始化"   >
+          <a href="#1-是否必须初始化" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-是否必须初始化" class="headerlink" title="(1) 是否必须初始化"></a><strong>(1) 是否必须初始化</strong></h4>
+      <ul>
+<li><p><strong>引用：</strong></p>
+<ul>
+<li>引用在声明的时候必须初始化，否则无法通过编译。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>&amp; ref;  <span class="comment">// 编译错误，引用必须绑定变量</span></span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>指针：</strong></p>
+<ul>
+<li>指针声明后可以不初始化，但最好将其初始化（例如初始化为 <code>nullptr</code>），否则容易产生未定义行为。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* ptr;  <span class="comment">// 未初始化，非法操作可能导致未定义行为</span></span><br><span class="line"><span class="type">int</span>* ptr = <span class="literal">nullptr</span>;  <span class="comment">// 推荐初始化为 nullptr</span></span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h4 id="2-是否可以为空"   >
+          <a href="#2-是否可以为空" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-是否可以为空" class="headerlink" title="(2) 是否可以为空"></a><strong>(2) 是否可以为空</strong></h4>
+      <ul>
+<li><p><strong>引用：</strong></p>
+<ul>
+<li>引用不能指向空（<code>nullptr</code>），它必须始终绑定到有效的变量。</li>
+</ul>
+</li>
+<li><p><strong>指针：</strong></p>
+<ul>
+<li>指针可以指向空内存区域（<code>nullptr</code>），表示它当前没有指向任何变量。</li>
+</ul>
+<p> 示例：<br> <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* ptr = <span class="literal">nullptr</span>;  <span class="comment">// 合法</span></span><br><span class="line"><span class="type">int</span>&amp; ref = <span class="literal">nullptr</span>;  <span class="comment">// 编译错误，引用必须绑定到变量</span></span><br></pre></td></tr></table></div></figure></p>
+</li>
+</ul>
+
+        <h4 id="3-绑定后是否可以更改"   >
+          <a href="#3-绑定后是否可以更改" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-绑定后是否可以更改" class="headerlink" title="(3) 绑定后是否可以更改"></a><strong>(3) 绑定后是否可以更改</strong></h4>
+      <ul>
+<li><p><strong>引用：</strong></p>
+<ul>
+<li>引用一旦绑定到变量，就不能再绑定到其他变量，引用始终是它所绑定变量的别名。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span>&amp; ref = a;  <span class="comment">// ref 绑定到 a</span></span><br><span class="line">ref = b;       <span class="comment">// 修改的是 a 的值，而不是重新绑定到 b</span></span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>指针：</strong></p>
+<ul>
+<li>指针可以随时更改指向，可以指向其他变量或内存单元。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span>* ptr = &amp;a;  <span class="comment">// ptr 指向 a</span></span><br><span class="line">ptr = &amp;b;       <span class="comment">// ptr 改为指向 b</span></span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h4 id="4-使用上的差异"   >
+          <a href="#4-使用上的差异" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-使用上的差异" class="headerlink" title="(4) 使用上的差异"></a><strong>(4) 使用上的差异</strong></h4>
+      <ul>
+<li><p><strong>引用：</strong></p>
+<ul>
+<li>如果将一变量赋值给引用，引用直接操作变量本身。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>&amp; ref = a;</span><br><span class="line">ref = <span class="number">20</span>;  <span class="comment">// 改变的是 a，a 的值变为 20</span></span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>指针：</strong></p>
+<ul>
+<li>要改变指针指向变量的值，需要解引用（<code>*</code>）。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span>* ptr = &amp;a;  <span class="comment">// 指针指向 a</span></span><br><span class="line">*ptr = <span class="number">30</span>;      <span class="comment">// 修改 a 的值为 30</span></span><br><span class="line">ptr = &amp;b;       <span class="comment">// 改为指向 b</span></span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h4 id="5-运算能力"   >
+          <a href="#5-运算能力" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-运算能力" class="headerlink" title="(5) 运算能力"></a><strong>(5) 运算能力</strong></h4>
+      <ul>
+<li><strong>引用：</strong><ul>
+<li>引用不支持指针的算术运算，例如加减法。</li>
+</ul>
+</li>
+<li><strong>指针：</strong><ul>
+<li>指针可以进行算术运算，例如指针递增&#x2F;递减，用于访问数组元素。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>* ptr = arr;   <span class="comment">// 指向数组的第一个元素</span></span><br><span class="line">ptr++;            <span class="comment">// 指向下一个元素</span></span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h4 id="6-内存特性"   >
+          <a href="#6-内存特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-内存特性" class="headerlink" title="(6) 内存特性"></a><strong>(6) 内存特性</strong></h4>
+      <ul>
+<li>引用在编译器实现中，可能会转换为指针，但它对开发者是透明的。</li>
+<li>指针本质上是一个变量，存储的是某个地址，并且占用内存。</li>
+</ul>
+<hr>
+
+        <h3 id="4-引用与指针的适用场景"   >
+          <a href="#4-引用与指针的适用场景" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-引用与指针的适用场景" class="headerlink" title="4. 引用与指针的适用场景"></a><strong>4. 引用与指针的适用场景</strong></h3>
+      
+        <h4 id="1-适用引用"   >
+          <a href="#1-适用引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-适用引用" class="headerlink" title="(1) 适用引用"></a><strong>(1) 适用引用</strong></h4>
+      <ol>
+<li><p><strong>函数参数传递</strong>：</p>
+<ul>
+<li>使用引用避免拷贝实参，提高性能。</li>
+<li>常用于不需要修改参数的地方（<code>const</code> 引用）。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">const</span> <span class="type">int</span>&amp; x)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>返回值</strong>：</p>
+<ul>
+<li>返回引用允许函数直接返回变量本身，而不是拷贝。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>&amp; <span class="title">getValue</span><span class="params">(<span class="type">int</span>&amp; a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>别名</strong>：</p>
+<ul>
+<li>为变量创建更简化的别名。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">42</span>;</span><br><span class="line"><span class="type">int</span>&amp; alias = a;  <span class="comment">// alias 是 a 的别名</span></span><br></pre></td></tr></table></div></figure></li>
+</ol>
+
+        <h4 id="2-适用指针"   >
+          <a href="#2-适用指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-适用指针" class="headerlink" title="(2) 适用指针"></a><strong>(2) 适用指针</strong></h4>
+      <ol>
+<li><p><strong>动态内存管理</strong>：</p>
+<ul>
+<li>使用指针分配和释放动态内存。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* ptr = <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">delete</span> ptr;  <span class="comment">// 手动释放内存</span></span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>数组与迭代</strong>：</p>
+<ul>
+<li>指针常用来访问数组元素。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span>* ptr = arr; ptr &lt; arr + <span class="number">3</span>; ++ptr) &#123;</span><br><span class="line">    std::cout &lt;&lt; *ptr &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>数据结构</strong>：</p>
+<ul>
+<li>指针是数据结构（如链表、树）的核心基础。</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    Node* next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p><strong>需要动态改变指向时</strong>：</p>
+<ul>
+<li>指针可以灵活地改变指向，适合需要频繁切换指向的场景。</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+        <h3 id="5-总结对比"   >
+          <a href="#5-总结对比" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-总结对比" class="headerlink" title="5. 总结对比"></a><strong>5. 总结对比</strong></h3>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th>特征</th>
+<th>引用</th>
+<th>指针</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>需要初始化</strong></td>
+<td>必须初始化</td>
+<td>可以先声明后初始化</td>
+</tr>
+<tr>
+<td><strong>是否可以为空</strong></td>
+<td>不可以为空</td>
+<td>可以是空指针（<code>nullptr</code>）</td>
+</tr>
+<tr>
+<td><strong>绑定是否可更改</strong></td>
+<td>绑定后不可更改</td>
+<td>可通过重新赋值更改指向</td>
+</tr>
+<tr>
+<td><strong>语法复杂度</strong></td>
+<td>更简单</td>
+<td>更复杂，需要使用 <code>*</code> 号</td>
+</tr>
+<tr>
+<td><strong>灵活性</strong></td>
+<td>受限</td>
+<td>更灵活</td>
+</tr>
+<tr>
+<td><strong>常见场景</strong></td>
+<td>函数传参、别名</td>
+<td>动态内存、复杂结构</td>
+</tr>
+</tbody></table></div>
+<p>引用更简单、更安全，适合大多数普通变量操作；指针更灵活，适合动态内存和复杂结构的场景。在实际开发中，应根据场景和需求选择适合的工具。</p>
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">65</div><div class="sidebar-ov-state-item__name">Archives</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
