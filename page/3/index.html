@@ -337,16 +337,46 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
 
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/12-%E5%B9%B6%E5%8F%91%20Bugs%20(%E6%AD%BB%E9%94%81%E3%80%81%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89%E3%80%81%E5%8E%9F%E5%AD%90%E6%80%A7%E9%A1%BA%E5%BA%8F%E8%BF%9D%E5%8F%8D)/">12-并发 Bugs (死锁、数据竞争、原子性顺序违反)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="12-并发-Bugs-死锁、数据竞争、原子性-顺序违反"   >
-          <a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="heading-link"><i class="fas fa-link"></i></a><a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="headerlink" title="12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)"></a>12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)</h2>
-      <p>死锁产生的必要条件</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/14-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%9A%84%E8%BF%9B%E7%A8%8B%20(forkexecveexit)/">14-操作系统上的进程 (forkexecveexit)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="14-操作系统上的进程-fork-execve-exit"   >
+          <a href="#14-操作系统上的进程-fork-execve-exit" class="heading-link"><i class="fas fa-link"></i></a><a href="#14-操作系统上的进程-fork-execve-exit" class="headerlink" title="14-操作系统上的进程 (fork&#x2F;execve&#x2F;exit)"></a>14-操作系统上的进程 (fork&#x2F;execve&#x2F;exit)</h3>
+      
+        <h3 id="立即复制状态机"   >
+          <a href="#立即复制状态机" class="heading-link"><i class="fas fa-link"></i></a><a href="#立即复制状态机" class="headerlink" title="立即复制状态机"></a>立即复制状态机</h3>
+      <ul>
+<li><p>包括</p>
+<p>所有</p>
+<p>信息的完整拷贝</p>
 <ul>
-<li>Atomicity violation，本应原子完成不被打断的代码被打断</li>
-<li>Order violation，本应按某个顺序完成的未能被正确同步</li>
+<li>每一个字节的内存</li>
+<li>打开的文件 (共享)</li>
+<li>……</li>
+<li>复制失败返回 -1<ul>
+<li>errno 会返回错误原因 (man fork)</li>
 </ul>
-<p>ABA</p>
-<p>例如mysql里的解引用指针和将指针置为空的两个线程，也是一种数据</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="如何区分两个状态机？"   >
+          <a href="#如何区分两个状态机？" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何区分两个状态机？" class="headerlink" title="如何区分两个状态机？"></a>如何区分两个状态机？</h3>
+      <ul>
+<li>新创建进程返回 0</li>
+<li>执行 fork 的进程返回子进程的进程号</li>
+</ul>
+<p>系统调用的返回值放在rax中</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">f</span></span>()&#123;</span><br><span class="line">	f | f &amp;</span><br><span class="line">&#125;</span><br><span class="line">f</span><br></pre></td></tr></table></div></figure>
+
+
+
+<p><code>printf</code>缓冲区在每一个进程的内存里，fork会一起复制</p>
+<p>遇到了粘贴时乱码问题</p>
+<p><code>execve</code>把当前的进程重置成一个可执行文件描述状态机的初始状态</p>
+<p>第三个参数是环境变量</p>
+<p><code>fork</code>默认直接把环境变量会继承</p>
+<p>strace的使用</p>
+<p><code>./demo</code>当前目录下的程序</p>
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
   var container = document.querySelector('.sidebar-ov-ha');
   var btn = document.querySelector('.sidebar-ha-btn');
@@ -633,4 +663,4 @@ if (Array.isArray(assistSearchList)) {
       extSearch(name);
     }, false);
   });
-}</script><div class="aplayer-container"><link class="aplayer-secondary-style-marker" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js server="netease" type="playlist" id="2556780013" fixed="true" autoplay="false" loop="all" order="list" preload="auto" list-folded="true" list-max-height="500px" lrc-type="0"></meting-js></div><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script><script type="application/json" src="/search.json"></script></body></html>
+}</script><div class="aplayer-container"><link class="aplayer-secondary-style-marker" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js server="netease" type="playlist" id="2556780013" fixed="true" autoplay="false" loop="all" order="list" preload="auto" list-folded="true" list-max-height="500px" lrc-type="0"></meting-js></div><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script><script type="application/json" src="/search.json"></script><canvas id="snow" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none"></canvas><script src="/js/snow.js"></script></body></html>
