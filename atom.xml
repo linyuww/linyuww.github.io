@@ -230,30 +230,6 @@
   </entry>
   
   <entry>
-    <title>红黑树</title>
-    <link href="https://linyuww.github.io/2025/09/10/%E7%BA%A2%E9%BB%91%E6%A0%91/"/>
-    <id>https://linyuww.github.io/2025/09/10/%E7%BA%A2%E9%BB%91%E6%A0%91/</id>
-    <published>2025-09-10T00:24:18.000Z</published>
-    <updated>2025-11-26T15:48:02.393Z</updated>
-    
-    <content type="html"><![CDATA[        <h2 id="红黑树"   >          <a href="#红黑树" class="heading-link"><i class="fas fa-link"></i></a><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2>              <h3 id="基本规则："   >          <a href="#基本规则：" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本规则：" class="headerlink" title="基本规则："></a>基本规则：</h3>      <p><strong>隐藏的空节点是黑色</strong></p><p>满足Avl树</p><p>根节点和叶子节点都是黑色</p><p>不能有连续两个红色节点</p><p>从根节点到叶子节点的每个路径上黑色节点数量都一致</p>        <h3 id="插入："   >          <a href="#插入：" class="heading-link"><i class="fas fa-link"></i></a><a href="#插入：" class="headerlink" title="插入："></a>插入：</h3>      <p>插入节点是根节点；直接变黑</p><p>插入节点的叔叔是红色；叔父爷爷变色，爷爷变插入节点继续调整</p><p>插入节点的叔叔是黑 ；（LL，RL，LR，RL）旋转，然后变色</p><p><span class="exturl"><a class="exturl__link"   href="https://www.bilibili.com/video/BV1Xm421x7Lg/?spm_id_from=333.337.search-card.all.click&vd_source=07ce431f0897d40efe75d8ff3761e5f6" >红黑树 - 定义, 插入, 构建_哔哩哔哩_bilibili</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">
-        &lt;h2 id=&quot;红黑树&quot;   &gt;
-          &lt;a href=&quot;#红黑树&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#红黑树&quot; class=&quot;headerlink&quot; tit</summary>
-      
-    
-    
-    
-    <category term="算法与数据结构" scheme="https://linyuww.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>腾讯面试准备</title>
     <link href="https://linyuww.github.io/2025/09/10/%E8%85%BE%E8%AE%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
     <id>https://linyuww.github.io/2025/09/10/%E8%85%BE%E8%AE%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</id>
@@ -273,6 +249,30 @@
     
     
     <category term="面试" scheme="https://linyuww.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>红黑树</title>
+    <link href="https://linyuww.github.io/2025/09/10/%E7%BA%A2%E9%BB%91%E6%A0%91/"/>
+    <id>https://linyuww.github.io/2025/09/10/%E7%BA%A2%E9%BB%91%E6%A0%91/</id>
+    <published>2025-09-10T00:24:18.000Z</published>
+    <updated>2025-11-26T15:48:02.393Z</updated>
+    
+    <content type="html"><![CDATA[        <h2 id="红黑树"   >          <a href="#红黑树" class="heading-link"><i class="fas fa-link"></i></a><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2>              <h3 id="基本规则："   >          <a href="#基本规则：" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本规则：" class="headerlink" title="基本规则："></a>基本规则：</h3>      <p><strong>隐藏的空节点是黑色</strong></p><p>满足Avl树</p><p>根节点和叶子节点都是黑色</p><p>不能有连续两个红色节点</p><p>从根节点到叶子节点的每个路径上黑色节点数量都一致</p>        <h3 id="插入："   >          <a href="#插入：" class="heading-link"><i class="fas fa-link"></i></a><a href="#插入：" class="headerlink" title="插入："></a>插入：</h3>      <p>插入节点是根节点；直接变黑</p><p>插入节点的叔叔是红色；叔父爷爷变色，爷爷变插入节点继续调整</p><p>插入节点的叔叔是黑 ；（LL，RL，LR，RL）旋转，然后变色</p><p><span class="exturl"><a class="exturl__link"   href="https://www.bilibili.com/video/BV1Xm421x7Lg/?spm_id_from=333.337.search-card.all.click&vd_source=07ce431f0897d40efe75d8ff3761e5f6" >红黑树 - 定义, 插入, 构建_哔哩哔哩_bilibili</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">
+        &lt;h2 id=&quot;红黑树&quot;   &gt;
+          &lt;a href=&quot;#红黑树&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#红黑树&quot; class=&quot;headerlink&quot; tit</summary>
+      
+    
+    
+    
+    <category term="算法与数据结构" scheme="https://linyuww.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
   </entry>
@@ -467,20 +467,20 @@
   </entry>
   
   <entry>
-    <title>windows安装python2环境</title>
-    <link href="https://linyuww.github.io/2025/09/10/windows%E5%AE%89%E8%A3%85python2%E7%8E%AF%E5%A2%83/"/>
-    <id>https://linyuww.github.io/2025/09/10/windows%E5%AE%89%E8%A3%85python2%E7%8E%AF%E5%A2%83/</id>
+    <title>wsl2安装启动mysql</title>
+    <link href="https://linyuww.github.io/2025/09/10/wsl2%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8mysql/"/>
+    <id>https://linyuww.github.io/2025/09/10/wsl2%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8mysql/</id>
     <published>2025-09-10T00:23:56.000Z</published>
-    <updated>2025-11-26T15:48:02.392Z</updated>
+    <updated>2025-11-26T15:48:02.393Z</updated>
     
-    <content type="html"><![CDATA[        <h4 id="windows安装python2环境"   >          <a href="#windows安装python2环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#windows安装python2环境" class="headerlink" title="windows安装python2环境"></a>windows安装python2环境</h4>      <p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918205426825.png" alt="image-20240918205426825"></p><p>安装在D盘后，不用管最后这个，之后配置环境变量</p><p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918205806490.png" alt="image-20240918205806490"></p><p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20240918210154534.png" alt="image-20240918210154534"></p><p>把这两个目录添加到环境变量，之后再修改文件夹中python.exe为python2.exe</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>wsl2安装启动mysql</strong></p><p>启动</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /etc/init.d/mysql start</span><br></pre></td></tr></table></div></figure><p>配置文件</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cat</span> /etc/mysql/debian.cnf</span><br></pre></td></tr></table></div></figure><p>用户名密码就在这</p><figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">host     = localhost</span><br><span class="line"></span><br></pre></td></tr></table></div></figure><p>复制到用户名文件夹可以免输入用户名密码</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/mysql/debian.cnf .my.cnf</span><br></pre></td></tr></table></div></figure><p>要改变文件的所有者为用户</p><figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown cgz .my.cnf</span><br></pre></td></tr></table></div></figure><p>遇到报错</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 2002 (HY000): Can<span class="string">&#x27;t connect to local MySQL server through socket &#x27;</span>/var/run/mysqld/mysqld.sock<span class="string">&#x27; (2)</span></span><br></pre></td></tr></table></div></figure><p>问题就是没启动</p><p>运行上面的启动命令就行</p><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root 的密码: 123456</span><br></pre></td></tr></table></div></figure><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>;</span><br></pre></td></tr></table></div></figure><figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER <span class="string">&#x27;mufeng&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>;</span><br></pre></td></tr></table></div></figure>]]></content>
     
     
       
       
-    <summary type="html">
-        &lt;h4 id=&quot;windows安装python2环境&quot;   &gt;
-          &lt;a href=&quot;#windows安装python2环境&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href</summary>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;wsl2安装启动mysql&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;启动&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;div class=&quot;table-container&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;p</summary>
       
     
     
