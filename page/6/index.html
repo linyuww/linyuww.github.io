@@ -261,46 +261,43 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
 
 <p>STL中的一个范围偏特化例子：<br><img src="https://i-blog.csdnimg.cn/blog_migrate/5dfcc94de47d1100dba17b4524b6b7b6.png" alt="在这里插入图片描述"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E8%B0%83%E8%AF%95/">调试</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="理解状态机执行：不是-“调试”，也是-“调试”"   >
-          <a href="#理解状态机执行：不是-“调试”，也是-“调试”" class="heading-link"><i class="fas fa-link"></i></a><a href="#理解状态机执行：不是-“调试”，也是-“调试”" class="headerlink" title="理解状态机执行：不是 “调试”，也是 “调试”"></a>理解状态机执行：不是 “调试”，也是 “调试”</h3>
-      <ul>
-<li><code>ssh</code>：使用 <code>-v</code> 选项检查日志</li>
-<li><code>gcc</code>：使用 <code>-v</code> 选项打印各种过程</li>
-<li><code>make</code>：使用 <code>-nB</code> 选项查看完整命令历史</li>
-</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E8%B0%83%E8%AF%95bootloader/">调试bootloader</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>gdb调试</p>
+<p>目的：复现jyy的调试过程</p>
+<p>直接执行<code>make debug</code>会报错，显示<code>no file</code>问题就是boot里的文件是bootblock.o而不是boot.o，所以在其Makefile里添加</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> bootblock.o boot.o</span><br></pre></td></tr></table></div></figure>
 
-        <h3 id="调试：不仅是-“调试器”"   >
-          <a href="#调试：不仅是-“调试器”" class="heading-link"><i class="fas fa-link"></i></a><a href="#调试：不仅是-“调试器”" class="headerlink" title="调试：不仅是 “调试器”"></a>调试：不仅是 “调试器”</h3>
-      <ul>
-<li>Profiler: <code>perf</code> - “采样” 状态机</li>
-<li>Trace: <code>strace</code> - 追踪系统调用</li>
-</ul>
-<p>将日志文件重定向到vim进行各种操作</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strace -f g++ a.cc |&amp; vim -</span><br></pre></td></tr></table></div></figure>
+<p>复制一份，如何就再次执行<code>make debug </code>就会出现新的bug</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb.error: <span class="string">&quot;/home/cgz/work/os-workbench/abstract-machine/am/src/x86/qemu/boot/boot.o&quot;</span>: not <span class="keyword">in</span> executable format: file format not recognized</span><br></pre></td></tr></table></div></figure>
 
-<p>执行 <code>grep</code> 命令进行过滤，可以通过 <code>:!</code> 来运行外部命令并将结果显示在 <code>vim</code> 中。</p>
-<p>步骤如下：</p>
-<ol>
-<li><p>在 <code>vim</code> 中输入：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:!grep <span class="string">&quot;关键词&quot;</span> 文件名</span><br></pre></td></tr></table></div></figure>
+<p>显示格式不能识别，问gpt回答为该种格式不能直接调试，需要启动qemu，连接调试，事实也是这样，</p>
+<p>问题不是这个。所以就是Makefile里缺少-ggdb</p>
+<p>需要-ggdb提供调试信息，gdb才能调试可执行文件</p>
+<p>在</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstract-machine/am/src/x86/qemu/boot/Makefile</span><br></pre></td></tr></table></div></figure>
 
-<p>或者，你可以直接对 <code>vim</code> 缓冲区的内容使用管道进行过滤：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%!grep <span class="string">&quot;关键词&quot;</span></span><br></pre></td></tr></table></div></figure>
+<p>添加-ggdb可以同时解决打印不出来的问题，不实现stdio里的printf函数也能打印</p>
+<p>设置<code>$AM_HOME</code>为pa的框架，改写Makefile不起作用</p>
+<p>但是改写为直接clone的</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/cgz/work/os-workbench/abstract-machine/am/src/x86/qemu/boot/Makefile</span><br></pre></td></tr></table></div></figure>
 
-<ul>
-<li><code>:!grep &quot;关键词&quot;</code>：会在当前终端执行 <code>grep</code>，但不影响你在 <code>vim</code> 中的内容。</li>
-<li><code>:%!grep &quot;关键词&quot;</code>：会将当前文件内容通过管道传递给 <code>grep</code>，然后将过滤结果替换当前文件的内容。</li>
-</ul>
-</li>
-<li><p>例如：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%!grep <span class="string">&quot;error&quot;</span></span><br></pre></td></tr></table></div></figure>
+<p>就能正常使用printf，但是用make debug还是没有标记</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb.error: &quot;/home/cgz/work/os-workbench/abstract-machine/am/src/x86/qemu/boot/boot.o&quot;: not in executable format: file format not recognized</span><br></pre></td></tr></table></div></figure>
 
-<p>这会将所有包含 <code>error</code> 的行保留，并替换掉当前缓冲区的内容。</p>
-</li>
-</ol>
-<p>如果包含.h这种，使用转义字符</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%!grep <span class="string">&quot;\.h&quot;</span></span><br></pre></td></tr></table></div></figure>
+<p>造成这个的原因是在文件上没有gdb可以识别的标记</p>
+<p>解决方法应该是加上-ggdb应该就可以</p>
+<p>但是还是报错没有标记，把bulid生成的.o文件全部删除，再执行也一样。</p>
+<p>尝试把py程序代码手动输入，看看能否解决</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">debug:</span><br><span class="line">	qemu-system-i386 -s -S -machine accel=tcg -smp <span class="string">&quot;1,sockets=1&quot;</span> \</span><br><span class="line">		-drive format=raw,file=build/hello-x86-qemu &amp;</span><br><span class="line">	gdb -x debug.py</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Register the quit hook</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">on_quit</span>():</span><br><span class="line">    gdb.execute(<span class="string">&#x27;kill&#x27;</span>)</span><br><span class="line"></span><br><span class="line">gdb.events.exited.connect(on_quit)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to the remote target</span></span><br><span class="line">gdb.execute(<span class="string">&#x27;target remote localhost:1234&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the debug symbols</span></span><br><span class="line">am_home = os.environ[<span class="string">&#x27;AM_HOME&#x27;</span>]</span><br><span class="line">path = <span class="string">f&#x27;<span class="subst">&#123;am_home&#125;</span>/am/src/x86/qemu/boot/boot.o&#x27;</span></span><br><span class="line">gdb.execute(<span class="string">f&#x27;file <span class="subst">&#123;path&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># This is the 0x7c00</span></span><br><span class="line">gdb.Breakpoint(<span class="string">&#x27;_start&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># This is where 32-bit code starts</span></span><br><span class="line">gdb.Breakpoint(<span class="string">&#x27;start32&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Continue execution</span></span><br><span class="line">gdb.execute(<span class="string">&#x27;continue&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>提取出命令</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-i386 -s -S -machine accel=tcg -smp <span class="string">&quot;1,sockets=1&quot;</span> -drive format=raw,file=build/hello-x86-qemu &amp;</span><br><span class="line">//打开虚拟机文件夹</span><br><span class="line">gdb am/src/x86/qemu/boot/boot.o</span><br><span class="line"></span><br><span class="line">target remote localhost:1234</span><br><span class="line"></span><br><span class="line">//然后打断点执行</span><br><span class="line">(gdb)b _start</span><br><span class="line">(gdb)b start 32</span><br><span class="line">(gdb)c</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>同样的报错</p>
+<p><strong>已解决</strong></p>
+<p>把Makefile的两行交换位置即可</p>
+<figure class="highlight makefile"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SRCS := start.S main.c</span><br><span class="line"><span class="section">bootblock.o: <span class="variable">$(SRCS)</span> Makefile</span></span><br><span class="line">        @echo + CC <span class="variable">$(SRCS)</span></span><br><span class="line">        @<span class="variable">$(CROSS_COMPILE)</span>gcc -ggdb -static -m32 -fno-pic -Os -nostdlib  -Ttext 0x7c00 -I<span class="variable">$(AM_HOME)</span>/am/src -o bootblock.o <span class="variable">$(SRCS)</span></span><br><span class="line">        cp bootblock.o boot.o</span><br><span class="line">        @python3 genboot.py bootblock.o<span class="comment">#该pyhton程序的作用是将bootblock.o转换成其他格式供底层程序使用，破坏了其可调试性</span></span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">        rm -rf *.o</span><br></pre></td></tr></table></div></figure>
 
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/5/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
   var container = document.querySelector('.sidebar-ov-ha');

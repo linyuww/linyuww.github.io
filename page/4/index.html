@@ -43,16 +43,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
           <a href="#data-race" class="heading-link"><i class="fas fa-link"></i></a><a href="#data-race" class="headerlink" title="data race"></a>data race</h4>
       <p>基本原理就是不同线程对同一变量，至少有一个是写操作</p>
 <p>编译加<code>-fsanitize=thread</code>线程消毒器</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/12-%E5%B9%B6%E5%8F%91%20Bugs%20(%E6%AD%BB%E9%94%81%E3%80%81%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89%E3%80%81%E5%8E%9F%E5%AD%90%E6%80%A7%E9%A1%BA%E5%BA%8F%E8%BF%9D%E5%8F%8D)/">12-并发 Bugs (死锁、数据竞争、原子性顺序违反)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="12-并发-Bugs-死锁、数据竞争、原子性-顺序违反"   >
-          <a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="heading-link"><i class="fas fa-link"></i></a><a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="headerlink" title="12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)"></a>12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)</h2>
-      <p>死锁产生的必要条件</p>
-<ul>
-<li>Atomicity violation，本应原子完成不被打断的代码被打断</li>
-<li>Order violation，本应按某个顺序完成的未能被正确同步</li>
-</ul>
-<p>ABA</p>
-<p>例如mysql里的解引用指针和将指针置为空的两个线程，也是一种数据</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/14-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%9A%84%E8%BF%9B%E7%A8%8B%20(forkexecveexit)/">14-操作系统上的进程 (forkexecveexit)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="14-操作系统上的进程-fork-execve-exit"   >
           <a href="#14-操作系统上的进程-fork-execve-exit" class="heading-link"><i class="fas fa-link"></i></a><a href="#14-操作系统上的进程-fork-execve-exit" class="headerlink" title="14-操作系统上的进程 (fork&#x2F;execve&#x2F;exit)"></a>14-操作系统上的进程 (fork&#x2F;execve&#x2F;exit)</h3>
@@ -127,6 +117,16 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
         <h5 id="变速齿轮"   >
           <a href="#变速齿轮" class="heading-link"><i class="fas fa-link"></i></a><a href="#变速齿轮" class="headerlink" title="变速齿轮"></a>变速齿轮</h5>
       <p>hook，劫持相关代码</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/12-%E5%B9%B6%E5%8F%91%20Bugs%20(%E6%AD%BB%E9%94%81%E3%80%81%E6%95%B0%E6%8D%AE%E7%AB%9E%E4%BA%89%E3%80%81%E5%8E%9F%E5%AD%90%E6%80%A7%E9%A1%BA%E5%BA%8F%E8%BF%9D%E5%8F%8D)/">12-并发 Bugs (死锁、数据竞争、原子性顺序违反)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="12-并发-Bugs-死锁、数据竞争、原子性-顺序违反"   >
+          <a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="heading-link"><i class="fas fa-link"></i></a><a href="#12-并发-Bugs-死锁、数据竞争、原子性-顺序违反" class="headerlink" title="12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)"></a>12-并发 Bugs (死锁、数据竞争、原子性&#x2F;顺序违反)</h2>
+      <p>死锁产生的必要条件</p>
+<ul>
+<li>Atomicity violation，本应原子完成不被打断的代码被打断</li>
+<li>Order violation，本应按某个顺序完成的未能被正确同步</li>
+</ul>
+<p>ABA</p>
+<p>例如mysql里的解引用指针和将指针置为空的两个线程，也是一种数据</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/16-%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E5%92%8C%20UNIX%20Shell%20(pipe;%20xv6%20shell)/">16-系统调用和 UNIX Shell (pipe; xv6 shell)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="16-系统调用和-UNIX-Shell-pipe-xv6-shell"   >
           <a href="#16-系统调用和-UNIX-Shell-pipe-xv6-shell" class="heading-link"><i class="fas fa-link"></i></a><a href="#16-系统调用和-UNIX-Shell-pipe-xv6-shell" class="headerlink" title="16-系统调用和 UNIX Shell (pipe; xv6 shell)"></a>16-系统调用和 UNIX Shell (pipe; xv6 shell)</h2>
@@ -197,7 +197,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p><code>argc[0] = A</code></p>
 <p><code>argv[1] = B C</code></p>
 <p><code>argv[2]</code>该 程序的名称</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/20-%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%92%8C%E5%8A%A0%E8%BD%BD/">20-动态链接和加载</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/20-%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%92%8C%E5%8A%A0%E8%BD%BD/">20-动态链接和加载</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-12-01</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="20-动态链接和加载"   >
           <a href="#20-动态链接和加载" class="heading-link"><i class="fas fa-link"></i></a><a href="#20-动态链接和加载" class="headerlink" title="20-动态链接和加载"></a>20-动态链接和加载</h1>
       <p>libc.o静态链接</p>
@@ -211,7 +211,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
         <h2 id="动态链接（查表）"   >
           <a href="#动态链接（查表）" class="heading-link"><i class="fas fa-link"></i></a><a href="#动态链接（查表）" class="headerlink" title="动态链接（查表）"></a>动态链接（查表）</h2>
-      <p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20241207160836673.png" alt="image-20241207160836673"></p>
+      <p><img src="https://gitee.com/linyuuww/picture/raw/master/image-20241207160836673.png" alt="image-20241207160836673"></p>
 <p>编译时，函数调用  &#x3D; 查表(把函数调用替换成查表)</p>
 <p>编译时，动态链接库调用 &#x3D; 查表 </p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call  *TABLE[printf@symtab] </span><br></pre></td></tr></table></div></figure>
@@ -219,7 +219,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p>链接时，收集所有符号，<strong>“生成” 符号信息和相关代码</strong>：</p>
 <figure class="highlight c"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> foo@symtab     1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> printf@symtab  2 </span></span><br><span class="line">... </span><br><span class="line"><span class="type">void</span> *TABLE[N_SYMBOLS]; </span><br><span class="line"><span class="type">void</span> <span class="title function_">load</span><span class="params">(<span class="keyword">struct</span> loader *ld)</span> &#123;    </span><br><span class="line">    TABLE[foo@symtab] = ld-&gt;resolve(<span class="string">&quot;foo&quot;</span>);    </span><br><span class="line">    TABLE[foo@<span class="built_in">printf</span>] = ld-&gt;resolve(<span class="string">&quot;printf&quot;</span>);    </span><br><span class="line">    ... </span><br><span class="line">&#125; </span><br></pre></td></tr></table></div></figure>
 
-<p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20241208152058135.png" alt="image-20241208152058135"></p>
+<p><img src="https://gitee.com/linyuuww/picture/raw/master/image-20241208152058135.png" alt="image-20241208152058135"></p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LOAD(&quot;libc.dl&quot;)</span><br><span class="line">LOAD(&quot;libhello.dl&quot;)</span><br><span class="line">IMPORT(hello)</span><br><span class="line">IMPORT(exit)</span><br><span class="line">EXPORT(_start)</span><br></pre></td></tr></table></div></figure>
 
 <p><code>gdb</code>过程dlbox main.s</p>
@@ -237,14 +237,14 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p>因为call 的偏移量是64位，跳不到远处</p>
 <p>所以使用plt,作为中转，先跳到plt中，plt中存放GOT对应函数的地址</p>
 <p>再次跳转到对应函数</p>
-<p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20241208121223400.png" alt="image-20241208121223400"></p>
+<p><img src="https://gitee.com/linyuuww/picture/raw/master/image-20241208121223400.png" alt="image-20241208121223400"></p>
 <p>数据的链接，plt怎么解决数据链接的问题</p>
-<img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20241208171116351.png" alt="image-20241208171116351" style="zoom:33%;" />
+<img src="https://gitee.com/linyuuww/picture/raw/master/image-20241208171116351.png" alt="image-20241208171116351" style="zoom:33%;" />
 
 <p><code>get_x</code>会查表</p>
 <p><code>get_y</code>直接得到地址（hidden）</p>
 <p>编译器默认<code>extern</code>变量来自另外一个共享库单元（保守）</p>
-<img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20241208181848498.png" alt="image-20241208181848498" style="zoom:33%;" />
+<img src="https://gitee.com/linyuuww/picture/raw/master/image-20241208181848498.png" alt="image-20241208181848498" style="zoom:33%;" />
 
 <p>gpt对objdump反汇编的分析</p>
 <p><strong>总结</strong></p>
