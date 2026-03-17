@@ -28,7 +28,384 @@ var CONFIG = {
 };
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="linyuww's blog" type="application/atom+xml">
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/01/04/os%E5%A4%8D%E4%B9%A0/">os复习</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-01-04</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-01-04</span></span></div></header><div class="post-body"><div class="post-excerpt">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/03/17/%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80/">经典基础</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-03-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-03-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="一、核心易错点"   >
+          <a href="#一、核心易错点" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、核心易错点" class="headerlink" title="一、核心易错点"></a>一、核心易错点</h2>
+      
+        <h3 id="1-数组与越界"   >
+          <a href="#1-数组与越界" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-数组与越界" class="headerlink" title="1. 数组与越界"></a>1. 数组与越界</h3>
+      <ul>
+<li>循环变量和分类下标分离：不要用外层 <code>i</code> 直接访问固定小数组。</li>
+<li>容器访问前先判空或判长度：</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!v.<span class="built_in">empty</span>()) <span class="built_in">use</span>(v[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">if</span> (v.<span class="built_in">size</span>() &gt; <span class="number">1</span>) <span class="built_in">use</span>(v[<span class="number">1</span>]);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-输入输出"   >
+          <a href="#2-输入输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-输入输出" class="headerlink" title="2. 输入输出"></a>2. 输入输出</h3>
+      <ul>
+<li><code>cin &gt;&gt; n</code> 后接 <code>getline</code>，必须先吃掉换行符：</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cin &gt;&gt; n;</span><br><span class="line">cin.<span class="built_in">ignore</span>();</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>大数据 I&#x2F;O 优化：</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>固定宽度补零：<code>printf(&quot;%05d\n&quot;, num)</code>。</li>
+<li>输出优先 <code>\n</code>，避免频繁 <code>endl</code>。</li>
+</ul>
+
+        <h3 id="3-数据结构选择"   >
+          <a href="#3-数据结构选择" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-数据结构选择" class="headerlink" title="3. 数据结构选择"></a>3. 数据结构选择</h3>
+      <ul>
+<li>键可能重复时，不用 <code>map</code> 存主体数据（会覆盖），用 <code>struct + vector + sort</code>。</li>
+<li>不要求有序时优先 <code>unordered_map/unordered_set</code>。</li>
+<li>小范围计数（如 26 字母）优先数组。</li>
+</ul>
+
+        <h3 id="4-边界条件"   >
+          <a href="#4-边界条件" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-边界条件" class="headerlink" title="4. 边界条件"></a>4. 边界条件</h3>
+      <ul>
+<li>重点检查：<code>0</code>、空输入、区间端点、整除（余数为 0）。</li>
+<li>转换类题目做“正向 + 逆向”自检。</li>
+</ul>
+
+        <h3 id="5-算法策略"   >
+          <a href="#5-算法策略" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-算法策略" class="headerlink" title="5. 算法策略"></a>5. 算法策略</h3>
+      <ul>
+<li>能数组模拟就别硬改指针（如链表题可先按地址收集再处理）。</li>
+<li>位数少可枚举，位数大用 DFS + 剪枝。</li>
+</ul>
+
+        <h2 id="二、字符串输入与分词"   >
+          <a href="#二、字符串输入与分词" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、字符串输入与分词" class="headerlink" title="二、字符串输入与分词"></a>二、字符串输入与分词</h2>
+      
+        <h3 id="1-按空白读取到-EOF"   >
+          <a href="#1-按空白读取到-EOF" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-按空白读取到-EOF" class="headerlink" title="1. 按空白读取到 EOF"></a>1. 按空白读取到 EOF</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string word;</span><br><span class="line"><span class="keyword">while</span> (cin &gt;&gt; word) &#123;</span><br><span class="line">    words.<span class="built_in">push_back</span>(word);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-读取整行后按空格切词"   >
+          <a href="#2-读取整行后按空格切词" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-读取整行后按空格切词" class="headerlink" title="2. 读取整行后按空格切词"></a>2. 读取整行后按空格切词</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string line;</span><br><span class="line"><span class="built_in">getline</span>(cin, line);</span><br><span class="line"><span class="function">istringstream <span class="title">iss</span><span class="params">(line)</span></span>;</span><br><span class="line">string word;</span><br><span class="line"><span class="keyword">while</span> (iss &gt;&gt; word) &#123;</span><br><span class="line">    words.<span class="built_in">push_back</span>(word);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="3-cin-n-与-getline-混用模板"   >
+          <a href="#3-cin-n-与-getline-混用模板" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-cin-n-与-getline-混用模板" class="headerlink" title="3. cin &gt;&gt; n 与 getline 混用模板"></a>3. <code>cin &gt;&gt; n</code> 与 <code>getline</code> 混用模板</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n;</span><br><span class="line">cin &gt;&gt; n;</span><br><span class="line">cin.<span class="built_in">ignore</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    string line;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">getline</span>(cin, line)) <span class="keyword">break</span>;</span><br><span class="line">    <span class="function">istringstream <span class="title">iss</span><span class="params">(line)</span></span>;</span><br><span class="line">    string word;</span><br><span class="line">    <span class="keyword">while</span> (iss &gt;&gt; word) &#123;</span><br><span class="line">        cout &lt;&lt; word &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="三、排序与比较器"   >
+          <a href="#三、排序与比较器" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、排序与比较器" class="headerlink" title="三、排序与比较器"></a>三、排序与比较器</h2>
+      
+        <h3 id="1-sort-Lambda"   >
+          <a href="#1-sort-Lambda" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-sort-Lambda" class="headerlink" title="1. sort + Lambda"></a>1. <code>sort</code> + Lambda</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>(), [](<span class="type">const</span> Node&amp; x, <span class="type">const</span> Node&amp; y) &#123;</span><br><span class="line">    <span class="keyword">return</span> x.key &lt; y.key;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-结构体内重载"   >
+          <a href="#2-结构体内重载" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-结构体内重载" class="headerlink" title="2. 结构体内重载 &lt;"></a>2. 结构体内重载 <code>&lt;</code></h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="type">int</span> num, de, cai;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Student&amp; b) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (de + cai == b.de + b.cai) &#123;</span><br><span class="line">            <span class="keyword">if</span> (de == b.de) <span class="keyword">return</span> num &lt; b.num;</span><br><span class="line">            <span class="keyword">return</span> de &gt; b.de;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> de + cai &gt; b.de + b.cai;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>成员版 <code>operator&lt;</code> 只写一个参数（右操作数）。</li>
+<li>建议加 <code>const</code>，保证比较不改对象。</li>
+</ul>
+
+        <h2 id="四、map-常用写法"   >
+          <a href="#四、map-常用写法" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、map-常用写法" class="headerlink" title="四、map&lt;int, bool&gt; 常用写法"></a>四、<code>map&lt;int, bool&gt;</code> 常用写法</h2>
+      
+        <h3 id="1-插入-修改"   >
+          <a href="#1-插入-修改" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-插入-修改" class="headerlink" title="1. 插入&#x2F;修改"></a>1. 插入&#x2F;修改</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mp[<span class="number">10</span>] = <span class="literal">true</span>;</span><br><span class="line">mp.<span class="built_in">insert</span>(&#123;<span class="number">30</span>, <span class="literal">true</span>&#125;);</span><br><span class="line">mp.<span class="built_in">emplace</span>(<span class="number">50</span>, <span class="literal">false</span>);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-遍历（推荐写法）"   >
+          <a href="#2-遍历（推荐写法）" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-遍历（推荐写法）" class="headerlink" title="2. 遍历（推荐写法）"></a>2. 遍历（推荐写法）</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; [key, val] : mp) &#123;</span><br><span class="line">    cout &lt;&lt; key &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; boolalpha &lt;&lt; val &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="五、区间与迭代器"   >
+          <a href="#五、区间与迭代器" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、区间与迭代器" class="headerlink" title="五、区间与迭代器"></a>五、区间与迭代器</h2>
+      
+        <h3 id="1-begin-与-end"   >
+          <a href="#1-begin-与-end" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-begin-与-end" class="headerlink" title="1. begin() 与 end()"></a>1. <code>begin()</code> 与 <code>end()</code></h3>
+      <ul>
+<li><code>begin()</code> 指向第一个元素。</li>
+<li><code>end()</code> 指向末尾后一个位置，不可解引用。</li>
+</ul>
+
+        <h3 id="2-reverse-左闭右开"   >
+          <a href="#2-reverse-左闭右开" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-reverse-左闭右开" class="headerlink" title="2. reverse 左闭右开"></a>2. <code>reverse</code> 左闭右开</h3>
+      <ul>
+<li><code>reverse(first, last)</code> 作用区间是 $[first, last)$。</li>
+<li>示例：</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">reverse</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">begin</span>() + <span class="number">3</span>); <span class="comment">// 前 3 个</span></span><br><span class="line"><span class="built_in">reverse</span>(v.<span class="built_in">begin</span>() + <span class="number">1</span>, v.<span class="built_in">end</span>());   <span class="comment">// 从第 2 个到末尾</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="六、格式化输出"   >
+          <a href="#六、格式化输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#六、格式化输出" class="headerlink" title="六、格式化输出"></a>六、格式化输出</h2>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(n) &lt;&lt; x &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><code>fixed</code>：固定小数格式。</li>
+<li><code>setprecision(n)</code>：配合 <code>fixed</code> 时表示小数位数。</li>
+</ul>
+
+        <h2 id="七、sort-越界保护"   >
+          <a href="#七、sort-越界保护" class="heading-link"><i class="fas fa-link"></i></a><a href="#七、sort-越界保护" class="headerlink" title="七、sort() 越界保护"></a>七、<code>sort()</code> 越界保护</h2>
+      
+        <h3 id="1-推荐：min-限制右边界"   >
+          <a href="#1-推荐：min-限制右边界" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-推荐：min-限制右边界" class="headerlink" title="1. 推荐：min 限制右边界"></a>1. 推荐：<code>min</code> 限制右边界</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> end_idx = <span class="built_in">min</span>(i + step, (<span class="type">int</span>)a.<span class="built_in">size</span>());</span><br><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>() + i, a.<span class="built_in">begin</span>() + end_idx);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-与-end-比较"   >
+          <a href="#2-与-end-比较" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-与-end-比较" class="headerlink" title="2. 与 end() 比较"></a>2. 与 <code>end()</code> 比较</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> it_end = (a.<span class="built_in">begin</span>() + i + step &gt; a.<span class="built_in">end</span>()) ? a.<span class="built_in">end</span>() : a.<span class="built_in">begin</span>() + i + step;</span><br><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>() + i, it_end);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="八、工程化小习惯"   >
+          <a href="#八、工程化小习惯" class="heading-link"><i class="fas fa-link"></i></a><a href="#八、工程化小习惯" class="headerlink" title="八、工程化小习惯"></a>八、工程化小习惯</h2>
+      <ul>
+<li>比较前先判长度，不等直接返回。</li>
+<li><code>vector</code> 返回值可直接 <code>return &#123;a, b&#125;;</code>。</li>
+<li>累加场景优先检查是否误写 <code>=</code>（应为 <code>+=</code>）。</li>
+</ul>
+<p>这是一个为你整理的 <strong>C++ STL 关联容器与哈希表核心用法总结表</strong>。在刷题和面试时，你可以直接在脑海中调出这张表格，快速决定使用哪种数据结构。</p>
+
+        <h2 id="九、C-STL-核心容器对比与速查表"   >
+          <a href="#九、C-STL-核心容器对比与速查表" class="heading-link"><i class="fas fa-link"></i></a><a href="#九、C-STL-核心容器对比与速查表" class="headerlink" title="九、C++ STL 核心容器对比与速查表"></a>九、C++ STL 核心容器对比与速查表</h2>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th><strong>操作大类</strong></th>
+<th><strong>具体方法 &#x2F; 代码片段</strong></th>
+<th><strong>适用容器</strong></th>
+<th><strong>时间复杂度 (哈希表 &#x2F; 红黑树)</strong></th>
+<th><strong>核心说明与避坑指南</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>插入 &#x2F; 修改</strong></td>
+<td><code>insert(val)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>插入元素。如果 Key 已经存在，则<strong>不会覆盖</strong>，插入失败。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>emplace(args...)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>原地构造元素，省去拷贝&#x2F;移动开销，<strong>性能通常优于 <code>insert</code></strong>。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>container[key] = val</code></td>
+<td>仅 <code>map</code>, <code>unordered_map</code></td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td><strong>最常用</strong>。Key 存在则修改 Value；Key 不存在则<strong>创建并赋默认值</strong>。</td>
+</tr>
+<tr>
+<td><strong>查找 &#x2F; 访问</strong></td>
+<td><code>find(key)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>查找 Key。找到返回对应迭代器，没找到返回 <code>container.end()</code>。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>count(key)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>返回 Key 的数量。在不允许重复的容器中，<strong>只能返回 1 或 0</strong>（常用于判断存在性）。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>at(key)</code></td>
+<td>仅 <code>map</code>, <code>unordered_map</code></td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>访问对应 Key 的 Value。如果 Key 不存在，会抛出越界异常，比 <code>[]</code> 更安全。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>lower_bound(key)</code></td>
+<td>仅 <code>set</code>, <code>map</code> (有序)</td>
+<td>$O(\log n)$</td>
+<td>返回指向第一个 <strong>大于或等于</strong> key 的迭代器。<strong>哈希表不支持</strong>。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>upper_bound(key)</code></td>
+<td>仅 <code>set</code>, <code>map</code> (有序)</td>
+<td>$O(\log n)$</td>
+<td>返回指向第一个 <strong>严格大于</strong> key 的迭代器。<strong>哈希表不支持</strong>。</td>
+</tr>
+<tr>
+<td><strong>删除</strong></td>
+<td><code>erase(key)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>直接根据 Key 删除元素。返回被删除元素的个数（0 或 1）。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>erase(iterator)</code></td>
+<td>全部适用</td>
+<td>摊还 $O(1)$</td>
+<td>删除迭代器指向的元素（常用于遍历时按条件删除）。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>clear()</code></td>
+<td>全部适用</td>
+<td>$O(n)$</td>
+<td>清空容器中的所有元素。</td>
+</tr>
+<tr>
+<td><strong>容量 &#x2F; 状态</strong></td>
+<td><code>empty()</code></td>
+<td>全部适用</td>
+<td>$O(1)$</td>
+<td>检查容器是否为空。返回 <code>true</code> 或 <code>false</code>。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>size()</code></td>
+<td>全部适用</td>
+<td>$O(1)$</td>
+<td>返回当前容器中元素的个数。</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="核心操作速记-适用于以上所有-STL-容器"   >
+          <a href="#核心操作速记-适用于以上所有-STL-容器" class="heading-link"><i class="fas fa-link"></i></a><a href="#核心操作速记-适用于以上所有-STL-容器" class="headerlink" title="核心操作速记 (适用于以上所有 STL 容器)"></a>核心操作速记 (适用于以上所有 STL 容器)</h3>
+      <ul>
+<li><strong>查找是否存在：</strong>  首选：<code>if (container.find(key) != container.end())</code><ul>
+<li>次选（仅限 set&#x2F;map）：<code>if (container.count(key) &gt; 0)</code></li>
+</ul>
+</li>
+<li><strong>插入元素：</strong><ul>
+<li><code>set</code> &#x2F; <code>unordered_set</code>: <code>insert(key)</code></li>
+<li><code>map</code> &#x2F; <code>unordered_map</code>: <code>container[key] = value</code> (最方便) 或 <code>insert(&#123;key, value&#125;)</code></li>
+</ul>
+</li>
+<li><strong>删除元素：</strong><ul>
+<li>按值删除：<code>erase(key)</code></li>
+</ul>
+</li>
+<li><strong>遍历容器：</strong><ul>
+<li>C++11 写法：<code>for (auto it : container)</code></li>
+<li>C++17 结构化绑定 (针对 map)：<code>for (auto [key, value] : my_map)</code></li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="十、算法题型强化（从-N-数之和开始）"   >
+          <a href="#十、算法题型强化（从-N-数之和开始）" class="heading-link"><i class="fas fa-link"></i></a><a href="#十、算法题型强化（从-N-数之和开始）" class="headerlink" title="十、算法题型强化（从 N 数之和开始）"></a>十、算法题型强化（从 N 数之和开始）</h2>
+      <p>这一部分按“题型框架 -&gt; 高频坑点 -&gt; 可复用模板思维”整理，便于刷题时快速调用。</p>
+
+        <h3 id="1-N-数之和家族（3Sum-4Sum）"   >
+          <a href="#1-N-数之和家族（3Sum-4Sum）" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-N-数之和家族（3Sum-4Sum）" class="headerlink" title="1. N 数之和家族（3Sum &#x2F; 4Sum）"></a>1. N 数之和家族（3Sum &#x2F; 4Sum）</h3>
+      
+        <h4 id="题型总框架"   >
+          <a href="#题型总框架" class="heading-link"><i class="fas fa-link"></i></a><a href="#题型总框架" class="headerlink" title="题型总框架"></a>题型总框架</h4>
+      <ul>
+<li>先排序，再做枚举 + 双指针。</li>
+<li>去重必须发生在遍历过程中，而不是预处理阶段。</li>
+<li>4Sum 及以上场景优先考虑剪枝，否则容易超时。</li>
+</ul>
+
+        <h4 id="四个高频坑点"   >
+          <a href="#四个高频坑点" class="heading-link"><i class="fas fa-link"></i></a><a href="#四个高频坑点" class="headerlink" title="四个高频坑点"></a>四个高频坑点</h4>
+      <ol>
+<li>不能提前去重</li>
+</ol>
+<ul>
+<li>不要先用 <code>set</code> 对原数组去重。</li>
+<li>原数组中的重复值可能是合法答案的一部分，例如 <code>[0, 0, 0]</code>。</li>
+</ul>
+<ol start="2">
+<li>去重边界要写准</li>
+</ol>
+<ul>
+<li>外层去重：<code>if (k &gt; 0 &amp;&amp; nums[k] == nums[k - 1]) continue;</code></li>
+<li>内层去重：<code>if (i &gt; k + 1 &amp;&amp; nums[i] == nums[i - 1]) continue;</code></li>
+<li>关键点：内层必须和当前层起点比较，不能写成 <code>i &gt; 0</code>。</li>
+</ul>
+<ol start="3">
+<li>警惕整型溢出</li>
+</ol>
+<ul>
+<li>多个 <code>int</code> 累加时可能溢出。</li>
+<li>计算和时先提升类型：<code>(long long)nums[k] + nums[i] + ...</code>。</li>
+</ul>
+<ol start="4">
+<li>剪枝时分清 <code>break</code> 与 <code>continue</code></li>
+</ol>
+<ul>
+<li>最小和已经大于 <code>target</code>：后续只会更大，直接 <code>break</code>。</li>
+<li>最大和仍小于 <code>target</code>：当前值太小，应该 <code>continue</code>。</li>
+</ul>
+
+        <h3 id="2-回溯算法（Backtracking）"   >
+          <a href="#2-回溯算法（Backtracking）" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-回溯算法（Backtracking）" class="headerlink" title="2. 回溯算法（Backtracking）"></a>2. 回溯算法（Backtracking）</h3>
+      
+        <h4 id="统一骨架"   >
+          <a href="#统一骨架" class="heading-link"><i class="fas fa-link"></i></a><a href="#统一骨架" class="headerlink" title="统一骨架"></a>统一骨架</h4>
+      <p>终止条件 -&gt; 做选择 -&gt; 递归 -&gt; 撤销选择。</p>
+
+        <h4 id="两种写法对比"   >
+          <a href="#两种写法对比" class="heading-link"><i class="fas fa-link"></i></a><a href="#两种写法对比" class="headerlink" title="两种写法对比"></a>两种写法对比</h4>
+      <ol>
+<li>值传递写法（易写易懂）</li>
+</ol>
+<ul>
+<li>形式：<code>void backtrack(int n, string path)</code></li>
+<li>递归：<code>backtrack(n, path + ch)</code></li>
+<li>特点：天然不需要手动撤销，代码直观。</li>
+<li>代价：频繁拷贝字符串，适合 $n$ 很小（如 $n \le 10$）。</li>
+</ul>
+<ol start="2">
+<li>引用传递写法（面试主流）</li>
+</ol>
+<ul>
+<li>形式：<code>void backtrack(int n, string&amp; path)</code></li>
+<li>必须严格遵循：加入字符 -&gt; 递归 -&gt; <code>pop_back()</code>。</li>
+<li>特点：性能更好，适合规模更大的搜索。</li>
+</ul>
+
+        <h3 id="3-哈希表优化思路"   >
+          <a href="#3-哈希表优化思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-哈希表优化思路" class="headerlink" title="3. 哈希表优化思路"></a>3. 哈希表优化思路</h3>
+      
+        <h4 id="思路一：分组哈希（降维）"   >
+          <a href="#思路一：分组哈希（降维）" class="heading-link"><i class="fas fa-link"></i></a><a href="#思路一：分组哈希（降维）" class="headerlink" title="思路一：分组哈希（降维）"></a>思路一：分组哈希（降维）</h4>
+      <ul>
+<li>典型题：四数相加 II（四个独立数组）。</li>
+<li>做法：前两数组求和计数，后两数组查补数 <code>0 - c - d</code>。</li>
+<li>复杂度从 $O(n^4)$ 降为 $O(n^2)$。</li>
+</ul>
+
+        <h4 id="思路二：能用定长数组就别用哈希"   >
+          <a href="#思路二：能用定长数组就别用哈希" class="heading-link"><i class="fas fa-link"></i></a><a href="#思路二：能用定长数组就别用哈希" class="headerlink" title="思路二：能用定长数组就别用哈希"></a>思路二：能用定长数组就别用哈希</h4>
+      <ul>
+<li>当键空间很小且固定（如 26 个小写字母）时，优先 <code>int hash[26] = &#123;0&#125;;</code>。</li>
+<li>数组访问常数更小、内存连续、实现也更稳定。</li>
+</ul>
+
+        <h3 id="4-一页速记（实战决策）"   >
+          <a href="#4-一页速记（实战决策）" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-一页速记（实战决策）" class="headerlink" title="4. 一页速记（实战决策）"></a>4. 一页速记（实战决策）</h3>
+      <ul>
+<li>N 数之和：排序 + 双指针 + 分层去重 + 剪枝。</li>
+<li>回溯：小规模可值传递，大规模用引用传递并手动撤销。</li>
+<li>哈希优化：先看能否分组降维，再看能否降到定长数组。</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/01/04/os%E5%A4%8D%E4%B9%A0/">os复习</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-01-04</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-01-04</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="操作系统"   >
           <a href="#操作系统" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1>
       <p>填空题（1*20&#x3D;20分）简单看看概念</p>
@@ -1406,94 +1783,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <li><strong>临时缓存</strong>用于解决数据处理速度的差异（如网络接收速度慢于处理速度）。</li>
 <li>**自动增长：**通过动态分配内存扩容实现，常用 <strong>指数增长（2 倍增长）</strong> 策略；也可以按照具体业务需要调整。</li>
 </ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">智能指针</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="智能指针"   >
-          <a href="#智能指针" class="heading-link"><i class="fas fa-link"></i></a><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h2>
-      
-        <h3 id="unique-ptr"   >
-          <a href="#unique-ptr" class="heading-link"><i class="fas fa-link"></i></a><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a><strong>unique_ptr</strong></h3>
-      <p>作用域指针，不能复制</p>
-<p>栈分配指针，当死亡时，自动释放所管理的内存，无需显示调用delete</p>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::unique_ptr&lt;<span class="type">int</span>&gt; p1 = std::<span class="built_in">make_unique</span>&lt;<span class="type">int</span>&gt;(<span class="number">10</span>); <span class="comment">// 管理动态分配的内存</span></span><br><span class="line"><span class="comment">// std::unique_ptr&lt;int&gt; p2 = p1; // 错误！unique_ptr不支持拷贝</span></span><br><span class="line">std::unique_ptr&lt;<span class="type">int</span>&gt; p2 = std::<span class="built_in">move</span>(p1); <span class="comment">// 通过 std::move 转移所有权</span></span><br></pre></td></tr></table></div></figure>
-
-<p>只能显示调用构造函数，因为其构造函数有<code>explicit</code>关键字，没有了构造函数的隐式转换</p>
-<p>最好的调用还是使用<code>make_unique</code>会捕获异常，不会产生悬空指针问题</p>
-
-        <h3 id="shared-ptr"   >
-          <a href="#shared-ptr" class="heading-link"><i class="fas fa-link"></i></a><a href="#shared-ptr" class="headerlink" title="shared_ptr"></a><strong>shared_ptr</strong></h3>
-      <p>追踪引用计数，如果引用为0，则释放内存</p>
-<p>需要分配内存用于计数</p>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shared_ptr&lt;Entity&gt; p = <span class="built_in">make_shared</span>&lt;Entity&gt;();</span><br></pre></td></tr></table></div></figure>
-
-<p>作用主要包括：</p>
-<ol>
-<li>自动管理动态分配的对象，避免手动调用 <code>delete</code>。</li>
-<li>支持共享所有权，让多个 <code>shared_ptr</code> 可以安全地访问同一对象。</li>
-<li>借助引用计数机制，实现对象的生命周期控制，当最后一个 <code>shared_ptr</code> 销毁后，自行释放资源。</li>
-</ol>
-<p><strong><code>unique_ptr</code></strong>：独占所有权，不支持多个指针管理同一个对象；更轻量且不存在循环引用问题。</p>
-<p><strong><code>weak_ptr</code></strong>：用于观察 <code>shared_ptr</code> 管理的对象，不增加引用计数；主要用于辅助 <code>shared_ptr</code>，避免循环引用的问题。</p>
-
-        <h3 id="std-weak-ptr"   >
-          <a href="#std-weak-ptr" class="heading-link"><i class="fas fa-link"></i></a><a href="#std-weak-ptr" class="headerlink" title="std::weak_ptr"></a>std::weak_ptr</h3>
-      <p><code>std::weak_ptr</code> 是 C++11 引入的一种智能指针，和 <code>std::shared_ptr</code> 一起使用，用于避免 <strong>循环引用</strong> 问题，同时提供了一种对 <code>std::shared_ptr</code> 所管理对象的弱引用（non-owning reference）。它不改变所管理对象的引用计数。</p>
-<ul>
-<li><strong>循环引用问题</strong>：<br>在使用 <code>std::shared_ptr</code> 时，如果两个对象互相以 <code>shared_ptr</code> 引用彼此，会导致<strong>内存泄漏</strong>，因为它们的引用计数无法递减到 0。<ul>
-<li><code>shared_ptr</code> 通过引用计数管理对象的生命周期，当引用计数为 0 时，自动释放对象。</li>
-<li>如果存在循环引用，两个对象会始终持有对方，这样它们的引用计数永远不会减为 0，因此无法释放内存。</li>
-</ul>
-</li>
-<li><strong>非拥有性的弱引用</strong>：<br>有时候，一个对象只需要 “观察” 对另一个对象的引用，而无需控制它的生命周期。这时使用 <code>std::weak_ptr</code> 是更合理的选择。</li>
-</ul>
-<p><code>std::weak_ptr</code> 提供了一种临时、不影响生命周期的引用，从而解决了上述问题。</p>
-<p><strong>总结</strong></p>
-<p><code>std::weak_ptr</code> 的主要使用场景包括：</p>
-<ol>
-<li><strong>解决 <code>std::shared_ptr</code> 的循环引用问题</strong>。</li>
-<li><strong>跨组件之间的非拥有性引用</strong>，例如缓存对象的管理。</li>
-<li><strong>事件监听器或回调函数，避免悬垂指针的产生</strong>。</li>
-<li>在弱引用需求场景下提供更加灵活的资源管理，而不是一味增加强引用计数。</li>
-</ol>
-<p><strong><code>std::weak_ptr</code> 的特点</strong></p>
-<ol>
-<li><strong>不控制对象的生命周期</strong>：</li>
-<li><strong>检测对象是否已销毁</strong>：<ul>
-<li>可以通过调用 <code>weak_ptr</code> 的 <code>expired()</code> 方法来检查被引用的对象是否已经销毁。</li>
-</ul>
-</li>
-<li><strong>使用 <code>lock()</code> 转换为 <code>shared_ptr</code></strong>：<ul>
-<li>如果需要安全地访问被引用的对象，可以调用 <code>weak_ptr</code> 的 <code>lock()</code> 方法，返回一个临时的 <code>shared_ptr</code>。如果对象已销毁，<code>lock()</code> 会返回一个空指针。</li>
-</ul>
-</li>
-</ol>
-<p>假设我们有两个类 <code>A</code> 和 <code>B</code>，它们通过 <code>std::shared_ptr</code> 互相引用。如果没有使用 <code>weak_ptr</code>，将会发生循环引用，导致内存泄漏。</p>
-<p><strong>示例代码（循环引用问题）</strong>：</p>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>; <span class="comment">// 前向声明</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    std::shared_ptr&lt;B&gt; ptrB; <span class="comment">// A 持有共享指针引用 B</span></span><br><span class="line">    ~<span class="built_in">A</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;A destroyed&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    std::shared_ptr&lt;A&gt; ptrA; <span class="comment">// B 持有共享指针引用 A</span></span><br><span class="line">    ~<span class="built_in">B</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;B destroyed&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建循环引用</span></span><br><span class="line">    <span class="keyword">auto</span> a = std::<span class="built_in">make_shared</span>&lt;A&gt;();</span><br><span class="line">    <span class="keyword">auto</span> b = std::<span class="built_in">make_shared</span>&lt;B&gt;();</span><br><span class="line">    a-&gt;ptrB = b; <span class="comment">// A 持有 B</span></span><br><span class="line">    b-&gt;ptrA = a; <span class="comment">// B 持有 A</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 离开 main() 作用域时，A 和 B 的引用计数不会减到 0，导致内存泄漏</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p>运行结果：</p>
-<figure class="highlight text"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 没有输出，因为 `A` 和 `B` 无法正常析构，发生内存泄漏。</span><br></pre></td></tr></table></div></figure>
-
-<p><strong>解决循环引用的正确做法</strong>：<br>将其中一个引用改为 <code>std::weak_ptr</code>，避免两个对象互相增加引用计数。</p>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>; <span class="comment">// 前向声明</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    std::weak_ptr&lt;B&gt; ptrB; <span class="comment">// 弱引用 B</span></span><br><span class="line">    ~<span class="built_in">A</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;A destroyed&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    std::shared_ptr&lt;A&gt; ptrA; <span class="comment">// 共享指针持有 A</span></span><br><span class="line">    ~<span class="built_in">B</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;B destroyed&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> a = std::<span class="built_in">make_shared</span>&lt;A&gt;();</span><br><span class="line">    <span class="keyword">auto</span> b = std::<span class="built_in">make_shared</span>&lt;B&gt;();</span><br><span class="line">    a-&gt;ptrB = b; <span class="comment">// A 弱引用 B</span></span><br><span class="line">    b-&gt;ptrA = a; <span class="comment">// B 持有 A</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 离开作用域时，A 和 B 都将正确析构</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p>运行结果：</p>
-<figure class="highlight text"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B destroyed</span><br><span class="line">A destroyed</span><br></pre></td></tr></table></div></figure>
-
-<p>通过将某一侧的引用改为 <code>std::weak_ptr</code>，打破了循环引用。</p>
-<hr>
-<p><strong>跨组件间的弱引用</strong></p>
-<p>如果某些对象之间并无强依赖关系，但仍需临时引用，则可以使用 <code>std::weak_ptr</code>。</p>
-<p><strong>示例 1：缓存管理</strong><br>在缓存系统中，如果一个对象的存在依赖于被缓存的内容，则可以使用 <code>std::weak_ptr</code>：</p>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CachedObject</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">CachedObject</span>(std::string name) : <span class="built_in">name</span>(name) &#123;</span><br><span class="line">        std::cout &lt;&lt; name &lt;&lt; <span class="string">&quot; created&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">CachedObject</span>() &#123;</span><br><span class="line">        std::cout &lt;&lt; name &lt;&lt; <span class="string">&quot; destroyed&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">printName</span><span class="params">()</span> </span>&#123; std::cout &lt;&lt; <span class="string">&quot;Object name: &quot;</span> &lt;&lt; name &lt;&lt; std::endl; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    std::string name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::unordered_map&lt;std::string, std::weak_ptr&lt;CachedObject&gt;&gt; cache;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> obj1 = std::<span class="built_in">make_shared</span>&lt;CachedObject&gt;(<span class="string">&quot;Object1&quot;</span>);</span><br><span class="line">        cache[<span class="string">&quot;key1&quot;</span>] = obj1;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span> obj2 = std::<span class="built_in">make_shared</span>&lt;CachedObject&gt;(<span class="string">&quot;Object2&quot;</span>);</span><br><span class="line">        cache[<span class="string">&quot;key2&quot;</span>] = obj2;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用缓存中的对象</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">auto</span> obj = cache[<span class="string">&quot;key1&quot;</span>].<span class="built_in">lock</span>()) &#123;</span><br><span class="line">            obj-&gt;<span class="built_in">printName</span>(); <span class="comment">// 输出：Object name: Object1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="comment">// obj1 和 obj2 均超出作用域，被释放</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 尝试访问释放的对象</span></span><br><span class="line">    <span class="keyword">if</span> (cache[<span class="string">&quot;key1&quot;</span>].<span class="built_in">expired</span>()) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Object1 no longer exists&quot;</span> &lt;&lt; std::endl; <span class="comment">// 输出</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p>运行结果：</p>
-<figure class="highlight text"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object1 created</span><br><span class="line">Object2 created</span><br><span class="line">Object name: Object1</span><br><span class="line">Object2 destroyed</span><br><span class="line">Object1 destroyed</span><br><span class="line">Object1 no longer exists</span><br></pre></td></tr></table></div></figure>
-
-<hr>
-<p><strong>事件回调（防止悬垂引用）</strong></p>
-<p>如果某类对象注册了一个事件监听器或回调函数，而监听器的生命周期可能比被观察的对象短，那么可以使用 <code>std::weak_ptr</code> 避免访问悬垂的指针。</p>
-<p>例如：</p>
-<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">EventSource</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Listener</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Listener</span>(std::shared_ptr&lt;EventSource&gt; source) : <span class="built_in">source</span>(source) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">onEvent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">auto</span> src = source.<span class="built_in">lock</span>()) &#123; <span class="comment">// 检查 source 是否仍有效</span></span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;Event handled&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;Source no longer exists&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    std::weak_ptr&lt;EventSource&gt; source;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">EventSource</span> : <span class="keyword">public</span> std::enable_shared_from_this&lt;EventSource&gt; &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">fireEvent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (listener) <span class="built_in">listener</span>(); <span class="comment">// 调用回调</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setListener</span><span class="params">(std::function&lt;<span class="type">void</span>()&gt; callback)</span> </span>&#123;</span><br><span class="line">        listener = callback;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    std::function&lt;<span class="type">void</span>()&gt; listener;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::shared_ptr&lt;EventSource&gt; source = std::<span class="built_in">make_shared</span>&lt;EventSource&gt;();</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> listener = std::<span class="built_in">make_shared</span>&lt;Listener&gt;(source);</span><br><span class="line">        source-&gt;<span class="built_in">setListener</span>([listener]() &#123; listener-&gt;<span class="built_in">onEvent</span>(); &#125;);</span><br><span class="line"></span><br><span class="line">        source-&gt;<span class="built_in">fireEvent</span>(); <span class="comment">// 输出：Event handled</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Listener 已销毁，无悬垂引用</span></span><br><span class="line">    source-&gt;<span class="built_in">fireEvent</span>(); <span class="comment">// 不输出，Listener 已解除绑定</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:5244/" target="_blank" rel="noopener" data-popover="Learning Materials" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-book"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
   var container = document.querySelector('.sidebar-ov-ha');
   var btn = document.querySelector('.sidebar-ha-btn');
@@ -1507,7 +1796,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
     });
   }
 });
-</script></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">65</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Categories</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+</script></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">66</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Categories</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 

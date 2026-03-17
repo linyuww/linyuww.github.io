@@ -1,0 +1,735 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/stun-logo.jpg?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/stun-logo.jpg?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="一、核心易错点                           1. 数组与越界        循环变量和分类下标分离：不要用外层 i 直接访问固定小数组。 容器访问前先判空或判长度：  12if (!v.empty()) use(v[0]);if (v.size() &gt; 1) use(v[1]);                      2.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="经典基础">
+<meta property="og:url" content="https://linyuww.github.io/2026/03/17/%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="linyuww&#39;s blog">
+<meta property="og:description" content="一、核心易错点                           1. 数组与越界        循环变量和分类下标分离：不要用外层 i 直接访问固定小数组。 容器访问前先判空或判长度：  12if (!v.empty()) use(v[0]);if (v.size() &gt; 1) use(v[1]);                      2.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-17T12:23:40.000Z">
+<meta property="article:modified_time" content="2026-03-17T12:24:33.617Z">
+<meta name="twitter:card" content="summary"><title>经典基础 | linyuww's blog</title><link ref="canonical" href="https://linyuww.github.io/2026/03/17/%E7%BB%8F%E5%85%B8%E5%9F%BA%E7%A1%80/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="linyuww's blog" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">经典基础</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-03-17</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-03-17</span></span></div></header><div class="post-body">
+        <h2 id="一、核心易错点"   >
+          <a href="#一、核心易错点" class="heading-link"><i class="fas fa-link"></i></a><a href="#一、核心易错点" class="headerlink" title="一、核心易错点"></a>一、核心易错点</h2>
+      
+        <h3 id="1-数组与越界"   >
+          <a href="#1-数组与越界" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-数组与越界" class="headerlink" title="1. 数组与越界"></a>1. 数组与越界</h3>
+      <ul>
+<li>循环变量和分类下标分离：不要用外层 <code>i</code> 直接访问固定小数组。</li>
+<li>容器访问前先判空或判长度：</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!v.<span class="built_in">empty</span>()) <span class="built_in">use</span>(v[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">if</span> (v.<span class="built_in">size</span>() &gt; <span class="number">1</span>) <span class="built_in">use</span>(v[<span class="number">1</span>]);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-输入输出"   >
+          <a href="#2-输入输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-输入输出" class="headerlink" title="2. 输入输出"></a>2. 输入输出</h3>
+      <ul>
+<li><code>cin &gt;&gt; n</code> 后接 <code>getline</code>，必须先吃掉换行符：</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cin &gt;&gt; n;</span><br><span class="line">cin.<span class="built_in">ignore</span>();</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>大数据 I&#x2F;O 优化：</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>固定宽度补零：<code>printf(&quot;%05d\n&quot;, num)</code>。</li>
+<li>输出优先 <code>\n</code>，避免频繁 <code>endl</code>。</li>
+</ul>
+
+        <h3 id="3-数据结构选择"   >
+          <a href="#3-数据结构选择" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-数据结构选择" class="headerlink" title="3. 数据结构选择"></a>3. 数据结构选择</h3>
+      <ul>
+<li>键可能重复时，不用 <code>map</code> 存主体数据（会覆盖），用 <code>struct + vector + sort</code>。</li>
+<li>不要求有序时优先 <code>unordered_map/unordered_set</code>。</li>
+<li>小范围计数（如 26 字母）优先数组。</li>
+</ul>
+
+        <h3 id="4-边界条件"   >
+          <a href="#4-边界条件" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-边界条件" class="headerlink" title="4. 边界条件"></a>4. 边界条件</h3>
+      <ul>
+<li>重点检查：<code>0</code>、空输入、区间端点、整除（余数为 0）。</li>
+<li>转换类题目做“正向 + 逆向”自检。</li>
+</ul>
+
+        <h3 id="5-算法策略"   >
+          <a href="#5-算法策略" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-算法策略" class="headerlink" title="5. 算法策略"></a>5. 算法策略</h3>
+      <ul>
+<li>能数组模拟就别硬改指针（如链表题可先按地址收集再处理）。</li>
+<li>位数少可枚举，位数大用 DFS + 剪枝。</li>
+</ul>
+
+        <h2 id="二、字符串输入与分词"   >
+          <a href="#二、字符串输入与分词" class="heading-link"><i class="fas fa-link"></i></a><a href="#二、字符串输入与分词" class="headerlink" title="二、字符串输入与分词"></a>二、字符串输入与分词</h2>
+      
+        <h3 id="1-按空白读取到-EOF"   >
+          <a href="#1-按空白读取到-EOF" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-按空白读取到-EOF" class="headerlink" title="1. 按空白读取到 EOF"></a>1. 按空白读取到 EOF</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string word;</span><br><span class="line"><span class="keyword">while</span> (cin &gt;&gt; word) &#123;</span><br><span class="line">    words.<span class="built_in">push_back</span>(word);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-读取整行后按空格切词"   >
+          <a href="#2-读取整行后按空格切词" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-读取整行后按空格切词" class="headerlink" title="2. 读取整行后按空格切词"></a>2. 读取整行后按空格切词</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string line;</span><br><span class="line"><span class="built_in">getline</span>(cin, line);</span><br><span class="line"><span class="function">istringstream <span class="title">iss</span><span class="params">(line)</span></span>;</span><br><span class="line">string word;</span><br><span class="line"><span class="keyword">while</span> (iss &gt;&gt; word) &#123;</span><br><span class="line">    words.<span class="built_in">push_back</span>(word);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="3-cin-n-与-getline-混用模板"   >
+          <a href="#3-cin-n-与-getline-混用模板" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-cin-n-与-getline-混用模板" class="headerlink" title="3. cin &gt;&gt; n 与 getline 混用模板"></a>3. <code>cin &gt;&gt; n</code> 与 <code>getline</code> 混用模板</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n;</span><br><span class="line">cin &gt;&gt; n;</span><br><span class="line">cin.<span class="built_in">ignore</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    string line;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">getline</span>(cin, line)) <span class="keyword">break</span>;</span><br><span class="line">    <span class="function">istringstream <span class="title">iss</span><span class="params">(line)</span></span>;</span><br><span class="line">    string word;</span><br><span class="line">    <span class="keyword">while</span> (iss &gt;&gt; word) &#123;</span><br><span class="line">        cout &lt;&lt; word &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="三、排序与比较器"   >
+          <a href="#三、排序与比较器" class="heading-link"><i class="fas fa-link"></i></a><a href="#三、排序与比较器" class="headerlink" title="三、排序与比较器"></a>三、排序与比较器</h2>
+      
+        <h3 id="1-sort-Lambda"   >
+          <a href="#1-sort-Lambda" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-sort-Lambda" class="headerlink" title="1. sort + Lambda"></a>1. <code>sort</code> + Lambda</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>(), [](<span class="type">const</span> Node&amp; x, <span class="type">const</span> Node&amp; y) &#123;</span><br><span class="line">    <span class="keyword">return</span> x.key &lt; y.key;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-结构体内重载"   >
+          <a href="#2-结构体内重载" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-结构体内重载" class="headerlink" title="2. 结构体内重载 &lt;"></a>2. 结构体内重载 <code>&lt;</code></h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="type">int</span> num, de, cai;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Student&amp; b) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (de + cai == b.de + b.cai) &#123;</span><br><span class="line">            <span class="keyword">if</span> (de == b.de) <span class="keyword">return</span> num &lt; b.num;</span><br><span class="line">            <span class="keyword">return</span> de &gt; b.de;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> de + cai &gt; b.de + b.cai;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>成员版 <code>operator&lt;</code> 只写一个参数（右操作数）。</li>
+<li>建议加 <code>const</code>，保证比较不改对象。</li>
+</ul>
+
+        <h2 id="四、map-常用写法"   >
+          <a href="#四、map-常用写法" class="heading-link"><i class="fas fa-link"></i></a><a href="#四、map-常用写法" class="headerlink" title="四、map&lt;int, bool&gt; 常用写法"></a>四、<code>map&lt;int, bool&gt;</code> 常用写法</h2>
+      
+        <h3 id="1-插入-修改"   >
+          <a href="#1-插入-修改" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-插入-修改" class="headerlink" title="1. 插入&#x2F;修改"></a>1. 插入&#x2F;修改</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mp[<span class="number">10</span>] = <span class="literal">true</span>;</span><br><span class="line">mp.<span class="built_in">insert</span>(&#123;<span class="number">30</span>, <span class="literal">true</span>&#125;);</span><br><span class="line">mp.<span class="built_in">emplace</span>(<span class="number">50</span>, <span class="literal">false</span>);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-遍历（推荐写法）"   >
+          <a href="#2-遍历（推荐写法）" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-遍历（推荐写法）" class="headerlink" title="2. 遍历（推荐写法）"></a>2. 遍历（推荐写法）</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; [key, val] : mp) &#123;</span><br><span class="line">    cout &lt;&lt; key &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; boolalpha &lt;&lt; val &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="五、区间与迭代器"   >
+          <a href="#五、区间与迭代器" class="heading-link"><i class="fas fa-link"></i></a><a href="#五、区间与迭代器" class="headerlink" title="五、区间与迭代器"></a>五、区间与迭代器</h2>
+      
+        <h3 id="1-begin-与-end"   >
+          <a href="#1-begin-与-end" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-begin-与-end" class="headerlink" title="1. begin() 与 end()"></a>1. <code>begin()</code> 与 <code>end()</code></h3>
+      <ul>
+<li><code>begin()</code> 指向第一个元素。</li>
+<li><code>end()</code> 指向末尾后一个位置，不可解引用。</li>
+</ul>
+
+        <h3 id="2-reverse-左闭右开"   >
+          <a href="#2-reverse-左闭右开" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-reverse-左闭右开" class="headerlink" title="2. reverse 左闭右开"></a>2. <code>reverse</code> 左闭右开</h3>
+      <ul>
+<li><code>reverse(first, last)</code> 作用区间是 $[first, last)$。</li>
+<li>示例：</li>
+</ul>
+<figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">reverse</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">begin</span>() + <span class="number">3</span>); <span class="comment">// 前 3 个</span></span><br><span class="line"><span class="built_in">reverse</span>(v.<span class="built_in">begin</span>() + <span class="number">1</span>, v.<span class="built_in">end</span>());   <span class="comment">// 从第 2 个到末尾</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="六、格式化输出"   >
+          <a href="#六、格式化输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#六、格式化输出" class="headerlink" title="六、格式化输出"></a>六、格式化输出</h2>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(n) &lt;&lt; x &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><code>fixed</code>：固定小数格式。</li>
+<li><code>setprecision(n)</code>：配合 <code>fixed</code> 时表示小数位数。</li>
+</ul>
+
+        <h2 id="七、sort-越界保护"   >
+          <a href="#七、sort-越界保护" class="heading-link"><i class="fas fa-link"></i></a><a href="#七、sort-越界保护" class="headerlink" title="七、sort() 越界保护"></a>七、<code>sort()</code> 越界保护</h2>
+      
+        <h3 id="1-推荐：min-限制右边界"   >
+          <a href="#1-推荐：min-限制右边界" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-推荐：min-限制右边界" class="headerlink" title="1. 推荐：min 限制右边界"></a>1. 推荐：<code>min</code> 限制右边界</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> end_idx = <span class="built_in">min</span>(i + step, (<span class="type">int</span>)a.<span class="built_in">size</span>());</span><br><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>() + i, a.<span class="built_in">begin</span>() + end_idx);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="2-与-end-比较"   >
+          <a href="#2-与-end-比较" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-与-end-比较" class="headerlink" title="2. 与 end() 比较"></a>2. 与 <code>end()</code> 比较</h3>
+      <figure class="highlight cpp"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> it_end = (a.<span class="built_in">begin</span>() + i + step &gt; a.<span class="built_in">end</span>()) ? a.<span class="built_in">end</span>() : a.<span class="built_in">begin</span>() + i + step;</span><br><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>() + i, it_end);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="八、工程化小习惯"   >
+          <a href="#八、工程化小习惯" class="heading-link"><i class="fas fa-link"></i></a><a href="#八、工程化小习惯" class="headerlink" title="八、工程化小习惯"></a>八、工程化小习惯</h2>
+      <ul>
+<li>比较前先判长度，不等直接返回。</li>
+<li><code>vector</code> 返回值可直接 <code>return &#123;a, b&#125;;</code>。</li>
+<li>累加场景优先检查是否误写 <code>=</code>（应为 <code>+=</code>）。</li>
+</ul>
+<p>这是一个为你整理的 <strong>C++ STL 关联容器与哈希表核心用法总结表</strong>。在刷题和面试时，你可以直接在脑海中调出这张表格，快速决定使用哪种数据结构。</p>
+
+        <h2 id="九、C-STL-核心容器对比与速查表"   >
+          <a href="#九、C-STL-核心容器对比与速查表" class="heading-link"><i class="fas fa-link"></i></a><a href="#九、C-STL-核心容器对比与速查表" class="headerlink" title="九、C++ STL 核心容器对比与速查表"></a>九、C++ STL 核心容器对比与速查表</h2>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th><strong>操作大类</strong></th>
+<th><strong>具体方法 &#x2F; 代码片段</strong></th>
+<th><strong>适用容器</strong></th>
+<th><strong>时间复杂度 (哈希表 &#x2F; 红黑树)</strong></th>
+<th><strong>核心说明与避坑指南</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>插入 &#x2F; 修改</strong></td>
+<td><code>insert(val)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>插入元素。如果 Key 已经存在，则<strong>不会覆盖</strong>，插入失败。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>emplace(args...)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>原地构造元素，省去拷贝&#x2F;移动开销，<strong>性能通常优于 <code>insert</code></strong>。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>container[key] = val</code></td>
+<td>仅 <code>map</code>, <code>unordered_map</code></td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td><strong>最常用</strong>。Key 存在则修改 Value；Key 不存在则<strong>创建并赋默认值</strong>。</td>
+</tr>
+<tr>
+<td><strong>查找 &#x2F; 访问</strong></td>
+<td><code>find(key)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>查找 Key。找到返回对应迭代器，没找到返回 <code>container.end()</code>。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>count(key)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>返回 Key 的数量。在不允许重复的容器中，<strong>只能返回 1 或 0</strong>（常用于判断存在性）。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>at(key)</code></td>
+<td>仅 <code>map</code>, <code>unordered_map</code></td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>访问对应 Key 的 Value。如果 Key 不存在，会抛出越界异常，比 <code>[]</code> 更安全。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>lower_bound(key)</code></td>
+<td>仅 <code>set</code>, <code>map</code> (有序)</td>
+<td>$O(\log n)$</td>
+<td>返回指向第一个 <strong>大于或等于</strong> key 的迭代器。<strong>哈希表不支持</strong>。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>upper_bound(key)</code></td>
+<td>仅 <code>set</code>, <code>map</code> (有序)</td>
+<td>$O(\log n)$</td>
+<td>返回指向第一个 <strong>严格大于</strong> key 的迭代器。<strong>哈希表不支持</strong>。</td>
+</tr>
+<tr>
+<td><strong>删除</strong></td>
+<td><code>erase(key)</code></td>
+<td>全部适用</td>
+<td>$O(1)$ &#x2F; $O(\log n)$</td>
+<td>直接根据 Key 删除元素。返回被删除元素的个数（0 或 1）。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>erase(iterator)</code></td>
+<td>全部适用</td>
+<td>摊还 $O(1)$</td>
+<td>删除迭代器指向的元素（常用于遍历时按条件删除）。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>clear()</code></td>
+<td>全部适用</td>
+<td>$O(n)$</td>
+<td>清空容器中的所有元素。</td>
+</tr>
+<tr>
+<td><strong>容量 &#x2F; 状态</strong></td>
+<td><code>empty()</code></td>
+<td>全部适用</td>
+<td>$O(1)$</td>
+<td>检查容器是否为空。返回 <code>true</code> 或 <code>false</code>。</td>
+</tr>
+<tr>
+<td></td>
+<td><code>size()</code></td>
+<td>全部适用</td>
+<td>$O(1)$</td>
+<td>返回当前容器中元素的个数。</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="核心操作速记-适用于以上所有-STL-容器"   >
+          <a href="#核心操作速记-适用于以上所有-STL-容器" class="heading-link"><i class="fas fa-link"></i></a><a href="#核心操作速记-适用于以上所有-STL-容器" class="headerlink" title="核心操作速记 (适用于以上所有 STL 容器)"></a>核心操作速记 (适用于以上所有 STL 容器)</h3>
+      <ul>
+<li><strong>查找是否存在：</strong>  首选：<code>if (container.find(key) != container.end())</code><ul>
+<li>次选（仅限 set&#x2F;map）：<code>if (container.count(key) &gt; 0)</code></li>
+</ul>
+</li>
+<li><strong>插入元素：</strong><ul>
+<li><code>set</code> &#x2F; <code>unordered_set</code>: <code>insert(key)</code></li>
+<li><code>map</code> &#x2F; <code>unordered_map</code>: <code>container[key] = value</code> (最方便) 或 <code>insert(&#123;key, value&#125;)</code></li>
+</ul>
+</li>
+<li><strong>删除元素：</strong><ul>
+<li>按值删除：<code>erase(key)</code></li>
+</ul>
+</li>
+<li><strong>遍历容器：</strong><ul>
+<li>C++11 写法：<code>for (auto it : container)</code></li>
+<li>C++17 结构化绑定 (针对 map)：<code>for (auto [key, value] : my_map)</code></li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="十、算法题型强化（从-N-数之和开始）"   >
+          <a href="#十、算法题型强化（从-N-数之和开始）" class="heading-link"><i class="fas fa-link"></i></a><a href="#十、算法题型强化（从-N-数之和开始）" class="headerlink" title="十、算法题型强化（从 N 数之和开始）"></a>十、算法题型强化（从 N 数之和开始）</h2>
+      <p>这一部分按“题型框架 -&gt; 高频坑点 -&gt; 可复用模板思维”整理，便于刷题时快速调用。</p>
+
+        <h3 id="1-N-数之和家族（3Sum-4Sum）"   >
+          <a href="#1-N-数之和家族（3Sum-4Sum）" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-N-数之和家族（3Sum-4Sum）" class="headerlink" title="1. N 数之和家族（3Sum &#x2F; 4Sum）"></a>1. N 数之和家族（3Sum &#x2F; 4Sum）</h3>
+      
+        <h4 id="题型总框架"   >
+          <a href="#题型总框架" class="heading-link"><i class="fas fa-link"></i></a><a href="#题型总框架" class="headerlink" title="题型总框架"></a>题型总框架</h4>
+      <ul>
+<li>先排序，再做枚举 + 双指针。</li>
+<li>去重必须发生在遍历过程中，而不是预处理阶段。</li>
+<li>4Sum 及以上场景优先考虑剪枝，否则容易超时。</li>
+</ul>
+
+        <h4 id="四个高频坑点"   >
+          <a href="#四个高频坑点" class="heading-link"><i class="fas fa-link"></i></a><a href="#四个高频坑点" class="headerlink" title="四个高频坑点"></a>四个高频坑点</h4>
+      <ol>
+<li>不能提前去重</li>
+</ol>
+<ul>
+<li>不要先用 <code>set</code> 对原数组去重。</li>
+<li>原数组中的重复值可能是合法答案的一部分，例如 <code>[0, 0, 0]</code>。</li>
+</ul>
+<ol start="2">
+<li>去重边界要写准</li>
+</ol>
+<ul>
+<li>外层去重：<code>if (k &gt; 0 &amp;&amp; nums[k] == nums[k - 1]) continue;</code></li>
+<li>内层去重：<code>if (i &gt; k + 1 &amp;&amp; nums[i] == nums[i - 1]) continue;</code></li>
+<li>关键点：内层必须和当前层起点比较，不能写成 <code>i &gt; 0</code>。</li>
+</ul>
+<ol start="3">
+<li>警惕整型溢出</li>
+</ol>
+<ul>
+<li>多个 <code>int</code> 累加时可能溢出。</li>
+<li>计算和时先提升类型：<code>(long long)nums[k] + nums[i] + ...</code>。</li>
+</ul>
+<ol start="4">
+<li>剪枝时分清 <code>break</code> 与 <code>continue</code></li>
+</ol>
+<ul>
+<li>最小和已经大于 <code>target</code>：后续只会更大，直接 <code>break</code>。</li>
+<li>最大和仍小于 <code>target</code>：当前值太小，应该 <code>continue</code>。</li>
+</ul>
+
+        <h3 id="2-回溯算法（Backtracking）"   >
+          <a href="#2-回溯算法（Backtracking）" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-回溯算法（Backtracking）" class="headerlink" title="2. 回溯算法（Backtracking）"></a>2. 回溯算法（Backtracking）</h3>
+      
+        <h4 id="统一骨架"   >
+          <a href="#统一骨架" class="heading-link"><i class="fas fa-link"></i></a><a href="#统一骨架" class="headerlink" title="统一骨架"></a>统一骨架</h4>
+      <p>终止条件 -&gt; 做选择 -&gt; 递归 -&gt; 撤销选择。</p>
+
+        <h4 id="两种写法对比"   >
+          <a href="#两种写法对比" class="heading-link"><i class="fas fa-link"></i></a><a href="#两种写法对比" class="headerlink" title="两种写法对比"></a>两种写法对比</h4>
+      <ol>
+<li>值传递写法（易写易懂）</li>
+</ol>
+<ul>
+<li>形式：<code>void backtrack(int n, string path)</code></li>
+<li>递归：<code>backtrack(n, path + ch)</code></li>
+<li>特点：天然不需要手动撤销，代码直观。</li>
+<li>代价：频繁拷贝字符串，适合 $n$ 很小（如 $n \le 10$）。</li>
+</ul>
+<ol start="2">
+<li>引用传递写法（面试主流）</li>
+</ol>
+<ul>
+<li>形式：<code>void backtrack(int n, string&amp; path)</code></li>
+<li>必须严格遵循：加入字符 -&gt; 递归 -&gt; <code>pop_back()</code>。</li>
+<li>特点：性能更好，适合规模更大的搜索。</li>
+</ul>
+
+        <h3 id="3-哈希表优化思路"   >
+          <a href="#3-哈希表优化思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-哈希表优化思路" class="headerlink" title="3. 哈希表优化思路"></a>3. 哈希表优化思路</h3>
+      
+        <h4 id="思路一：分组哈希（降维）"   >
+          <a href="#思路一：分组哈希（降维）" class="heading-link"><i class="fas fa-link"></i></a><a href="#思路一：分组哈希（降维）" class="headerlink" title="思路一：分组哈希（降维）"></a>思路一：分组哈希（降维）</h4>
+      <ul>
+<li>典型题：四数相加 II（四个独立数组）。</li>
+<li>做法：前两数组求和计数，后两数组查补数 <code>0 - c - d</code>。</li>
+<li>复杂度从 $O(n^4)$ 降为 $O(n^2)$。</li>
+</ul>
+
+        <h4 id="思路二：能用定长数组就别用哈希"   >
+          <a href="#思路二：能用定长数组就别用哈希" class="heading-link"><i class="fas fa-link"></i></a><a href="#思路二：能用定长数组就别用哈希" class="headerlink" title="思路二：能用定长数组就别用哈希"></a>思路二：能用定长数组就别用哈希</h4>
+      <ul>
+<li>当键空间很小且固定（如 26 个小写字母）时，优先 <code>int hash[26] = &#123;0&#125;;</code>。</li>
+<li>数组访问常数更小、内存连续、实现也更稳定。</li>
+</ul>
+
+        <h3 id="4-一页速记（实战决策）"   >
+          <a href="#4-一页速记（实战决策）" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-一页速记（实战决策）" class="headerlink" title="4. 一页速记（实战决策）"></a>4. 一页速记（实战决策）</h3>
+      <ul>
+<li>N 数之和：排序 + 双指针 + 分层去重 + 剪枝。</li>
+<li>回溯：小规模可值传递，大规模用引用传递并手动撤销。</li>
+<li>哈希优化：先看能否分组降维，再看能否降到定长数组。</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2026/01/04/os%E5%A4%8D%E4%B9%A0/"><span class="paginator-prev__text">os复习</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%B8%E5%BF%83%E6%98%93%E9%94%99%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">
+          一、核心易错点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E7%BB%84%E4%B8%8E%E8%B6%8A%E7%95%8C"><span class="toc-number">1.1.</span> <span class="toc-text">
+          1. 数组与越界</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">1.2.</span> <span class="toc-text">
+          2. 输入输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%80%89%E6%8B%A9"><span class="toc-number">1.3.</span> <span class="toc-text">
+          3. 数据结构选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.4.</span> <span class="toc-text">
+          4. 边界条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%AE%97%E6%B3%95%E7%AD%96%E7%95%A5"><span class="toc-number">1.5.</span> <span class="toc-text">
+          5. 算法策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%85%A5%E4%B8%8E%E5%88%86%E8%AF%8D"><span class="toc-number">2.</span> <span class="toc-text">
+          二、字符串输入与分词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8C%89%E7%A9%BA%E7%99%BD%E8%AF%BB%E5%8F%96%E5%88%B0-EOF"><span class="toc-number">2.1.</span> <span class="toc-text">
+          1. 按空白读取到 EOF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AF%BB%E5%8F%96%E6%95%B4%E8%A1%8C%E5%90%8E%E6%8C%89%E7%A9%BA%E6%A0%BC%E5%88%87%E8%AF%8D"><span class="toc-number">2.2.</span> <span class="toc-text">
+          2. 读取整行后按空格切词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-cin-n-%E4%B8%8E-getline-%E6%B7%B7%E7%94%A8%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.3.</span> <span class="toc-text">
+          3. cin &gt;&gt; n 与 getline 混用模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%AF%94%E8%BE%83%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">
+          三、排序与比较器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-sort-Lambda"><span class="toc-number">3.1.</span> <span class="toc-text">
+          1. sort + Lambda</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BB%93%E6%9E%84%E4%BD%93%E5%86%85%E9%87%8D%E8%BD%BD"><span class="toc-number">3.2.</span> <span class="toc-text">
+          2. 结构体内重载 &lt;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81map-%E5%B8%B8%E7%94%A8%E5%86%99%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">
+          四、map&lt;int, bool&gt; 常用写法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8F%92%E5%85%A5-%E4%BF%AE%E6%94%B9"><span class="toc-number">4.1.</span> <span class="toc-text">
+          1. 插入&#x2F;修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%81%8D%E5%8E%86%EF%BC%88%E6%8E%A8%E8%8D%90%E5%86%99%E6%B3%95%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">
+          2. 遍历（推荐写法）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%8C%BA%E9%97%B4%E4%B8%8E%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">
+          五、区间与迭代器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-begin-%E4%B8%8E-end"><span class="toc-number">5.1.</span> <span class="toc-text">
+          1. begin() 与 end()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-reverse-%E5%B7%A6%E9%97%AD%E5%8F%B3%E5%BC%80"><span class="toc-number">5.2.</span> <span class="toc-text">
+          2. reverse 左闭右开</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-number">6.</span> <span class="toc-text">
+          六、格式化输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81sort-%E8%B6%8A%E7%95%8C%E4%BF%9D%E6%8A%A4"><span class="toc-number">7.</span> <span class="toc-text">
+          七、sort() 越界保护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8E%A8%E8%8D%90%EF%BC%9Amin-%E9%99%90%E5%88%B6%E5%8F%B3%E8%BE%B9%E7%95%8C"><span class="toc-number">7.1.</span> <span class="toc-text">
+          1. 推荐：min 限制右边界</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%8E-end-%E6%AF%94%E8%BE%83"><span class="toc-number">7.2.</span> <span class="toc-text">
+          2. 与 end() 比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%B0%8F%E4%B9%A0%E6%83%AF"><span class="toc-number">8.</span> <span class="toc-text">
+          八、工程化小习惯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81C-STL-%E6%A0%B8%E5%BF%83%E5%AE%B9%E5%99%A8%E5%AF%B9%E6%AF%94%E4%B8%8E%E9%80%9F%E6%9F%A5%E8%A1%A8"><span class="toc-number">9.</span> <span class="toc-text">
+          九、C++ STL 核心容器对比与速查表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%93%8D%E4%BD%9C%E9%80%9F%E8%AE%B0-%E9%80%82%E7%94%A8%E4%BA%8E%E4%BB%A5%E4%B8%8A%E6%89%80%E6%9C%89-STL-%E5%AE%B9%E5%99%A8"><span class="toc-number">9.1.</span> <span class="toc-text">
+          核心操作速记 (适用于以上所有 STL 容器)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E7%AE%97%E6%B3%95%E9%A2%98%E5%9E%8B%E5%BC%BA%E5%8C%96%EF%BC%88%E4%BB%8E-N-%E6%95%B0%E4%B9%8B%E5%92%8C%E5%BC%80%E5%A7%8B%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">
+          十、算法题型强化（从 N 数之和开始）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-N-%E6%95%B0%E4%B9%8B%E5%92%8C%E5%AE%B6%E6%97%8F%EF%BC%883Sum-4Sum%EF%BC%89"><span class="toc-number">10.1.</span> <span class="toc-text">
+          1. N 数之和家族（3Sum &#x2F; 4Sum）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B%E6%80%BB%E6%A1%86%E6%9E%B6"><span class="toc-number">10.1.1.</span> <span class="toc-text">
+          题型总框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E9%AB%98%E9%A2%91%E5%9D%91%E7%82%B9"><span class="toc-number">10.1.2.</span> <span class="toc-text">
+          四个高频坑点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%EF%BC%88Backtracking%EF%BC%89"><span class="toc-number">10.2.</span> <span class="toc-text">
+          2. 回溯算法（Backtracking）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E9%AA%A8%E6%9E%B6"><span class="toc-number">10.2.1.</span> <span class="toc-text">
+          统一骨架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%E5%AF%B9%E6%AF%94"><span class="toc-number">10.2.2.</span> <span class="toc-text">
+          两种写法对比</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%93%88%E5%B8%8C%E8%A1%A8%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="toc-number">10.3.</span> <span class="toc-text">
+          3. 哈希表优化思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%E4%B8%80%EF%BC%9A%E5%88%86%E7%BB%84%E5%93%88%E5%B8%8C%EF%BC%88%E9%99%8D%E7%BB%B4%EF%BC%89"><span class="toc-number">10.3.1.</span> <span class="toc-text">
+          思路一：分组哈希（降维）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%E4%BA%8C%EF%BC%9A%E8%83%BD%E7%94%A8%E5%AE%9A%E9%95%BF%E6%95%B0%E7%BB%84%E5%B0%B1%E5%88%AB%E7%94%A8%E5%93%88%E5%B8%8C"><span class="toc-number">10.3.2.</span> <span class="toc-text">
+          思路二：能用定长数组就别用哈希</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%B8%80%E9%A1%B5%E9%80%9F%E8%AE%B0%EF%BC%88%E5%AE%9E%E6%88%98%E5%86%B3%E7%AD%96%EF%BC%89"><span class="toc-number">10.4.</span> <span class="toc-text">
+          4. 一页速记（实战决策）</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:5244/" target="_blank" rel="noopener" data-popover="Learning Materials" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-book"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
+  var container = document.querySelector('.sidebar-ov-ha');
+  var btn = document.querySelector('.sidebar-ha-btn');
+  var img = document.querySelector('.sidebar-ha-img');
+  if (btn && img && container) {
+    btn.addEventListener('click', function() {
+      img.style.display = 'block';
+    });
+    container.addEventListener('mouseleave', function() {
+      img.style.display = 'none';
+    });
+  }
+});
+</script></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">66</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Categories</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ Untitled ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', 'Please enter characters');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><div class="aplayer-container"><link class="aplayer-secondary-style-marker" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js server="netease" type="playlist" id="2556780013" fixed="true" autoplay="false" loop="all" order="list" preload="auto" list-folded="true" list-max-height="500px" lrc-type="0"></meting-js></div><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script><script type="application/json" src="/search.json"></script><canvas id="snow" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none"></canvas><script src="/js/snow.js"></script></body></html>
