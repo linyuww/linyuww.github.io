@@ -28,7 +28,448 @@ var CONFIG = {
 };
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="linyuww's blog" type="application/atom+xml">
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/03/19/Dev-C-%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%9C%BA%E8%AF%95%E8%B0%83%E8%AF%95%E6%89%8B%E5%86%8C/">Dev-C++ 机试调试</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-03-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-03-19</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>适用场景：复试上机时使用 <code>Dev-C++</code> 编写和调试 <code>C/C++</code> 程序。<br>目标：把最常用的环境配置、调试流程、代码片段和提交前检查集中到这一份。</p>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/03/21/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">软件工程复习笔记</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-03-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-03-21</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="第一章"   >
+          <a href="#第一章" class="heading-link"><i class="fas fa-link"></i></a><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1>
+      
+        <h3 id="软件工程的特性"   >
+          <a href="#软件工程的特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#软件工程的特性" class="headerlink" title="软件工程的特性"></a>软件工程的特性</h3>
+      <p>⚫ 软件工程关注于大型程序的构造</p>
+<p>⚫ 软件工程的中心课题是控制复杂性</p>
+<p>⚫ 软件经常变化</p>
+<p>⚫ 开发软件的效率非常重要</p>
+<p>⚫ 和谐地合作是开发软件的关键</p>
+<p>⚫ 软件必须有效地支持它的用户</p>
+<p>⚫ 在软件工程领域中是由具有一种文化背景的人替具有另一种文化背景的人创造产品</p>
+
+        <h3 id="基本原理"   >
+          <a href="#基本原理" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3>
+      <p> ⚫用分阶段的生命周期计划严格管理</p>
+<p> ⚫坚持进行阶段评审</p>
+<p>⚫实行严格的产品控制</p>
+<p> ⚫采用现代程序设计技术</p>
+<p>⚫结果应能清楚地审查</p>
+<p>⚫开发小组的人员应该少而精</p>
+<p>⚫承认不断改进软件工程实践的必要性</p>
+
+        <h3 id="三要素"   >
+          <a href="#三要素" class="heading-link"><i class="fas fa-link"></i></a><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h3>
+      <p>软件工程三个要素：方法、工具、过程</p>
+
+        <h3 id="软件过程的定义"   >
+          <a href="#软件过程的定义" class="heading-link"><i class="fas fa-link"></i></a><a href="#软件过程的定义" class="headerlink" title="软件过程的定义"></a>软件过程的定义</h3>
+      <p>为了获得高质量软件所需要完成的一系列任务框架，它规定了完成各项任务的工作步骤</p>
+
+        <h3 id="四种模型"   >
+          <a href="#四种模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#四种模型" class="headerlink" title="四种模型"></a>四种模型</h3>
+      <p><strong>瀑布模型</strong>，每个阶段都经过仔细验证，应付需求变化能力较弱</p>
+<p><strong>快速原型模型</strong>，不带反馈环，开发快，过多修改容易带来版本管理的问题</p>
+<p><strong>增量模型</strong>，把软件分成一系列增量构件，当新构件集成到现有软件时，所形成的产品必须可测试。要求软件结构必须是开放的</p>
+<p><strong>螺旋模型</strong>，每个阶段都增加了风险分析，风险更小</p>
+<p><strong>喷泉模型</strong>，迭代重复演进，各阶段无明显界限。</p>
+
+        <h1 id="第二章，可行性分析"   >
+          <a href="#第二章，可行性分析" class="heading-link"><i class="fas fa-link"></i></a><a href="#第二章，可行性分析" class="headerlink" title="第二章，可行性分析"></a>第二章，可行性分析</h1>
+      <p><strong>题型</strong>：画数据流图，数据字典，成本效益分析</p>
+
+        <h3 id="可行性研究的目的和内容"   >
+          <a href="#可行性研究的目的和内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#可行性研究的目的和内容" class="headerlink" title="可行性研究的目的和内容"></a>可行性研究的目的和内容</h3>
+      <p><strong>可行性研究的目的</strong>是用最小的代价，在尽可能短的时间内确定问题是否可以解决，以及是否值得解决</p>
+<p><strong>可行性</strong>:技术可行性,经济可行性,操作可行性</p>
+
+        <h3 id="数据流图的概念（必考画图）"   >
+          <a href="#数据流图的概念（必考画图）" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据流图的概念（必考画图）" class="headerlink" title="数据流图的概念（必考画图）"></a>数据流图的概念（必考画图）</h3>
+      <p>数据流图(DFD)是一种图形化技术，它描绘信息流和数据从输入移动到输出的过程中所经受的变换</p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1644y1A79C?spm_id_from=333.788.videopod.episodes&vd_source=07ce431f0897d40efe75d8ff3761e5f6&p=4" >数据流图大题讲解</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="数据字典的概念，和数据流图的关系，表示方法"   >
+          <a href="#数据字典的概念，和数据流图的关系，表示方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据字典的概念，和数据流图的关系，表示方法" class="headerlink" title="数据字典的概念，和数据流图的关系，表示方法"></a>数据字典的概念，和数据流图的关系，表示方法</h3>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hc41147R2/?spm_id_from=333.337.search-card.all.click&vd_source=07ce431f0897d40efe75d8ff3761e5f6" >软件工程速成之数据字典例题讲解</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p><strong>概念</strong>：数据的信息的集合，也就是对数据流图中所包含的所有元素的定义的集合通常采用半形式化方法表达。</p>
+<p>数据字典与数据流图配合，能清楚地表达数据处理的要求</p>
+
+        <h3 id="成本-效益分析"   >
+          <a href="#成本-效益分析" class="heading-link"><i class="fas fa-link"></i></a><a href="#成本-效益分析" class="headerlink" title="成本&#x2F;效益分析"></a>成本&#x2F;效益分析</h3>
+      
+        <h1 id="第三章，需求分析"   >
+          <a href="#第三章，需求分析" class="heading-link"><i class="fas fa-link"></i></a><a href="#第三章，需求分析" class="headerlink" title="第三章，需求分析"></a>第三章，需求分析</h1>
+      <p><strong>相关题型：简答题，画ER图，画状态转换图，其余简答题</strong></p>
+<p>需求分析是生命周期模型中定义阶段的最后一个步骤的工作</p>
+
+        <h3 id="结构化分析方法SA：分析系统数据流"   >
+          <a href="#结构化分析方法SA：分析系统数据流" class="heading-link"><i class="fas fa-link"></i></a><a href="#结构化分析方法SA：分析系统数据流" class="headerlink" title="结构化分析方法SA：分析系统数据流"></a>结构化分析方法SA：分析系统数据流</h3>
+      <p>SA的描述工具：</p>
+<p>1.分层的数据流图</p>
+<p>2.数据词典</p>
+<p>3.描述加工逻辑的结构化语言，判定图或判定树</p>
+
+        <h3 id="需求分析阶段任务"   >
+          <a href="#需求分析阶段任务" class="heading-link"><i class="fas fa-link"></i></a><a href="#需求分析阶段任务" class="headerlink" title="需求分析阶段任务"></a>需求分析阶段任务</h3>
+      
+        <h4 id="确定对系统的综合要求"   >
+          <a href="#确定对系统的综合要求" class="heading-link"><i class="fas fa-link"></i></a><a href="#确定对系统的综合要求" class="headerlink" title="确定对系统的综合要求"></a>确定对系统的综合要求</h4>
+      <p>功能需求，性能需求，可靠性和可用性需求，出错处理需求，接口需求，约束（精度；工具和语言约束；设计约束；应该使用的标准；应该使用的硬件平台。），逆向需求，未来可能的扩充要求</p>
+
+        <h4 id="分析系统的数据要求"   >
+          <a href="#分析系统的数据要求" class="heading-link"><i class="fas fa-link"></i></a><a href="#分析系统的数据要求" class="headerlink" title="分析系统的数据要求"></a>分析系统的数据要求</h4>
+      <p>建立概念性的数据模型（ER图），形象描绘数据结构（层次方框图，Warnier图，IPO图），数据结构规范化</p>
+
+        <h4 id="导出系统的逻辑模型"   >
+          <a href="#导出系统的逻辑模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#导出系统的逻辑模型" class="headerlink" title="导出系统的逻辑模型"></a>导出系统的逻辑模型</h4>
+      <p>导出系统的逻辑模型（DFD+DD+IPO）</p>
+
+        <h4 id="修正系统开发计划"   >
+          <a href="#修正系统开发计划" class="heading-link"><i class="fas fa-link"></i></a><a href="#修正系统开发计划" class="headerlink" title="修正系统开发计划"></a>修正系统开发计划</h4>
+      <p>修正系统开发计划（重估成本，进度）</p>
+
+        <h3 id="与用户沟通获取需求的方法"   >
+          <a href="#与用户沟通获取需求的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#与用户沟通获取需求的方法" class="headerlink" title="与用户沟通获取需求的方法"></a>与用户沟通获取需求的方法</h3>
+      <p>访谈，面向数据流自顶向下求精（沿数据流图（DFD）回溯，用户复查， 细化数据流图（DFD）），简易的应用规格说明技术，快速建立软件原型</p>
+
+        <h3 id="面向过程的分析方法主要是建立三类模型"   >
+          <a href="#面向过程的分析方法主要是建立三类模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#面向过程的分析方法主要是建立三类模型" class="headerlink" title="面向过程的分析方法主要是建立三类模型"></a>面向过程的分析方法主要是建立三类模型</h3>
+      <p>模型核心：数据字典</p>
+<p>数据模型：E-R图表达</p>
+<p>功能模型：DFD表达</p>
+<p>行为模型：状态转换图</p>
+
+        <h3 id="需求分析的产品是什么"   >
+          <a href="#需求分析的产品是什么" class="heading-link"><i class="fas fa-link"></i></a><a href="#需求分析的产品是什么" class="headerlink" title="需求分析的产品是什么"></a>需求分析的产品是什么</h3>
+      <p>编制需求分析阶段的文档</p>
+<p>⚫ 需求规格说明书，作为分析阶段最终成果，<strong>是需求分析阶段得出的最主要的文档</strong></p>
+<p>⚫ 数据要求说明书</p>
+<p>⚫ 初步的用户手册</p>
+<p>⚫ 修改、完善与确定软件开发实施计划</p>
+
+        <h3 id="软件需求规格说明书的内容"   >
+          <a href="#软件需求规格说明书的内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#软件需求规格说明书的内容" class="headerlink" title="软件需求规格说明书的内容"></a>软件需求规格说明书的内容</h3>
+      <p>通常用自然语言完整、准确、具体地描述系统的数据要求、功能需求、性能需求、可靠性和可用性要求、出错处理需求、接口需求、约束、逆向需求以及将来可能提出的要求。</p>
+
+        <h3 id="常使用的图形工具"   >
+          <a href="#常使用的图形工具" class="heading-link"><i class="fas fa-link"></i></a><a href="#常使用的图形工具" class="headerlink" title="常使用的图形工具"></a>常使用的图形工具</h3>
+      
+        <h4 id="实体-联系图（和数据库里的一样）"   >
+          <a href="#实体-联系图（和数据库里的一样）" class="heading-link"><i class="fas fa-link"></i></a><a href="#实体-联系图（和数据库里的一样）" class="headerlink" title="实体-联系图（和数据库里的一样）"></a>实体-联系图（和数据库里的一样）</h4>
+      
+        <h4 id="状态转换图"   >
+          <a href="#状态转换图" class="heading-link"><i class="fas fa-link"></i></a><a href="#状态转换图" class="headerlink" title="状态转换图"></a>状态转换图</h4>
+      <p>通过描绘系统的状态及引起系统状态转换的事件，来表示系统的行为</p>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ar4y1t7XP/?spm_id_from=333.337.search-card.all.click&vd_source=07ce431f0897d40efe75d8ff3761e5f6" >软件工程数据流图，状态转换图速通教程</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h1 id="第五章，总体设计"   >
+          <a href="#第五章，总体设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#第五章，总体设计" class="headerlink" title="第五章，总体设计"></a>第五章，总体设计</h1>
+      <p>题型：给数据流图画结构图</p>
+
+        <h2 id="总体设计的任务"   >
+          <a href="#总体设计的任务" class="heading-link"><i class="fas fa-link"></i></a><a href="#总体设计的任务" class="headerlink" title="总体设计的任务"></a>总体设计的任务</h2>
+      <p>将系统划分成模块结构形式，决定每个模块要完成的功能，每个模块之间的调用关系，决定模块接口。</p>
+<p>1.设想供选择的方案</p>
+<p>2.选取合理的方案</p>
+<p>⚫ 数据流程图</p>
+<p>⚫ 组成系统的物理元素清单</p>
+<p>⚫ 成本&#x2F;效益分析</p>
+<p>⚫ 进度计划</p>
+<p>3.确定最佳方案</p>
+<p>4.功能分解</p>
+<p>5.设计软件结构（模块化思想）</p>
+<p>6.数据库设计</p>
+<p>7.制定测试计划</p>
+<p>8.书写文档</p>
+<p>⚫ 系统说明</p>
+<p>⚫ 用户手册</p>
+<p>⚫ 测试计划</p>
+<p>⚫ 详细的实施计划</p>
+<p>⚫ 数据库设计结果</p>
+<p>9.审查和复查</p>
+
+        <h2 id="模块化思想"   >
+          <a href="#模块化思想" class="heading-link"><i class="fas fa-link"></i></a><a href="#模块化思想" class="headerlink" title="模块化思想"></a>模块化思想</h2>
+      <p>自顶向下，逐步细化，抽象，逐步求精，信息隐藏和局部化，模块独立</p>
+<p>模块化就是把程序划分成<strong>独立命名且可独立访问</strong>的模块，每个模块完成一个子功能，把这些模块集成起来构成一个整体，可以完成指定的功能满足用户的需求。</p>
+
+        <h2 id="衡量模块独立的标准（内聚和耦合的含义，种类）（问答，选择）"   >
+          <a href="#衡量模块独立的标准（内聚和耦合的含义，种类）（问答，选择）" class="heading-link"><i class="fas fa-link"></i></a><a href="#衡量模块独立的标准（内聚和耦合的含义，种类）（问答，选择）" class="headerlink" title="衡量模块独立的标准（内聚和耦合的含义，种类）（问答，选择）"></a>衡量模块独立的标准（内聚和耦合的含义，种类）（问答，选择）</h2>
+      
+        <h4 id="耦合"   >
+          <a href="#耦合" class="heading-link"><i class="fas fa-link"></i></a><a href="#耦合" class="headerlink" title="耦合"></a>耦合</h4>
+      <p>是模块之间的互相连接的紧密程度的度量。</p>
+<p><strong>种类</strong>：（从低到高）非直接耦合，数据耦合，标记耦合，控制耦合，外部耦合，公共耦合，内容耦合</p>
+<p><strong>原则</strong>：尽可能使用<strong>数据耦合</strong>，少用<strong>控制耦合和特征耦合</strong>，<strong>限制</strong>公共环境耦合的范围，完全不用<strong>内容耦合</strong></p>
+
+        <h4 id="内聚"   >
+          <a href="#内聚" class="heading-link"><i class="fas fa-link"></i></a><a href="#内聚" class="headerlink" title="内聚"></a>内聚</h4>
+      <p>是模块强度（一个模块内部各个元素彼此结合的紧密程度）的度量。</p>
+<p><strong>种类</strong>：（按紧密程度从高到底排列）功能内聚，顺序内聚，通信内聚，过程内聚，时间内聚，逻辑内聚，巧合内聚。</p>
+<p>模块独立性比较强的模块应是<strong>高内聚低耦合</strong>的模块。</p>
+
+        <h2 id="启发式规则"   >
+          <a href="#启发式规则" class="heading-link"><i class="fas fa-link"></i></a><a href="#启发式规则" class="headerlink" title="启发式规则"></a>启发式规则</h2>
+      <p>1.改进软件结构提高模块独立性</p>
+<p>2.模块规模适中</p>
+<p>3.适当控制深度，宽度，扇出（一个模块直接调用控制的模块数），扇入（直接调用该模块的模块数，不破坏独立性的前提下，越大越好）</p>
+<p>4.模块的作用域应该在控制域之内</p>
+<p>5.降低模块接口的复杂程度</p>
+<p>6.单出单入，避免内容耦合</p>
+<p>7.设计功能可预测的模块，但要避免过分受限制的模块</p>
+
+        <h2 id="掌握面向数据流图的设计方法"   >
+          <a href="#掌握面向数据流图的设计方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#掌握面向数据流图的设计方法" class="headerlink" title="掌握面向数据流图的设计方法"></a>掌握面向数据流图的设计方法</h2>
+      <p><strong>解决的任务</strong>，就是将软件需求分析阶段生成的逻辑模型数据流图映射（Mapping）成表达软件系统结构的软件结构图</p>
+<p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20241129164607279.png" alt="image-20241129164607279"></p>
+<p><img src="C:/Users/86147/AppData/Roaming/Typora/typora-user-images/image-20241129164619780.png" alt="image-20241129164619780"></p>
+
+        <h1 id="第六章，详细设计"   >
+          <a href="#第六章，详细设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#第六章，详细设计" class="headerlink" title="第六章，详细设计"></a>第六章，详细设计</h1>
+      <p>考简答，<strong>画NS图，PAD图</strong>，<strong>判定树，判定表</strong>，<strong>计算复杂度</strong>，jackson方法</p>
+
+        <h3 id="详细设计的基本任务"   >
+          <a href="#详细设计的基本任务" class="heading-link"><i class="fas fa-link"></i></a><a href="#详细设计的基本任务" class="headerlink" title="详细设计的基本任务"></a>详细设计的基本任务</h3>
+      <p>结构程序设计，人机界面程序设计</p>
+
+        <h3 id="程序的五种控制结构"   >
+          <a href="#程序的五种控制结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#程序的五种控制结构" class="headerlink" title="程序的五种控制结构"></a>程序的五种控制结构</h3>
+      <p>五种控制结构：顺序结构，选择结构，先判断循环结构，后判断循环结构，多选择结构</p>
+
+        <h3 id="详细设计的工具，之间的转换"   >
+          <a href="#详细设计的工具，之间的转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#详细设计的工具，之间的转换" class="headerlink" title="详细设计的工具，之间的转换"></a>详细设计的工具，之间的转换</h3>
+      
+        <h4 id="图形工具：程序流程图、盒图（N-S图）、PAD图"   >
+          <a href="#图形工具：程序流程图、盒图（N-S图）、PAD图" class="heading-link"><i class="fas fa-link"></i></a><a href="#图形工具：程序流程图、盒图（N-S图）、PAD图" class="headerlink" title="图形工具：程序流程图、盒图（N-S图）、PAD图"></a>图形工具：<strong>程序流程图</strong>、<strong>盒图（N-S图）</strong>、PAD图</h4>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1644y1A79C?spm_id_from=333.788.videopod.episodes&vd_source=07ce431f0897d40efe75d8ff3761e5f6&p=3" >NS图例题</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h4 id="表格工具：判定表、判定树"   >
+          <a href="#表格工具：判定表、判定树" class="heading-link"><i class="fas fa-link"></i></a><a href="#表格工具：判定表、判定树" class="headerlink" title="表格工具：判定表、判定树"></a>表格工具：判定表、判定树</h4>
+      
+        <h3 id="Jackson方法"   >
+          <a href="#Jackson方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#Jackson方法" class="headerlink" title="Jackson方法"></a>Jackson方法</h3>
+      
+        <h3 id="McCabe方法计算复杂度"   >
+          <a href="#McCabe方法计算复杂度" class="heading-link"><i class="fas fa-link"></i></a><a href="#McCabe方法计算复杂度" class="headerlink" title="McCabe方法计算复杂度"></a>McCabe方法计算复杂度</h3>
+      <p>程序环形复杂性计算方法（三种）：</p>
+<p>(1)流图中<strong>区域的数量</strong>对应于环形复杂度</p>
+<p>(2)给定流图G的环形复杂度V(G)，定义为<strong>V(G)&#x3D;E-N+2</strong>，E是流图中边的数量，N是流图中结点的数量。</p>
+<p>(3)<strong>V(G)&#x3D;P+1</strong>，P是流图G中的判定结点数。</p>
+
+        <h1 id="第七章，实现"   >
+          <a href="#第七章，实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#第七章，实现" class="headerlink" title="第七章，实现"></a>第七章，实现</h1>
+      <p><strong>题型：设计测试样例</strong></p>
+
+        <h3 id="选择程序设计语言应该考虑哪些因素"   >
+          <a href="#选择程序设计语言应该考虑哪些因素" class="heading-link"><i class="fas fa-link"></i></a><a href="#选择程序设计语言应该考虑哪些因素" class="headerlink" title="选择程序设计语言应该考虑哪些因素"></a>选择程序设计语言应该考虑哪些因素</h3>
+      <hr>
+<p>一般情况下高级语言优于汇编语言</p>
+<p>• 系统用户的要求</p>
+<p>• 可以使用的编译程序</p>
+<p>• 可以得到的软件工具</p>
+<p>• 工程规模</p>
+<p>• 程序员的知识</p>
+<p>• 软件可移植性要求</p>
+<p>• 软件的应用领域</p>
+
+        <h3 id="良好的编程风格应该包括哪些方面"   >
+          <a href="#良好的编程风格应该包括哪些方面" class="heading-link"><i class="fas fa-link"></i></a><a href="#良好的编程风格应该包括哪些方面" class="headerlink" title="良好的编程风格应该包括哪些方面"></a>良好的编程风格应该包括哪些方面</h3>
+      <hr>
+<p> 程序实际上也是一种供人阅读的文章，有一个文章的风格问题。应该使程序具有良好的风格</p>
+<p>⚫ 源程序文档化（标识符、注解、视觉效果等）</p>
+<p>⚫ 数据说明</p>
+<p>⚫ 语句结构（简单、直接）</p>
+<p>⚫ 输入&#x2F;输出方法</p>
+<p>⚫ 效率（程序运行时间、存储器效率、输入&#x2F;输出效率）</p>
+
+        <h3 id="软件测试的目的"   >
+          <a href="#软件测试的目的" class="heading-link"><i class="fas fa-link"></i></a><a href="#软件测试的目的" class="headerlink" title="软件测试的目的"></a>软件测试的目的</h3>
+      <hr>
+<p>目标：以尽可能小的代价，发现尽可能多的错误</p>
+<p>尽可能多地发现并排除软件中潜藏的错误，最终把一个高质量的软件系统交给用户使用</p>
+
+        <h3 id="初步-测试计划是在哪个阶段制定的"   >
+          <a href="#初步-测试计划是在哪个阶段制定的" class="heading-link"><i class="fas fa-link"></i></a><a href="#初步-测试计划是在哪个阶段制定的" class="headerlink" title="初步 测试计划是在哪个阶段制定的"></a>初步 测试计划是在哪个阶段制定的</h3>
+      <hr>
+<p>一旦完成了需求模型就可以着手制定测试计划，在建立了设计模型之后就可以立即开始设计详细的测试方案</p>
+
+        <h3 id="黑盒测试和白盒测试的概念（问答题必考设计测试样例）"   >
+          <a href="#黑盒测试和白盒测试的概念（问答题必考设计测试样例）" class="heading-link"><i class="fas fa-link"></i></a><a href="#黑盒测试和白盒测试的概念（问答题必考设计测试样例）" class="headerlink" title="黑盒测试和白盒测试的概念（问答题必考设计测试样例）"></a><strong>黑盒测试和白盒测试的概念</strong>（问答题必考设计测试样例）</h3>
+      <hr>
+<p>黑盒测试是把程序看成一个黑盒子，完全不考虑程序内部结构和处理过程的测试——功能测试</p>
+<p>白盒测试是对程序的执行细节进行测试，通过设计测试数据，验证程序模块的每个路径的执行情况——结构测试</p>
+
+        <h3 id="测试步骤（5个）以及与之相关的文档"   >
+          <a href="#测试步骤（5个）以及与之相关的文档" class="heading-link"><i class="fas fa-link"></i></a><a href="#测试步骤（5个）以及与之相关的文档" class="headerlink" title="测试步骤（5个）以及与之相关的文档"></a>测试步骤（5个）以及与之相关的文档</h3>
+      <hr>
+<p> 软件测试的步骤</p>
+<p>⚫ 模块测试（单元测试）——程序设计&amp;代码bugs </p>
+<p>⚫ 子系统测试——测试模块的接口</p>
+<p>⚫ 系统测试——需求确认&amp;系统设计</p>
+<p>⚫ 验收测试——用户加入</p>
+<p>⚫ 平行运行——新旧系统比较运行结果</p>
+
+        <h3 id="单元测试的方法"   >
+          <a href="#单元测试的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#单元测试的方法" class="headerlink" title="单元测试的方法"></a>单元测试的方法</h3>
+      <hr>
+<p>代码审查，计算机测试</p>
+<p><strong>测试重点</strong></p>
+<p>1.模块接口测试</p>
+<p>2.局部数据结构测试</p>
+<p>3.路径测试</p>
+<p>4.错误处理测试</p>
+<p>5.边界测试</p>
+
+        <h3 id="渐增式与非渐增式的区别"   >
+          <a href="#渐增式与非渐增式的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#渐增式与非渐增式的区别" class="headerlink" title="渐增式与非渐增式的区别"></a>渐增式与非渐增式的区别</h3>
+      <hr>
+<p>模块组装成系统的两种方式</p>
+<p><strong>非渐增式测试</strong>：</p>
+<p>首先对<strong>每个模块分别</strong>进行模块测试，然后再把所有模块组装在一起进行测试，最终得到要求的软件系统</p>
+<p><strong>渐增式测试</strong>：</p>
+<p>首先对一个个模块进行模块测试，然后将这些模块逐步组装成较大的系统。</p>
+<p>在组装的过程中<strong>边连接边测试</strong>，以发现连接过程中产生的问题。通过渐增逐步组装成要求的软件系统。</p>
+<p>分为自顶向下和自底向上两种方法</p>
+<p><strong>比较</strong>：</p>
+<p><strong>渐增式测试</strong>可以<strong>较早</strong>发现模块间的接口错误，非渐增式测试最后才组装，因此错误发现得晚。</p>
+<p><strong>非渐增式测试</strong>中发现错误后<strong>难以诊断定位</strong>，渐增式测试中，出现的错误往往跟最新加入的模块有关</p>
+<p><strong>渐增式测试</strong>在不断集成的过程中使模块不断在新的条件下受到新的检测，<strong>测试更彻底</strong>。</p>
+<p><strong>渐增式测试</strong>较非渐增式测试<strong>费时</strong>，非渐增式测试可以同时并行测试所有模块，能充分利用人力。</p>
+
+        <h3 id="自顶向下，自下而上，以及混合策略的优缺点"   >
+          <a href="#自顶向下，自下而上，以及混合策略的优缺点" class="heading-link"><i class="fas fa-link"></i></a><a href="#自顶向下，自下而上，以及混合策略的优缺点" class="headerlink" title="自顶向下，自下而上，以及混合策略的优缺点"></a>自顶向下，自下而上，以及混合策略的优缺点</h3>
+      <hr>
+<p><strong>1.自顶向下集成</strong></p>
+<p>优点：在早期即对主要控制及关键的抉择进行检验</p>
+<p>问题：Stub只是对低层模块的模拟，测试时没有重要的数据自下往上流，许多重要的测试须推迟进行，而且在早期不能充分展开人力</p>
+<p><strong>2.自底向上集成</strong>（相反）</p>
+<p>优点：模块自底向上组装，不需要桩模块，重要数据自下往上流动，可以提前完成重要测试，充分展开人力</p>
+<p>缺点：不可以在早期就对主要控制进行检验</p>
+<p><strong>3.混合集成测试</strong> 兼具二者优点</p>
+<p>改善的自顶向下测试，早期使用自底向上测试一些关键模块，其他一样</p>
+<p>混合法：较下层采用自底向上，较上层采用自顶向下</p>
+
+        <h3 id="确认测试"   >
+          <a href="#确认测试" class="heading-link"><i class="fas fa-link"></i></a><a href="#确认测试" class="headerlink" title="确认测试"></a>确认测试</h3>
+      <hr>
+<p>确认测试又称验收测试，任务是验证软件的功能和性能及其他特性是否与用户的要求一致。</p>
+<p>对软件的功能和性能要求在软件需求规格说明。书中已经明确规定，它包含的信息就是软件确认测试的基础</p>
+<p>确认测试应交付的文档有：</p>
+<p>⚫ 确认测试分析报告⚫ 最终的用户手册和操作手册⚫ 项目开发总结报告</p>
+
+        <h3 id="白盒测试技术（覆盖标准，基本路径）"   >
+          <a href="#白盒测试技术（覆盖标准，基本路径）" class="heading-link"><i class="fas fa-link"></i></a><a href="#白盒测试技术（覆盖标准，基本路径）" class="headerlink" title="白盒测试技术（覆盖标准，基本路径）"></a>白盒测试技术（覆盖标准，基本路径）</h3>
+      <hr>
+<p><strong>每条路径对应表达式都写出来，表达式是给分关键</strong></p>
+<p>⚫语句覆盖（点覆盖）：每个语句至少执行一次</p>
+<p>⚫ 判定覆盖（边界覆盖）：在语句覆盖的基础上，每个判定的每个分支至少执行一次</p>
+<p>⚫ 条件覆盖：在语句覆盖的基础上，使每个判定表达式的每个条件都取到各种可能的结果</p>
+<p>⚫ 判定&#x2F;条件覆盖：即判定覆盖并条件覆盖</p>
+<p>⚫ 条件组合覆盖：每个判定条件表达式中条件的各种可能组合都至少出现一次</p>
+<p>⚫ 路径覆盖</p>
+
+        <h3 id="黑盒测试技术（等级划分，边界值分析）"   >
+          <a href="#黑盒测试技术（等级划分，边界值分析）" class="heading-link"><i class="fas fa-link"></i></a><a href="#黑盒测试技术（等级划分，边界值分析）" class="headerlink" title="黑盒测试技术（等级划分，边界值分析）"></a>黑盒测试技术（等级划分，边界值分析）</h3>
+      <p><strong>最好画个表</strong></p>
+<p>等价划分，错误推测</p>
+<p>边界值分析，对等价类划分的补充</p>
+
+        <h3 id="软件调试技术有哪些"   >
+          <a href="#软件调试技术有哪些" class="heading-link"><i class="fas fa-link"></i></a><a href="#软件调试技术有哪些" class="headerlink" title="软件调试技术有哪些"></a>软件调试技术有哪些</h3>
+      <p>蛮干法:强行排错</p>
+<p>回溯法:一旦发现了错误，人们先分析错误征兆，确定最先发现“征兆”的位置</p>
+<p>原因排除法：</p>
+<p>1.归纳法</p>
+<p>2.演绎法调试</p>
+<p>3.对分查找法</p>
+
+        <h3 id="软件可靠性（可靠性和可用性的含义）"   >
+          <a href="#软件可靠性（可靠性和可用性的含义）" class="heading-link"><i class="fas fa-link"></i></a><a href="#软件可靠性（可靠性和可用性的含义）" class="headerlink" title="软件可靠性（可靠性和可用性的含义）"></a>软件可靠性（可靠性和可用性的含义）</h3>
+      <p>可靠性（Reliability）</p>
+<p>• 程序在给定的时间间隔内，按照说明书的规定，成<br>功地运行的概率</p>
+<p>可用性（Usability）</p>
+<p>• 程序在给定的时间点，按照说明书的规定，成功地<br>运行的概率</p>
+
+        <h1 id="第八章，维护"   >
+          <a href="#第八章，维护" class="heading-link"><i class="fas fa-link"></i></a><a href="#第八章，维护" class="headerlink" title="第八章，维护"></a>第八章，维护</h1>
+      
+        <h3 id="什么是维护"   >
+          <a href="#什么是维护" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是维护" class="headerlink" title="什么是维护"></a>什么是维护</h3>
+      <p>软件维护就是在软件已经交付使用之后，为了改正错误或满足新的需要而修改软件的过程</p>
+<p> 维护的类型</p>
+<p>⚫ 改正性维护（Corrective Maintenance）</p>
+<p>⚫ 预防性维护（Preventive Maintenance）</p>
+<p>⚫ 适应性维护（Adaptive Maintenance）</p>
+<p>⚫ 完善性维护（Perfective Maintenance）</p>
+
+        <h3 id="决定软件可维护性的因素"   >
+          <a href="#决定软件可维护性的因素" class="heading-link"><i class="fas fa-link"></i></a><a href="#决定软件可维护性的因素" class="headerlink" title="决定软件可维护性的因素"></a>决定软件可维护性的因素</h3>
+      <p>可理解性: 是指由文档代码理解功能运行的容易程度</p>
+<p>可测试性:是指论证程序正确性的容易程度。</p>
+<p>可修改性:是指程序容易修改的程度</p>
+<p>可靠性</p>
+<p>可移植性:表明程序转移到一个新的计算环境的可能性的大小</p>
+<p>可使用性：定义为程序方便、实用、及易于使用的程度</p>
+<p>效率:是指程序能执行预定义功能，而又不浪费机器<br>资源的程度</p>
+
+        <h3 id="文档"   >
+          <a href="#文档" class="heading-link"><i class="fas fa-link"></i></a><a href="#文档" class="headerlink" title="文档"></a>文档</h3>
+      <p>⚫ 影响可维护性的决定因素，比代码更重要</p>
+<p>⚫ 用户文档</p>
+<p>• 功能描述——说明系统能做什么</p>
+<p>• 安装文档——说明安装系统的方法及适应特定的硬件配置的方法</p>
+<p>• 使用手册——说明使用方法以及错误挽救方法</p>
+<p>• 参考手册——详尽描述用户可使用的所有系统设施以及他们的使用方法，给出错误信息注解表</p>
+<p>• 操作员指南（如果需要有系统操作员的话）——说明操作员处理使用中出现的各种情况的方法</p>
+<p>⚫ 系统文档</p>
+<p>• 即软件生产过程中每一步产生的文档</p>
+
+        <h3 id="维护是软件生命周期中所花费用最多的阶段"   >
+          <a href="#维护是软件生命周期中所花费用最多的阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#维护是软件生命周期中所花费用最多的阶段" class="headerlink" title="维护是软件生命周期中所花费用最多的阶段"></a>维护是软件生命周期中所花费用最多的阶段</h3>
+      <p>软件维护活动所花费的工作占整个生存期工作量的70%以上，维护成本约为开发成本的4倍（满足8-2原则）</p>
+
+        <h1 id="第九-十二章-面向对象软件工程（考察较少）"   >
+          <a href="#第九-十二章-面向对象软件工程（考察较少）" class="heading-link"><i class="fas fa-link"></i></a><a href="#第九-十二章-面向对象软件工程（考察较少）" class="headerlink" title="第九~十二章 面向对象软件工程（考察较少）"></a>第九~十二章 面向对象软件工程（考察较少）</h1>
+      
+        <h3 id="几个概念：类，对象，继承，消息，属性，实例，多态性，重载"   >
+          <a href="#几个概念：类，对象，继承，消息，属性，实例，多态性，重载" class="heading-link"><i class="fas fa-link"></i></a><a href="#几个概念：类，对象，继承，消息，属性，实例，多态性，重载" class="headerlink" title="几个概念：类，对象，继承，消息，属性，实例，多态性，重载"></a>几个概念：类，对象，继承，消息，属性，实例，多态性，重载</h3>
+      
+        <h3 id="面向对象的方法-4个要素"   >
+          <a href="#面向对象的方法-4个要素" class="heading-link"><i class="fas fa-link"></i></a><a href="#面向对象的方法-4个要素" class="headerlink" title="面向对象的方法(4个要素)"></a>面向对象的方法(4个要素)</h3>
+      <p><strong>OOM&#x3D;对象+类+继承+消息</strong></p>
+<p>对象(object)：客观世界由对象组成。</p>
+<p>⚫ 类 (class) ：对象可划分为类；单个对象可视为某一类的实例 (instance)。</p>
+<p>⚫ 继承(inheritance)：类可分层，下层子类与上层父类有相同特征，称为继承。</p>
+<p>⚫ 消息(message)：对象间只能通过发送消息进行联系，外界不能处理对象的内部数据，只能通过消息请求它进行处理（如果它提供相应消息的话）。</p>
+
+        <h3 id="面向对象方法的优点"   >
+          <a href="#面向对象方法的优点" class="heading-link"><i class="fas fa-link"></i></a><a href="#面向对象方法的优点" class="headerlink" title="面向对象方法的优点"></a>面向对象方法的优点</h3>
+      <p>① 与人类习惯的思维方式一致</p>
+<p>②面向对象软件稳定性好</p>
+<p>③ 面向对象软件可重用性好</p>
+<p>④ 较易开发大型软件产品</p>
+<p>⑤ 面向对象软件可维护性好</p>
+
+        <h3 id="面向对象建模的三个模型，以及之间的关系"   >
+          <a href="#面向对象建模的三个模型，以及之间的关系" class="heading-link"><i class="fas fa-link"></i></a><a href="#面向对象建模的三个模型，以及之间的关系" class="headerlink" title="面向对象建模的三个模型，以及之间的关系"></a>面向对象建模的三个模型，以及之间的关系</h3>
+      <p>面向对象分析模型由3个独立模型组成：</p>
+<p>⚫ 对象模型：最重要，开发任何系统都需要，</p>
+<p>• 描述静态结构，定义做事情实体，用类图和对象图表示</p>
+<p>⚫ 动态模型：对于开发交互式系统（interactive system）很重要</p>
+<p>• 描述交互过程，由状态图和顺序图表示</p>
+<p>⚫ 功能模型：对于开发大运算量问题（如科学计算、编译系统等）很重要</p>
+<p>• 指明系统应“做什么”，由用例图表示</p>
+
+        <h3 id="面向对象设计时要设计哪些子系统，及各个子系统的作用"   >
+          <a href="#面向对象设计时要设计哪些子系统，及各个子系统的作用" class="heading-link"><i class="fas fa-link"></i></a><a href="#面向对象设计时要设计哪些子系统，及各个子系统的作用" class="headerlink" title="面向对象设计时要设计哪些子系统，及各个子系统的作用"></a>面向对象设计时要设计哪些子系统，及各个子系统的作用</h3>
+      <p><strong>问题域子系统，人机交互子系统，任务管理子系统，数据管理子系统</strong></p>
+<p>问题域：直接负责实现客户需求子系统</p>
+<p>人机交互：实现用户界面子系统包括可复用的GUI子系统</p>
+<p>任务管理：确定各类任务，把任务分配给适当的硬件或软件去执行</p>
+<p>数据管理：负责对象的存储和检索的子系统</p>
+
+        <h3 id="CMM等级划分（了解，选择题）"   >
+          <a href="#CMM等级划分（了解，选择题）" class="heading-link"><i class="fas fa-link"></i></a><a href="#CMM等级划分（了解，选择题）" class="headerlink" title="CMM等级划分（了解，选择题）"></a>CMM等级划分（了解，选择题）</h3>
+      <p>(1)初始级</p>
+<p>(2)可重复级</p>
+<p>(3)已定义级</p>
+<p>(4)已管理级</p>
+<p>(5)优化级</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/03/19/Dev-C-%E6%93%8D%E4%BD%9C%E4%B8%8E%E6%9C%BA%E8%AF%95%E8%B0%83%E8%AF%95%E6%89%8B%E5%86%8C/">Dev-C++ 机试调试</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-03-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-03-19</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>适用场景：复试上机时使用 <code>Dev-C++</code> 编写和调试 <code>C/C++</code> 程序。<br>目标：把最常用的环境配置、调试流程、代码片段和提交前检查集中到这一份。</p>
 
         <h2 id="1-先把环境配对"   >
           <a href="#1-先把环境配对" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-先把环境配对" class="headerlink" title="1. 先把环境配对"></a>1. 先把环境配对</h2>
@@ -1630,18 +2071,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <li><strong>需要快速查找，不关心顺序</strong>：优先选择哈希容器，比如 <code>unordered_set</code> 和 <code>unordered_map</code>。</li>
 <li><strong>使用栈或队列模型</strong>：考虑 <code>stack</code>、<code>queue</code> 或 <code>priority_queue</code>。</li>
 </ol>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98/">其他问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="Mysql问题"   >
-          <a href="#Mysql问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#Mysql问题" class="headerlink" title="Mysql问题"></a>Mysql问题</h2>
-      <p> 说一说事物隔离级别 </p>
-<p>SQL标准的事务隔离级别包括：</p>
-<p>读未提交，读提交，可重复读，串行化</p>
-<p> 事务的四大特性有哪些？ </p>
-<p>原子性，一致性，隔离性，持久性</p>
-
-        <h2 id="Linux系统目录"   >
-          <a href="#Linux系统目录" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux系统目录" class="headerlink" title="Linux系统目录"></a>Linux系统目录</h2>
-      <p><img src="/images/linux_folder.webp" alt="目录2" title="linux系统文件夹"></p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%85%B3%E4%BA%8E%E9%A1%B9%E7%9B%AE/">关于项目</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>项目背景： 设计并实现了一个基于 Linux 平台的轻量级 HTTP 服务器，采用<strong>多 Reactor 多线程</strong>高并发模型，通过 <strong>epoll 提供高效的 I&#x2F;O 复用</strong>。结合<strong>自动增长缓冲区</strong>、<strong>定时器和异步日志</strong>等技术，实现了高性能和稳定运行的目标。 </p>
 <p>主要工作  </p>
 <p>内存优化：设计了<strong>内存池和 LFU 缓存</strong>，减少内存碎片，提升内存使用效率。  </p>
@@ -1798,14 +2227,18 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 <p><img   src="https://cdn.nlark.com/yuque/0/2025/png/47188040/1737792284038-49feb6bc-6920-4e1c-9c4a-516ffee44982.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_26,text_5Luj56CB6ZqP5oOz5b2V55-l6K-G5pif55CD,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" style="width: image/watermark,type_d3F5LW1pY3JvaGVp,size_26,tepx;height: t_5Luj56CB6ZqP5oOz5b2V55-l6K-G5pif55CD,color_FFFFFF,shadow_50,t_80,g_se,px;"  alt="img"></p>
 <p>前端往后端写，后端往硬盘写</p>
 <p>双缓冲技术 ，写满就交换，相当于将多条日志拼接成一个大buffer传送到后端然后写入文件，减少了线程开销</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E9%97%AE%E9%A2%98/">其他项目问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="为什么服务器要以root身份启动，不能以root身份运行"   >
-          <a href="#为什么服务器要以root身份启动，不能以root身份运行" class="heading-link"><i class="fas fa-link"></i></a><a href="#为什么服务器要以root身份启动，不能以root身份运行" class="headerlink" title="为什么服务器要以root身份启动，不能以root身份运行"></a>为什么服务器要以root身份启动，不能以root身份运行</h3>
-      <p>为什么要以 root 启动？</p>
-<p>绑定低编号端口（如 80、443）。<br>配置共享内存、设备文件、调整资源等需要的高权限操作。</p>
-<p>为什么不能以 root 运行？</p>
-<p>潜在漏洞可能导致系统被完全攻破。<br>不符合最小权限原则。<br>服务隔离无法实现，其他服务可能受到影响。<br>意外操作可能导致灾难性的后果。<br>如何解决这个问题？</p>
-<p>启动时以 root 完成特权操作，然后立刻降级为普通用户运行。<br>使用 setuid() 和 setgid() 等 Linux 用户管理接口实现特权降级。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98/">其他问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="Mysql问题"   >
+          <a href="#Mysql问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#Mysql问题" class="headerlink" title="Mysql问题"></a>Mysql问题</h2>
+      <p> 说一说事物隔离级别 </p>
+<p>SQL标准的事务隔离级别包括：</p>
+<p>读未提交，读提交，可重复读，串行化</p>
+<p> 事务的四大特性有哪些？ </p>
+<p>原子性，一致性，隔离性，持久性</p>
+
+        <h2 id="Linux系统目录"   >
+          <a href="#Linux系统目录" class="heading-link"><i class="fas fa-link"></i></a><a href="#Linux系统目录" class="headerlink" title="Linux系统目录"></a>Linux系统目录</h2>
+      <p><img src="/images/linux_folder.webp" alt="目录2" title="linux系统文件夹"></p>
 </div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:5244/" target="_blank" rel="noopener" data-popover="Learning Materials" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-book"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
   var container = document.querySelector('.sidebar-ov-ha');
   var btn = document.querySelector('.sidebar-ha-btn');
@@ -1819,7 +2252,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
     });
   }
 });
-</script></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">67</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Categories</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+</script></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">68</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">Categories</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
