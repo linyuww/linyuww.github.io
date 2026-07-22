@@ -71,14 +71,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
           <a href="#问题分析：" class="heading-link"><i class="fas fa-link"></i></a><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h3>
       <p>1）当你尝试使用 systemd 命令来管理 Linux 系统上的服务的时候，之所以会报错，可能因为系统中根本就没有使用 systemd，而是使用的 SysV init (sysvinit)。</p>
 <p>2）如果你是在 windows 中通过 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=WSL&spm=1001.2101.3001.7020" >WSL</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 使用的 Ubuntu 或者 Dibian 系统，默认情况下系统使用的是 SysV 而不是 systemd。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/windows%E5%AE%89%E8%A3%85python2%E7%8E%AF%E5%A2%83/">windows安装python2环境</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-12-02</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h4 id="windows安装python2环境"   >
-          <a href="#windows安装python2环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#windows安装python2环境" class="headerlink" title="windows安装python2环境"></a>windows安装python2环境</h4>
-      <p><img src="/images/image-20240918205426825.png" alt="image-20240918205426825"></p>
-<p>安装在D盘后，不用管最后这个，之后配置环境变量</p>
-<p><img src="/images/image-20240918205806490.png" alt="image-20240918205806490"></p>
-<p><img src="/images/image-20240918210154534.png" alt="image-20240918210154534"></p>
-<p>把这两个目录添加到环境变量，之后再修改文件夹中python.exe为python2.exe</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/wsl2%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8mysql/">wsl2安装启动mysql</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><strong>wsl2安装启动mysql</strong></p>
 <p>启动</p>
 <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /etc/init.d/mysql start</span><br></pre></td></tr></table></div></figure>
@@ -110,6 +102,14 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
 <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER <span class="string">&#x27;mufeng&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>;</span><br></pre></td></tr></table></div></figure>
 
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/windows%E5%AE%89%E8%A3%85python2%E7%8E%AF%E5%A2%83/">windows安装python2环境</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-12-02</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="windows安装python2环境"   >
+          <a href="#windows安装python2环境" class="heading-link"><i class="fas fa-link"></i></a><a href="#windows安装python2环境" class="headerlink" title="windows安装python2环境"></a>windows安装python2环境</h4>
+      <p><img src="/images/image-20240918205426825.png" alt="image-20240918205426825"></p>
+<p>安装在D盘后，不用管最后这个，之后配置环境变量</p>
+<p><img src="/images/image-20240918205806490.png" alt="image-20240918205806490"></p>
+<p><img src="/images/image-20240918210154534.png" alt="image-20240918210154534"></p>
+<p>把这两个目录添加到环境变量，之后再修改文件夹中python.exe为python2.exe</p>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/wsl%E7%9A%84%E4%BB%A3%E7%90%86%E5%A6%82%E4%BD%95%E4%B8%8E%E4%B8%BB%E6%9C%BA%E5%85%B1%E4%BA%AB/">wsl的代理如何与主机共享</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>wsl的代理如何与主机共享</p>
 <p>需要拉取docker镜像，但是curl无效</p>
 <p>设置配置文件.wslconfig后仍然ping不通</p>
@@ -130,45 +130,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
 <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://qiita.com/1000k/items/8446c344f3823b04db47" >VSCode で WSL2 プロジェクトを開くと Copilot 拡張機能が応答しない #copilot - Qiita</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://stackoverflow.com/questions/78719710/copilot-is-not-working-is-wsl-remote-connection" >github - Copilot is not working is WSL remote connection? - Stack Overflow</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/">在使用wsl时，突然不能用code打开vscode</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="在使用wsl时，突然不能用code打开vscode"   >
-          <a href="#在使用wsl时，突然不能用code打开vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#在使用wsl时，突然不能用code打开vscode" class="headerlink" title="在使用wsl时，突然不能用code打开vscode"></a>在使用wsl时，突然不能用<code>code</code>打开<code>vscode</code></h2>
-      <p>加一行配置环境变量可以解决</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/mnt/c/Users/86147/AppData/Local/Programs/Microsoft VS Code/bin&quot;</span></span><br></pre></td></tr></table></div></figure>
-
-<p>但是不够优雅</p>
-<p>在 <code>/etc/wsl.conf</code> 中明确追加 PATH 配置</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = true</span><br></pre></td></tr></table></div></figure>
-
-<p>设置完以上方法后，发现还是一样因为本来就默认共享环境变量</p>
-<p>发现vscode文件路径名称<strong>有空格</strong></p>
-<p>wsl执行</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></div></figure>
-
-<p>出现</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/c/Users/86147/AppData/Local/Programs/Microsoft:VS:Code/bin</span><br></pre></td></tr></table></div></figure>
-
-<p>空格被识别成分割</p>
-<p>所以可能是更新后路径名出现了这个bug导致无法正常识别环境变量</p>
-
-        <h3 id="解决方案是用短路径"   >
-          <a href="#解决方案是用短路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方案是用短路径" class="headerlink" title="解决方案是用短路径"></a>解决方案是用短路径</h3>
-      <p>Windows 文件系统有短路径名（8.3 格式）支持，通常无空格，可以兼容在 WSL 和 Windows 下使用。你可以先找到短路径名，然后将其添加到环境变量中。</p>
-<ol>
-<li><p><strong>获取短路径名</strong>： 打开 Windows 命令提示符（cmd），输入以下命令以获取 <code>Microsoft VS Code</code> 文件夹的短路径名：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> <span class="string">&quot;C:\Users\86147\AppData\Local\Programs\&quot; /x</span></span><br></pre></td></tr></table></div></figure>
-
-<p>你可能会看到一行输出类似：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03/12/2024  09:00 AM    &lt;DIR&gt;          MICRO~1    Microsoft VS Code</span><br></pre></td></tr></table></div></figure>
-
-<p><code>MICRO~1</code> 就是此文件夹的短路径名。用这个名字可以避免空格问题。</p>
-</li>
-<li><p><strong>将短路径名添加到 PATH</strong>： 在 Windows 的环境变量设置中，将 VS Code 的路径设置为短路径格式。例如，将路径设置为：</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86147\AppData\Local\Programs\MICRO~1\bin</span><br></pre></td></tr></table></div></figure>
-
-<p>在 WSL 中，这个路径会自动被映射到 <code>/mnt/c/Users/86147/AppData/Local/Programs/MICRO~1/bin</code>，WSL 能正确解析。</p>
-</li>
-</ol>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9Fpython%E7%8E%AF%E5%A2%83%EF%BC%8C%E9%87%87%E7%94%A8%E8%BD%BB%E9%87%8F%E5%8C%96%E7%9A%84%E6%96%B9%E6%A1%88/">安装虚拟python环境，采用轻量化的方案</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="安装虚拟python环境，采用轻量化的方案"   >
           <a href="#安装虚拟python环境，采用轻量化的方案" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装虚拟python环境，采用轻量化的方案" class="headerlink" title="安装虚拟python环境，采用轻量化的方案"></a>安装虚拟python环境，采用轻量化的方案</h2>
@@ -218,6 +179,45 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
         <h3 id="总结"   >
           <a href="#总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
       <p>通过以上步骤，你可以创建一个轻量化的 Python 虚拟环境，并在其中安装所需的包。<code>venv</code> 提供了一个相对简单的方式来管理项目所需的依赖，同时保持系统 Python 环境的干净。在项目开发和测试中使用虚拟环境是良好的实践。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E5%9C%A8%E4%BD%BF%E7%94%A8wsl%E6%97%B6%EF%BC%8C%E7%AA%81%E7%84%B6%E4%B8%8D%E8%83%BD%E7%94%A8code%E6%89%93%E5%BC%80vscode/">在使用wsl时，突然不能用code打开vscode</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="在使用wsl时，突然不能用code打开vscode"   >
+          <a href="#在使用wsl时，突然不能用code打开vscode" class="heading-link"><i class="fas fa-link"></i></a><a href="#在使用wsl时，突然不能用code打开vscode" class="headerlink" title="在使用wsl时，突然不能用code打开vscode"></a>在使用wsl时，突然不能用<code>code</code>打开<code>vscode</code></h2>
+      <p>加一行配置环境变量可以解决</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$PATH</span>:/mnt/c/Users/86147/AppData/Local/Programs/Microsoft VS Code/bin&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>但是不够优雅</p>
+<p>在 <code>/etc/wsl.conf</code> 中明确追加 PATH 配置</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[interop]</span><br><span class="line">appendWindowsPath = true</span><br></pre></td></tr></table></div></figure>
+
+<p>设置完以上方法后，发现还是一样因为本来就默认共享环境变量</p>
+<p>发现vscode文件路径名称<strong>有空格</strong></p>
+<p>wsl执行</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></div></figure>
+
+<p>出现</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/c/Users/86147/AppData/Local/Programs/Microsoft:VS:Code/bin</span><br></pre></td></tr></table></div></figure>
+
+<p>空格被识别成分割</p>
+<p>所以可能是更新后路径名出现了这个bug导致无法正常识别环境变量</p>
+
+        <h3 id="解决方案是用短路径"   >
+          <a href="#解决方案是用短路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决方案是用短路径" class="headerlink" title="解决方案是用短路径"></a>解决方案是用短路径</h3>
+      <p>Windows 文件系统有短路径名（8.3 格式）支持，通常无空格，可以兼容在 WSL 和 Windows 下使用。你可以先找到短路径名，然后将其添加到环境变量中。</p>
+<ol>
+<li><p><strong>获取短路径名</strong>： 打开 Windows 命令提示符（cmd），输入以下命令以获取 <code>Microsoft VS Code</code> 文件夹的短路径名：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> <span class="string">&quot;C:\Users\86147\AppData\Local\Programs\&quot; /x</span></span><br></pre></td></tr></table></div></figure>
+
+<p>你可能会看到一行输出类似：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">03/12/2024  09:00 AM    &lt;DIR&gt;          MICRO~1    Microsoft VS Code</span><br></pre></td></tr></table></div></figure>
+
+<p><code>MICRO~1</code> 就是此文件夹的短路径名。用这个名字可以避免空格问题。</p>
+</li>
+<li><p><strong>将短路径名添加到 PATH</strong>： 在 Windows 的环境变量设置中，将 VS Code 的路径设置为短路径格式。例如，将路径设置为：</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86147\AppData\Local\Programs\MICRO~1\bin</span><br></pre></td></tr></table></div></figure>
+
+<p>在 WSL 中，这个路径会自动被映射到 <code>/mnt/c/Users/86147/AppData/Local/Programs/MICRO~1/bin</code>，WSL 能正确解析。</p>
+</li>
+</ol>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/%E6%B8%85%E7%90%86wsl%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/">清理wsl磁盘空间</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="清理wsl磁盘空间"   >
           <a href="#清理wsl磁盘空间" class="heading-link"><i class="fas fa-link"></i></a><a href="#清理wsl磁盘空间" class="headerlink" title="清理wsl磁盘空间"></a>清理wsl磁盘空间</h1>
@@ -268,7 +268,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
       <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/arvinrong/article/details/135723290" >Windows WSL2 占用磁盘空间清理释放_wsl占用空间太大-CSDN博客</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 <figure class="highlight powershell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker system prune</span><br><span class="line">WARNING! This will remove:</span><br><span class="line">  - all stopped containers</span><br><span class="line">  - all networks not used by at least one container</span><br><span class="line">  - all dangling images</span><br><span class="line">  - unused build cache</span><br><span class="line"></span><br><span class="line">Are you sure you want to <span class="keyword">continue</span>? [<span class="type">y</span>/<span class="type">N</span>] y</span><br><span class="line">Total reclaimed space: <span class="number">0</span>B</span><br></pre></td></tr></table></div></figure>
 
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:5244/" target="_blank" rel="noopener" data-popover="Learning Materials" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-book"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><a class="sidebar-ov-social-item" href="http://49.232.249.169:5244/" target="_blank" rel="noopener" data-popover="Learning Materials" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-book"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
   var container = document.querySelector('.sidebar-ov-ha');
   var btn = document.querySelector('.sidebar-ha-btn');
   var img = document.querySelector('.sidebar-ha-img');
