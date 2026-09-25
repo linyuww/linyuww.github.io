@@ -28,7 +28,127 @@ var CONFIG = {
 };
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="linyuww's blog" type="application/atom+xml">
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/09/21/python%E8%AF%AD%E6%B3%95/">python语法</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-09-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-09-21</span></span></div></header><div class="post-body"><div class="post-excerpt">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">Search</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hello Welcome to my blog</div><div class="header-banner-info__subtitle">一个大学生的个人博客</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/09/25/python%E8%AF%AD%E6%B3%95-2/">python语法(2)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-09-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-09-25</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="map-reduce"   >
+          <a href="#map-reduce" class="heading-link"><i class="fas fa-link"></i></a><a href="#map-reduce" class="headerlink" title="map&#x2F;reduce"></a>map&#x2F;reduce</h2>
+      <p>map()函数接收两个参数，一个是函数，一个是Iterable，</p>
+<p>map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator返回。</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">x</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> x * x</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>r = <span class="built_in">map</span>(f, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(r)<span class="comment">#将惰性序列转换成list</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br></pre></td></tr></table></div></figure>
+
+
+
+<p><code>reduce</code>的用法。</p>
+<p><code>reduce</code>把一个函数作用在一个序列<code>[x1, x2, x3, ...]</code>上，</p>
+<p>这个函数必须接收两个参数：函数还有被作用的序列</p>
+<p><code>reduce</code>把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)</span><br></pre></td></tr></table></div></figure>
+
+<p>比方说对一个序列求和，就可以用<code>reduce</code>实现：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> x + y</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>reduce(add, [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br><span class="line"><span class="number">25</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="filter过滤函数"   >
+          <a href="#filter过滤函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#filter过滤函数" class="headerlink" title="filter过滤函数"></a>filter过滤函数</h2>
+      <p><code>filter()</code>接收一个函数和一个序列。</p>
+<p>把传入的函数依次作用于每个元素，</p>
+<p>然后根据返回值是<code>True</code>还是<code>False</code>决定保留还是丢弃该元素</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">not_empty</span>(<span class="params">s</span>):</span><br><span class="line">    <span class="keyword">return</span> s <span class="keyword">and</span> s.strip()</span><br><span class="line"></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">filter</span>(not_empty, [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="literal">None</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;  &#x27;</span>]))</span><br><span class="line"><span class="comment"># 结果: [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></div></figure>
+
+<p>筛素数的方法，惰性筛选</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">primes</span>():</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">    it = _odd_iter() <span class="comment"># 初始序列</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        n = <span class="built_in">next</span>(it) <span class="comment"># 返回序列的第一个数</span></span><br><span class="line">        <span class="keyword">yield</span> n</span><br><span class="line">        it = <span class="built_in">filter</span>(_not_divisible(n), it) <span class="comment"># 构造新序列</span></span><br><span class="line"><span class="comment">#本质是每次it都叠加新的过滤规则，next出数之前都过滤</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_odd_iter</span>():</span><br><span class="line">    n = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        n = n + <span class="number">2</span></span><br><span class="line">        <span class="keyword">yield</span> n</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_not_divisible</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> x: x % n &gt; <span class="number">0</span></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>迭代器后面的数根本没筛。</strong></p>
+<p>只是把“筛选规则”保存下来了。</p>
+<p>等以后某个数字真正被生成时，再让它依次经过这些筛选规则。</p>
+<p>例题，筛选回文数：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">is_palindrome</span>(<span class="params">n</span>):</span><br><span class="line">    s = <span class="built_in">str</span>(n)</span><br><span class="line">    <span class="keyword">return</span> s == s[::-<span class="number">1</span>]<span class="comment">#-1是倒序切片，s[::-1]表示将字符串s倒序排列</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">int2list</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="built_in">list</span> = []</span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">list</span>.append(n % <span class="number">10</span>)</span><br><span class="line">        n //= <span class="number">10</span>			<span class="comment">#整除符号</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">is_palindrome</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="built_in">list</span> = int2list(n)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">list</span>) == <span class="number">1</span> :</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">list</span>) // <span class="number">2</span>):<span class="comment">#整除到中间即可</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">list</span>[i] != <span class="built_in">list</span>[-i - <span class="number">1</span>]:<span class="comment">#0与-1比较</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="sort"   >
+          <a href="#sort" class="heading-link"><i class="fas fa-link"></i></a><a href="#sort" class="headerlink" title="sort()"></a>sort()</h2>
+      <p><code>sorted()</code>函数接收一个<code>key</code>函数来实现自定义的排序，例如按绝对值大小排序：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>([<span class="number">36</span>, <span class="number">5</span>, -<span class="number">12</span>, <span class="number">9</span>, -<span class="number">21</span>], key=<span class="built_in">abs</span>)</span><br><span class="line">[<span class="number">5</span>, <span class="number">9</span>, -<span class="number">12</span>, -<span class="number">21</span>, <span class="number">36</span>]</span><br></pre></td></tr></table></div></figure>
+
+<p>key指定的函数将作用于list的每一个元素上，并根据key函数返回的结果进行排序。</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">36</span>, <span class="number">5</span>, -<span class="number">12</span>, <span class="number">9</span>, -<span class="number">21</span>]</span><br><span class="line"></span><br><span class="line">keys = [<span class="number">36</span>, <span class="number">5</span>,  <span class="number">12</span>, <span class="number">9</span>,  <span class="number">21</span>]</span><br></pre></td></tr></table></div></figure>
+
+<p>并按照对应关系返回list相应的元素：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result sort = [<span class="number">5</span>, <span class="number">9</span>, -<span class="number">12</span>, -<span class="number">21</span>, <span class="number">36</span>]</span><br></pre></td></tr></table></div></figure>
+
+<p>要进行反向排序，不必改动key函数，可以传入第三个参数<code>reverse=True</code></p>
+
+        <h2 id="返回函数与闭包"   >
+          <a href="#返回函数与闭包" class="heading-link"><i class="fas fa-link"></i></a><a href="#返回函数与闭包" class="headerlink" title="返回函数与闭包"></a>返回函数与闭包</h2>
+      <p>注意到返回的函数在其定义内部引用了局部变量<code>args</code>，所以，当一个函数返回了一个函数后，其内部的局部变量还被新函数引用。</p>
+<p>另一个需要注意的问题是，返回的函数并没有立刻执行，而是直到调用了<code>f()</code>才执行。</p>
+<p><strong>返回闭包时牢记一点：返回函数不要引用任何循环变量，或者后续会发生变化的变量。</strong></p>
+<p>如果一定要引用循环变量，</p>
+<p>方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">count</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">j</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">g</span>():</span><br><span class="line">            <span class="keyword">return</span> j*j</span><br><span class="line">        <span class="keyword">return</span> g</span><br><span class="line">    fs = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">4</span>):</span><br><span class="line">        fs.append(f(i)) <span class="comment"># f(i)立刻被执行，因此i的当前值被传入f()</span></span><br><span class="line">    <span class="keyword">return</span> fs</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="nonlocal"   >
+          <a href="#nonlocal" class="heading-link"><i class="fas fa-link"></i></a><a href="#nonlocal" class="headerlink" title="nonlocal"></a>nonlocal</h2>
+      <p>内层函数引用外层函数局部变量</p>
+<p>只读则调用正常</p>
+<p>赋值改写则会报错，要加<code>nonlocal x</code>声明</p>
+<p><strong>使用闭包时，对外层变量赋值前，需要先使用nonlocal声明该变量不是当前函数的局部变量。</strong></p>
+
+        <h2 id="匿名函数（lambda）"   >
+          <a href="#匿名函数（lambda）" class="heading-link"><i class="fas fa-link"></i></a><a href="#匿名函数（lambda）" class="headerlink" title="匿名函数（lambda）"></a>匿名函数（lambda）</h2>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> x * x</span><br><span class="line"></span><br><span class="line"><span class="keyword">lambda</span> x: x * x</span><br><span class="line"></span><br><span class="line"><span class="comment">#lambda后面是参数，:后面是函数。只能有一个表达式，没用return，返回值就是表达式结果</span></span><br></pre></td></tr></table></div></figure>
+
+<p>匿名函数也可以作为返回值返回</p>
+
+        <h2 id="装饰器Decorator"   >
+          <a href="#装饰器Decorator" class="heading-link"><i class="fas fa-link"></i></a><a href="#装饰器Decorator" class="headerlink" title="装饰器Decorator"></a>装饰器Decorator</h2>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">log</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">    @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kw</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;call %s():&#x27;</span> % func.__name__)</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kw)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">now</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;2015-3-25&#x27;</span>)</span><br><span class="line"></span><br><span class="line">now()<span class="comment">#相当于先调用wrapper里的打印日志，然后返回函数即now，然后执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#输出</span></span><br><span class="line">call now():</span><br><span class="line"><span class="number">2015</span>-<span class="number">3</span>-<span class="number">25</span></span><br></pre></td></tr></table></div></figure>
+
+<p>三层嵌套，针对装饰器带参数的</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">log</span>(<span class="params">text</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">        @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kw</span>):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;%s %s():&#x27;</span> % (text, func.__name__))</span><br><span class="line">            <span class="keyword">return</span> func(*args, **kw)</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@log(<span class="params"><span class="string">&quot;execute&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">now</span>():</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">        ↓ 等价于</span><br><span class="line"></span><br><span class="line">now = log(<span class="string">&quot;execute&quot;</span>)(now)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">第一层</span><br><span class="line">log(<span class="string">&quot;execute&quot;</span>)</span><br><span class="line">│</span><br><span class="line">│ text = <span class="string">&quot;execute&quot;</span></span><br><span class="line">↓</span><br><span class="line">返回 decorator</span><br><span class="line">        │</span><br><span class="line">        │</span><br><span class="line">第二层 │ decorator(now)</span><br><span class="line">        │ func = 原来的 now</span><br><span class="line">        ↓</span><br><span class="line">      返回 wrapper</span><br><span class="line">              │</span><br><span class="line">              │</span><br><span class="line">              ↓</span><br><span class="line">        now = wrapper</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">之后调用：</span><br><span class="line"></span><br><span class="line">now()</span><br><span class="line"> ↓</span><br><span class="line">wrapper()</span><br><span class="line"> │</span><br><span class="line"> ├── 使用 text = <span class="string">&quot;execute&quot;</span></span><br><span class="line"> │</span><br><span class="line"> ├── 使用 func = 原来的 now</span><br><span class="line"> │</span><br><span class="line"> └── func(*args, **kw)</span><br><span class="line">          ↓</span><br><span class="line">       原来的 now()</span><br></pre></td></tr></table></div></figure>
+
+<p>经过decorator装饰之后的函数，它们的<code>__name__</code>已经从原来的<code>&#39;now&#39;</code>变成了<code>&#39;wrapper&#39;</code></p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>now.__name__</span><br><span class="line"><span class="string">&#x27;wrapper&#x27;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>所以要加<code>@functools.wraps(func)</code></p>
+
+        <h2 id="偏函数"   >
+          <a href="#偏函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h2>
+      <p>就是制作了一个有其他默认参数的函数</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int2 = functools.partial(<span class="built_in">int</span>, base=<span class="number">2</span>)<span class="comment">#默认转二进制</span></span><br></pre></td></tr></table></div></figure>
+
+<p>创建偏函数时，实际上可以接收函数对象、<code>*args</code>和<code>**kw</code>这3个参数</p>
+<p>如果不些命名参数则就是位置参数</p>
+<p>当传入：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max2 = functools.partial(<span class="built_in">max</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p>实际上会把<code>10</code>作为<code>*args</code>的一部分自动加到左边，也就是：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max2(<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p>相当于：</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">args = (<span class="number">10</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>)</span><br><span class="line"><span class="built_in">max</span>(*args)</span><br></pre></td></tr></table></div></figure>
+
+<p>结果为<code>10</code>。</p>
+
+        <h2 id="模块"   >
+          <a href="#模块" class="heading-link"><i class="fas fa-link"></i></a><a href="#模块" class="headerlink" title="模块"></a>模块</h2>
+      <p>和java差不多，每一个包目录下面都会有一个<code>__init__.py</code>的文件</p>
+<p>要注意：</p>
+<ul>
+<li>模块名要遵循Python变量命名规范，不要使用中文、特殊字符；</li>
+<li>模块名不要和系统模块名冲突，最好先查看系统是否已存在该模块，检查方法是在Python交互环境执行<code>import abc</code>，若成功则说明系统存在此模块。</li>
+</ul>
+
+        <h2 id="作用域"   >
+          <a href="#作用域" class="heading-link"><i class="fas fa-link"></i></a><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2>
+      <p>类似<code>__xxx__</code>这样的变量是特殊变量，比如上面的<code>__author__</code>，<code>__name__</code></p>
+<p>类似<code>_xxx</code>和<code>__xxx</code>这样的函数或变量就是非公开的（private），不应该被直接引用，比如<code>_abc</code>，<code>__abc</code>等；</p>
+<p>外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2026/09/21/python%E8%AF%AD%E6%B3%95/">python语法</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2026-09-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2026-09-21</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="列表"   >
           <a href="#列表" class="heading-link"><i class="fas fa-link"></i></a><a href="#列表" class="headerlink" title="列表"></a>列表</h2>
       <p>list可变，tuple不变</p>
@@ -2512,233 +2632,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
 
         <h3 id="完美转发"   >
           <a href="#完美转发" class="heading-link"><i class="fas fa-link"></i></a><a href="#完美转发" class="headerlink" title="完美转发"></a>完美转发</h3>
-      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2025/09/10/STL%E7%9A%84%E5%AF%B9%E6%AF%94/">STL的对比</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2025-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2025-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt"><div class="table-container"><table>
-<thead>
-<tr>
-<th>容器类型</th>
-<th>底层数据结构</th>
-<th>元素存储特点</th>
-<th>访问方式</th>
-<th>是否支持随机访问</th>
-<th>动态大小调整</th>
-<th>典型应用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong><code>vector</code></strong></td>
-<td>动态数组 (连续内存)</td>
-<td>按加入顺序连续存储</td>
-<td>下标访问 (<code>[]</code>)</td>
-<td>是</td>
-<td>是</td>
-<td>动态数组的替代，快速随机访问，大量数据按顺序存取。</td>
-</tr>
-<tr>
-<td><strong><code>deque</code></strong></td>
-<td>分段连续内存</td>
-<td>按加入顺序存储（分段实现）</td>
-<td>双向访问（头尾操作快）</td>
-<td>是</td>
-<td>是</td>
-<td>需要快速在首尾插入与删除，而仍然支持随机访问的场景。</td>
-</tr>
-<tr>
-<td><strong><code>list</code></strong></td>
-<td>双向链表</td>
-<td>不连续，每个元素存储指针</td>
-<td>双向遍历</td>
-<td>否</td>
-<td>是</td>
-<td>频繁插入&#x2F;删除操作的场景，尤其在需要中间修改的情况下。</td>
-</tr>
-<tr>
-<td><strong><code>forward_list</code></strong></td>
-<td>单向链表</td>
-<td>不连续，只有前向指针</td>
-<td>单向遍历</td>
-<td>否</td>
-<td>是</td>
-<td>内存占用较小的场景，在对链表操作需求简单时用作优化。</td>
-</tr>
-<tr>
-<td><strong><code>array</code></strong></td>
-<td>静态数组 (固定大小)</td>
-<td>按加入顺序连续存储</td>
-<td>下标访问 (<code>[]</code>)</td>
-<td>是</td>
-<td>否</td>
-<td>小容量、固定大小、性能关键的场景，避免动态分配。</td>
-</tr>
-<tr>
-<td><strong><code>set</code></strong></td>
-<td>平衡二叉搜索树（通常是 Red-Black 树）</td>
-<td>按键值自动排序</td>
-<td>基于 key 查找和遍历</td>
-<td>否</td>
-<td>是</td>
-<td>唯一值的集合，不允许重复值，支持快速有序的查找和插入。</td>
-</tr>
-<tr>
-<td><strong><code>multiset</code></strong></td>
-<td>平衡二叉搜索树</td>
-<td>按键值自动排序</td>
-<td>基于 key 查找和遍历</td>
-<td>否</td>
-<td>是</td>
-<td>允许重复值的集合，多次插入同一值场景（按顺序存储）。</td>
-</tr>
-<tr>
-<td><strong><code>map</code></strong></td>
-<td>平衡二叉搜索树</td>
-<td>按键值自动排序</td>
-<td>基于 key 查找</td>
-<td>否</td>
-<td>是</td>
-<td>有序的键值对储存，适合频繁按 key 查找具体值的场景。</td>
-</tr>
-<tr>
-<td><strong><code>multimap</code></strong></td>
-<td>平衡二叉搜索树</td>
-<td>按键值自动排序</td>
-<td>基于 key 查找</td>
-<td>否</td>
-<td>是</td>
-<td>允许同一键值存在多个映射值的场景。</td>
-</tr>
-<tr>
-<td><strong><code>unordered_set</code></strong></td>
-<td>哈希表</td>
-<td>无序存储</td>
-<td>常数时间 key 查找</td>
-<td>否</td>
-<td>是</td>
-<td>唯一值的集合，但无需排序，适合大量 key 快速判断是否存在的场景。</td>
-</tr>
-<tr>
-<td><strong><code>unordered_multiset</code></strong></td>
-<td>哈希表</td>
-<td>无序存储</td>
-<td>常数时间 key 查找</td>
-<td>否</td>
-<td>是</td>
-<td>允许重复值的集合，但无序存储，适合大数据去重分析场景。</td>
-</tr>
-<tr>
-<td><strong><code>unordered_map</code></strong></td>
-<td>哈希表</td>
-<td>无序存储</td>
-<td>常数时间 key-value 查找</td>
-<td>否</td>
-<td>是</td>
-<td>可快速通过 key 查找 value 的场景（无需排序）。</td>
-</tr>
-<tr>
-<td><strong><code>unordered_multimap</code></strong></td>
-<td>哈希表</td>
-<td>无序存储</td>
-<td>常数时间 key 查找</td>
-<td>否</td>
-<td>是</td>
-<td>允许同一个 key 存储多个值（无需排序）的场景。</td>
-</tr>
-<tr>
-<td><strong><code>stack</code></strong></td>
-<td>基于 <code>deque</code> 实现</td>
-<td>后进先出 (LIFO)</td>
-<td>只访问顶端 (<code>top</code>)</td>
-<td>否</td>
-<td>是</td>
-<td>后进先出的场景，比如函数调用栈、括号匹配等。</td>
-</tr>
-<tr>
-<td><strong><code>queue</code></strong></td>
-<td>基于 <code>deque</code> 实现</td>
-<td>先进先出 (FIFO)</td>
-<td>只访问头部和尾部</td>
-<td>否</td>
-<td>是</td>
-<td>先进先出的场景，比如任务排队、消息队列等。</td>
-</tr>
-<tr>
-<td><strong><code>priority_queue</code></strong></td>
-<td>基于堆实现</td>
-<td>按优先级排序</td>
-<td>访问最大（默认情况）值</td>
-<td>否</td>
-<td>是</td>
-<td>按优先级任务调度、动态获取最大&#x2F;最小值的场景。</td>
-</tr>
-<tr>
-<td><strong><code>bitset</code></strong></td>
-<td>定长的位数组</td>
-<td>每个位存储 true&#x2F;false</td>
-<td>位访问 (<code>[]</code>)</td>
-<td>是</td>
-<td>否</td>
-<td>高效存储和操作布尔值，适合空间和位运算优化场景。</td>
-</tr>
-</tbody></table></div>
-
-        <h4 id="1-底层数据结构"   >
-          <a href="#1-底层数据结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-底层数据结构" class="headerlink" title="1. 底层数据结构"></a><strong>1. 底层数据结构</strong></h4>
-      <ul>
-<li><strong>动态数组</strong>：元素连续存放且可动态扩展的数组。</li>
-<li><strong>链表</strong>：使用指针将元素链接而成的结构，可分为单向链表与双向链表。</li>
-<li><strong>平衡二叉树</strong>：自平衡的二叉搜索树，常用的是红黑树（Red-Black Tree）。</li>
-<li><strong>哈希表</strong>：以哈希函数作为索引，通过哈希冲突解决机制（如拉链法）高效存储数据。</li>
-<li><strong>堆</strong>：通常是二叉堆，支持动态调整以保证堆顶始终是最大值或最小值。</li>
-</ul>
-<hr>
-
-        <h4 id="2-元素存储特点"   >
-          <a href="#2-元素存储特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-元素存储特点" class="headerlink" title="2. 元素存储特点"></a><strong>2. 元素存储特点</strong></h4>
-      <ul>
-<li><strong>连续存储</strong>：<code>vector</code> 和 <code>array</code> 采用连续存储，内存紧凑，随机访问快。</li>
-<li><strong>分段连续存储</strong>：<code>deque</code> 分段实现，以保证在头尾添加数据的高效性。</li>
-<li><strong>不连续存储</strong>：<code>list</code>、<code>forward_list</code>、<code>set</code> 等采用链表或树结构，插入&#x2F;删除效率高，但随机访问速度较慢。</li>
-</ul>
-<hr>
-
-        <h4 id="3-访问方式"   >
-          <a href="#3-访问方式" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-访问方式" class="headerlink" title="3. 访问方式"></a><strong>3. 访问方式</strong></h4>
-      <ul>
-<li><strong>下标访问 (<code>[]</code>)</strong>：<code>vector</code>、<code>array</code> 支持随机访问，可迅速获取指定位置的元素。</li>
-<li><strong>头尾访问</strong>：<code>stack</code> 和 <code>queue</code> 限制为某些特定操作。</li>
-<li><strong>优先访问</strong>：<code>priority_queue</code> 只能访问堆顶元素（最大值&#x2F;最小值）。</li>
-<li><strong>基于 key 访问</strong>：<code>map</code>、<code>unordered_map</code> 以键值对方式支持查找。</li>
-</ul>
-<hr>
-
-        <h4 id="4-是否支持随机访问"   >
-          <a href="#4-是否支持随机访问" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-是否支持随机访问" class="headerlink" title="4. 是否支持随机访问"></a><strong>4. 是否支持随机访问</strong></h4>
-      <ul>
-<li>支持随机访问的容器（如 <code>vector</code>、<code>array</code>、<code>deque</code> 等）提供 O(1) 复杂度的下标访问，操作简单。</li>
-<li>不支持随机访问的容器（如 <code>list</code>、<code>set</code> 等）需要遍历或依赖搜索结构，访问效率较低。</li>
-</ul>
-<hr>
-
-        <h4 id="5-动态大小调整"   >
-          <a href="#5-动态大小调整" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-动态大小调整" class="headerlink" title="5. 动态大小调整"></a><strong>5. 动态大小调整</strong></h4>
-      <ul>
-<li>动态容器（如 <code>vector</code>、<code>deque</code>、<code>list</code>）可以根据元素数目动态分配或收缩内存。</li>
-<li>静态容器（如 <code>array</code>）在定义时需指定固定大小。</li>
-</ul>
-<hr>
-
-        <h4 id="6-应用场景"   >
-          <a href="#6-应用场景" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-应用场景" class="headerlink" title="6. 应用场景"></a><strong>6. 应用场景</strong></h4>
-      <p>每种容器都有其典型应用场景，选择合适的容器取决于业务需求（如性能、顺序性、查找效率）。</p>
-
-        <h4 id="根据需求选择不同容器："   >
-          <a href="#根据需求选择不同容器：" class="heading-link"><i class="fas fa-link"></i></a><a href="#根据需求选择不同容器：" class="headerlink" title="根据需求选择不同容器："></a>根据需求选择不同容器：</h4>
-      <ol>
-<li><strong>需要快速随机访问</strong>：使用 <code>vector</code>、<code>array</code>。</li>
-<li><strong>需要频繁插入和删除</strong>：使用 <code>list</code>、<code>deque</code>（插入和删除表现良好）。</li>
-<li><strong>需要数据自动排序</strong>：使用 <code>set</code>、<code>multiset</code>（有序集合）或 <code>map</code>、<code>multimap</code>（有序键值对）。</li>
-<li><strong>需要快速查找，不关心顺序</strong>：优先选择哈希容器，比如 <code>unordered_set</code> 和 <code>unordered_map</code>。</li>
-<li><strong>使用栈或队列模型</strong>：考虑 <code>stack</code>、<code>queue</code> 或 <code>priority_queue</code>。</li>
-</ol>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">linyuww</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" aria-label="github" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" aria-label="Tetris" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><a class="sidebar-ov-social-item" href="http://49.232.249.169:5244/" aria-label="Study" target="_blank" rel="noopener" data-popover="Learning Materials" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-book"></i></span></a><a class="sidebar-ov-social-item" href="mailto:2949203814@qq.com" aria-label="Email: 2949203814@qq.com" target="_blank" rel="noopener" data-popover="2949203814@qq.com" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
+      </div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">linyuww</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/linyuww" aria-label="github" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="http://47.104.22.42:3000/" aria-label="Tetris" target="_blank" rel="noopener" data-popover="social.Tetris" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-gamepad"></i></span></a><a class="sidebar-ov-social-item" href="http://49.232.249.169:5244/" aria-label="Study" target="_blank" rel="noopener" data-popover="Learning Materials" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-book"></i></span></a><a class="sidebar-ov-social-item" href="mailto:2949203814@qq.com" aria-label="Email: 2949203814@qq.com" target="_blank" rel="noopener" data-popover="2949203814@qq.com" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a><div class="sidebar-ov-ha" style="text-align: center; margin-top: 10px;"><span class="sidebar-ov-social-item sidebar-ha-btn" style="cursor: pointer; display: inline-block;">哈</span><img class="sidebar-ha-img" src="/images/cat_ha.gif" style="display: none; width: 100%; margin-top: 10px;" alt="Ha"></div><script>document.addEventListener('DOMContentLoaded', function() {
   var container = document.querySelector('.sidebar-ov-ha');
   var btn = document.querySelector('.sidebar-ha-btn');
   var img = document.querySelector('.sidebar-ha-img');
@@ -2751,7 +2645,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"><lin
     });
   }
 });
-</script></div><div class="sidebar-ov-about"><a class="sidebar-ov-about__link" href="/about/"><i class="far fa-user" aria-hidden="true"></i><span>About Me</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">70</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">Categories</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+</script></div><div class="sidebar-ov-about"><a class="sidebar-ov-about__link" href="/about/"><i class="far fa-user" aria-hidden="true"></i><span>About Me</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">71</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">Categories</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="Search for Posts (Support multiple keywords)"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
