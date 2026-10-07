@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9Fpython%E7%8E%AF%E5%A2%83%EF%BC%8C%E9%87%87%E7%94%A8%E8%BD%BB%E9%87%8F%E5%8C%96%E7%9A%84%E6%96%B9%E6%A1%88/</loc>
+    <loc>https://linyuww.bond/2025/09/10/%E5%AE%9E%E7%8E%B0%E5%BA%93%E5%87%BD%E6%95%B0printf/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/%E5%AE%9E%E7%8E%B0%E5%BA%93%E5%87%BD%E6%95%B0printf/</loc>
+    <loc>https://linyuww.bond/2025/09/10/%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9Fpython%E7%8E%AF%E5%A2%83%EF%BC%8C%E9%87%87%E7%94%A8%E8%BD%BB%E9%87%8F%E5%8C%96%E7%9A%84%E6%96%B9%E6%A1%88/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -335,15 +335,6 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</loc>
-    
-    <lastmod>2025-11-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://linyuww.bond/2025/09/10/ngnix%E5%AE%9E%E7%8E%B0%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/</loc>
     
     <lastmod>2025-11-26</lastmod>
@@ -362,7 +353,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/pstree/</loc>
+    <loc>https://linyuww.bond/2025/09/10/linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -371,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/system%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://linyuww.bond/2025/09/10/pstree/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -389,7 +380,16 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/wsl%E7%9A%84%E4%BB%A3%E7%90%86%E5%A6%82%E4%BD%95%E4%B8%8E%E4%B8%BB%E6%9C%BA%E5%85%B1%E4%BA%AB/</loc>
+    <loc>https://linyuww.bond/2025/09/10/system%E5%88%9D%E5%A7%8B%E5%8C%96%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2025-11-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://linyuww.bond/2025/09/10/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -416,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://linyuww.bond/2025/09/10/wsl%E7%9A%84%E4%BB%A3%E7%90%86%E5%A6%82%E4%BD%95%E4%B8%8E%E4%B8%BB%E6%9C%BA%E5%85%B1%E4%BA%AB/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -470,15 +470,6 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/13-%E5%BA%94%E5%AF%B9%E5%B9%B6%E5%8F%91%20Bugs%20(%E5%8A%A8%E6%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90%EF%BC%9A%E5%BA%94%E5%AF%B9%E6%AD%BB%E9%94%81%E3%80%81%E6%AD%BB%E5%B1%80%E5%92%8C%E6%AD%BB%E7%BA%BF)/</loc>
-    
-    <lastmod>2025-11-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://linyuww.bond/2025/09/10/14-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%9A%84%E8%BF%9B%E7%A8%8B%20(forkexecveexit)/</loc>
     
     <lastmod>2025-11-26</lastmod>
@@ -488,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/15-(%E5%85%A5%E4%BE%B5)%20%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</loc>
+    <loc>https://linyuww.bond/2025/09/10/13-%E5%BA%94%E5%AF%B9%E5%B9%B6%E5%8F%91%20Bugs%20(%E5%8A%A8%E6%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90%EF%BC%9A%E5%BA%94%E5%AF%B9%E6%AD%BB%E9%94%81%E3%80%81%E6%AD%BB%E5%B1%80%E5%92%8C%E6%AD%BB%E7%BA%BF)/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -498,6 +489,15 @@
   
   <url>
     <loc>https://linyuww.bond/2025/09/10/16-%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E5%92%8C%20UNIX%20Shell%20(pipe;%20xv6%20shell)/</loc>
+    
+    <lastmod>2025-11-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://linyuww.bond/2025/09/10/15-(%E5%85%A5%E4%BE%B5)%20%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -524,15 +524,6 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/21-%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E3%80%81%E4%B8%AD%E6%96%AD%E5%92%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2/</loc>
-    
-    <lastmod>2025-11-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://linyuww.bond/2025/09/10/22-%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%AE%9E%E7%8E%B0%20(%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%EF%BC%9BUNIX%20%E5%92%8C%20xv6)/</loc>
     
     <lastmod>2025-11-26</lastmod>
@@ -542,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/23-%E5%A4%84%E7%90%86%E5%99%A8%E8%B0%83%E5%BA%A6%20(xv6%20%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2%EF%BC%9B%E5%A4%84%E7%90%86%E5%99%A8%E8%B0%83%E5%BA%A6%EF%BC%9A%E6%9C%BA%E5%88%B6%E5%92%8C%E7%AD%96%E7%95%A5)/</loc>
+    <loc>https://linyuww.bond/2025/09/10/21-%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E3%80%81%E4%B8%AD%E6%96%AD%E5%92%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -552,6 +543,15 @@
   
   <url>
     <loc>https://linyuww.bond/2025/09/10/24-%E7%8A%B6%E6%80%81%E6%9C%BA%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BA%94%E7%94%A8%20(%E5%9B%BE%E7%81%B5%E6%9C%BA%E3%80%81Game%20of%20Life%E3%80%81%E7%8A%B6%E6%80%81%E6%9C%BA%E6%80%9D%E6%83%B3/</loc>
+    
+    <lastmod>2025-11-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://linyuww.bond/2025/09/10/23-%E5%A4%84%E7%90%86%E5%99%A8%E8%B0%83%E5%BA%A6%20(xv6%20%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2%EF%BC%9B%E5%A4%84%E7%90%86%E5%99%A8%E8%B0%83%E5%BA%A6%EF%BC%9A%E6%9C%BA%E5%88%B6%E5%92%8C%E7%AD%96%E7%95%A5)/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -596,7 +596,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/gdbinit/</loc>
+    <loc>https://linyuww.bond/2025/09/10/hanoi/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
@@ -605,7 +605,7 @@
   </url>
   
   <url>
-    <loc>https://linyuww.bond/2025/09/10/hanoi/</loc>
+    <loc>https://linyuww.bond/2025/09/10/gdbinit/</loc>
     
     <lastmod>2025-11-26</lastmod>
     
