@@ -1133,6 +1133,16 @@ body.blog-terminal-open {
   border-radius: 8px;
   background: #4e6855;
 }
+.blog-terminal-earthrise {
+  display: block;
+  width: 100%;
+  height: 220px;
+  margin: 0 0 16px;
+}
+.blog-terminal-earthrise canvas {
+  width: 100%;
+  height: 100%;
+}
 .blog-terminal-line {
   min-height: 1.7em;
   overflow-wrap: anywhere;
